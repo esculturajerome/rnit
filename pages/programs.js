@@ -117,7 +117,7 @@ function Programs() {
             </div>
             <div className="max-w-xl mb-6">
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                Programs & Services
+                Programs &amp; Services
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
                 We believe in competence, integrity, high level of commitment,

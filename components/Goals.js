@@ -1,5 +1,6 @@
 import React from "react";
 import TitleRow from "./TitleRow";
+import Link from "next/link";
 
 function Goals() {
   const mission = [
