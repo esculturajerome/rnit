@@ -3,6 +3,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import ProgramRow from "../components/ProgramRow";
+import Link from "next/link";
 
 function Contact() {
   return (
@@ -15,6 +16,7 @@ function Contact() {
             width={720}
             height={479}
             layout="fill"
+            alt="RNIT Building"
           />
         </div>
 
@@ -33,9 +35,9 @@ function Contact() {
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-white/80 md:text-lg">
                   We always want to hear from you! Let us know how we can best
-                  help you and we'll do our very best.
+                  help you and we&apos;ll do our very best.
                 </p>
-                <a
+                <Link
                   href="https://goo.gl/maps/nxYjrUPPdfPnVgx88"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
@@ -50,7 +52,7 @@ function Contact() {
                   >
                     <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
                   </svg>
-                </a>
+                </Link>
               </div>
               <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10">

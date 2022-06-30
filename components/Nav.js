@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import { useState } from "react";
+import Link from "next/link";
 
 import logo from "../public/images/rnit-logo.svg";
 
@@ -20,7 +21,7 @@ function Nav() {
       <div className="bg-main/90 ">
         <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
           <div className="flex justify-end gap-2">
-            <a
+            <Link
               onClick={(e) => handleNav(e, "/enrol")}
               href="#"
               aria-label="Enrol now"
@@ -28,8 +29,8 @@ function Nav() {
               className="inline-flex items-center py-2 px-4  transition duration-200   hover:bg-secondary focus:shadow-outline focus:outline-none"
             >
               Online Enrolment
-            </a>
-            <a
+            </Link>
+            <Link
               onClick={(e) => handleNav(e, "/assessment")}
               href="#"
               aria-label="Enrol now"
@@ -37,38 +38,44 @@ function Nav() {
               className="inline-flex items-center py-2 px-4 transition duration-200   hover:bg-secondary focus:shadow-outline focus:outline-none"
             >
               Online Assessment
-            </a>
+            </Link>
           </div>
         </div>
       </div>
       <div className="bg-main">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
           <div className="relative flex items-center justify-between">
-            <a
+            <Link
               onClick={(e) => handleNav(e, "/")}
               href="#"
               aria-label="Company"
               title="Company"
               className="inline-flex items-center"
             >
-              <Image src={logo} width={50} height={50} objectFit="contain" />
+              <Image
+                src={logo}
+                width={50}
+                height={50}
+                objectFit="contain"
+                alt="logo"
+              />
               <p className="ml-3 uppercase font-serif text-white tracking-wider">
                 Romblon National Institute <br /> of Technology
               </p>
-            </a>
+            </Link>
             <ul className="items-center hidden space-x-8 lg:flex">
               <li>
-                <a
+                <Link
                   href="/"
                   aria-label="Our product"
                   title="Our product"
                   className="btn-text text-white"
                 >
                   Product
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   onClick={(e) => handleNav(e, "/programs")}
                   href="#"
                   aria-label="Our product"
@@ -76,10 +83,10 @@ function Nav() {
                   className="btn-text text-white"
                 >
                   Programs
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   onClick={(e) => handleNav(e, "/about")}
                   href="#"
                   aria-label="Product pricing"
@@ -87,10 +94,10 @@ function Nav() {
                   className="btn-text text-white"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   onClick={(e) => handleNav(e, "/contact")}
                   href="#"
                   aria-label="Contact us"
@@ -98,17 +105,17 @@ function Nav() {
                   className="btn-text text-white"
                 >
                   Contact us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/"
                   className="btn-contained h-8"
                   aria-label="Sign up"
                   title="Sign up"
                 >
                   Sign up
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="lg:hidden">
@@ -156,54 +163,54 @@ function Nav() {
                     <nav>
                       <ul className="space-y-4">
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="Our product"
                             title="Our product"
                             className="btn-text text-black"
                           >
                             Product
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="Our product"
                             title="Our product"
                             className="btn-text text-black"
                           >
                             Features
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="Product pricing"
                             title="Product pricing"
                             className="btn-text text-black"
                           >
                             Pricing
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             href="/"
                             aria-label="About us"
                             title="About us"
                             className="btn-text text-black"
                           >
                             About us
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
+                          <Link
                             href="/"
                             className="btn-contained"
                             aria-label="Sign up"
                             title="Sign up"
                           >
                             Sign up
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </nav>

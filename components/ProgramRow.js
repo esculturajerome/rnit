@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function ProgramRow() {
@@ -19,9 +20,9 @@ function ProgramRow() {
             </p>
           </div>
           <div className="flex  items-center gap-4">
-            <a href="/" className="btn-contained">
+            <Link href="/" className="btn-contained">
               Learn more
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -59,13 +59,13 @@ function Goals() {
               <p className="mb-2 text-sm text-gray-900 line-clamp-2">
                 {item.subText}
               </p>
-              <a
+              <Link
                 href={item.url}
                 aria-label=""
                 className="text-sm font-semibold btn-text"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
         ))}

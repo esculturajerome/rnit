@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 function Header() {
   return (
@@ -16,12 +17,12 @@ function Header() {
             </p>
           </div>
           <div className="flex  items-center gap-4 mb-8">
-            <a href="/" className="btn-contained">
+            <Link href="/" className="btn-contained">
               Enrol now
-            </a>
-            <a href="/" aria-label="" className="btn-text">
+            </Link>
+            <Link href="/" aria-label="" className="btn-text">
               Learn more
-            </a>
+            </Link>
           </div>
         </div>
       </div>
