@@ -122,7 +122,7 @@ const Teams = () => {
           <Slider {...settings}>
             {Object.entries(images).map((image, i) => (
               <Employee
-                picture={image[1].src}
+                picture={image[1]}
                 blurData={image[1].blurDataURL}
                 key={i}
               />
