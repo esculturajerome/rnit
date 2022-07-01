@@ -2,8 +2,12 @@ import React from "react";
 import Nav from "../components/Nav";
 import Course from "../components/Course";
 import Link from "next/link";
+import { handleNav } from "../components/Functions";
+import { useRouter } from "next/router";
+import Footer from "../components/Footer";
 
 function Programs() {
+  const router = useRouter();
   const courses = [
     {
       id: 1,
@@ -126,10 +130,11 @@ function Programs() {
               </p>
             </div>
             <div>
-              <Link
-                href="/"
-                aria-label=""
-                className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+              <a
+                onClick={(e) => handleNav(router, e, "/")}
+                href="#"
+                aria-label="Learn more"
+                className="btn-contained"
               >
                 Learn more
                 <svg
@@ -139,7 +144,7 @@ function Programs() {
                 >
                   <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
           <div className="flex items-center justify-center -mx-4 lg:pl-8">
@@ -175,7 +180,7 @@ function Programs() {
         />;
       })}
       <Course />
-
+      <Footer />
       {/* <Course type />
       <Course type /> */}
     </>

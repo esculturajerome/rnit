@@ -5,14 +5,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 import logo from "../public/images/rnit-logo.svg";
+import { handleNav } from "./Functions";
 
 function Nav() {
   const router = useRouter();
-
-  const handleNav = (e, url) => {
-    e.preventDefault();
-    router.push(url);
-  };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,32 +17,32 @@ function Nav() {
       <div className="bg-main/90 ">
         <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
           <div className="flex justify-end gap-2">
-            <Link
-              onClick={(e) => handleNav(e, "/enrol")}
+            <a
+              onClick={(e) => handleNav(router, e, "/enrol")}
               href="#"
               aria-label="Enrol now"
               title="Enrol now"
               className="inline-flex items-center py-2 px-4  transition duration-200   hover:bg-secondary focus:shadow-outline focus:outline-none"
             >
               Online Enrolment
-            </Link>
-            <Link
-              onClick={(e) => handleNav(e, "/assessment")}
+            </a>
+            <a
+              onClick={(e) => handleNav(router, e, "/assessment")}
               href="#"
               aria-label="Enrol now"
               title="Enrol now"
               className="inline-flex items-center py-2 px-4 transition duration-200   hover:bg-secondary focus:shadow-outline focus:outline-none"
             >
               Online Assessment
-            </Link>
+            </a>
           </div>
         </div>
       </div>
       <div className="bg-main">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
           <div className="relative flex items-center justify-between">
-            <Link
-              onClick={(e) => handleNav(e, "/")}
+            <a
+              onClick={(e) => handleNav(router, e, "/")}
               href="#"
               aria-label="Company"
               title="Company"
@@ -62,60 +58,38 @@ function Nav() {
               <p className="ml-3 uppercase font-serif text-white tracking-wider">
                 Romblon National Institute <br /> of Technology
               </p>
-            </Link>
-            <ul className="items-center hidden space-x-8 lg:flex">
-              <li>
-                <Link
-                  href="/"
-                  aria-label="Our product"
-                  title="Our product"
-                  className="btn-text text-white"
-                >
-                  Product
-                </Link>
+            </a>
+            <ul className="text-white items-center hidden space-x-8 lg:flex">
+              <li
+                className="btn-text"
+                onClick={(e) => handleNav(router, e, "/programs")}
+              >
+                Programs
               </li>
-              <li>
-                <Link
-                  onClick={(e) => handleNav(e, "/programs")}
-                  href="#"
-                  aria-label="Our product"
-                  title="Our product"
-                  className="btn-text text-white"
-                >
-                  Programs
-                </Link>
+              <li
+                className="btn-text"
+                onClick={(e) => handleNav(router, e, "/")}
+              >
+                Announcements
               </li>
-              <li>
-                <Link
-                  onClick={(e) => handleNav(e, "/about")}
-                  href="#"
-                  aria-label="Product pricing"
-                  title="Product pricing"
-                  className="btn-text text-white"
-                >
-                  About Us
-                </Link>
+              <li
+                className="btn-text"
+                onClick={(e) => handleNav(router, e, "/about")}
+              >
+                About Us
               </li>
-              <li>
-                <Link
-                  onClick={(e) => handleNav(e, "/contact")}
-                  href="#"
-                  aria-label="Contact us"
-                  title="Contact us"
-                  className="btn-text text-white"
-                >
-                  Contact us
-                </Link>
+              <li
+                className="btn-text"
+                onClick={(e) => handleNav(router, e, "/contact")}
+              >
+                Contact Us
               </li>
-              <li>
-                <Link
-                  href="/"
-                  className="btn-contained h-8"
-                  aria-label="Sign up"
-                  title="Sign up"
-                >
-                  Sign up
-                </Link>
+
+              <li
+                className="btn-contained h-8"
+                onClick={(e) => handleNav(router, e, "/")}
+              >
+                Sign up
               </li>
             </ul>
             <div className="lg:hidden">
@@ -161,56 +135,37 @@ function Nav() {
                       </div>
                     </div>
                     <nav>
-                      <ul className="space-y-4">
-                        <li>
-                          <Link
-                            href="/"
-                            aria-label="Our product"
-                            title="Our product"
-                            className="btn-text text-black"
-                          >
-                            Product
-                          </Link>
+                      <ul className="space-y-4 text-black">
+                        <li
+                          className="btn-text"
+                          onClick={(e) => handleNav(router, e, "/programs")}
+                        >
+                          Programs
                         </li>
-                        <li>
-                          <Link
-                            href="/"
-                            aria-label="Our product"
-                            title="Our product"
-                            className="btn-text text-black"
-                          >
-                            Features
-                          </Link>
+                        <li
+                          className="btn-text"
+                          onClick={(e) => handleNav(router, e, "/")}
+                        >
+                          Announcements
                         </li>
-                        <li>
-                          <Link
-                            href="/"
-                            aria-label="Product pricing"
-                            title="Product pricing"
-                            className="btn-text text-black"
-                          >
-                            Pricing
-                          </Link>
+                        <li
+                          className="btn-text"
+                          onClick={(e) => handleNav(router, e, "/about")}
+                        >
+                          About Us
                         </li>
-                        <li>
-                          <Link
-                            href="/"
-                            aria-label="About us"
-                            title="About us"
-                            className="btn-text text-black"
-                          >
-                            About us
-                          </Link>
+                        <li
+                          className="btn-text"
+                          onClick={(e) => handleNav(router, e, "/contact")}
+                        >
+                          Contact Us
                         </li>
-                        <li>
-                          <Link
-                            href="/"
-                            className="btn-contained"
-                            aria-label="Sign up"
-                            title="Sign up"
-                          >
-                            Sign up
-                          </Link>
+
+                        <li
+                          className="btn-contained"
+                          onClick={(e) => handleNav(router, e, "/")}
+                        >
+                          Sign up
                         </li>
                       </ul>
                     </nav>

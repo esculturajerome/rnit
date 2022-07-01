@@ -16,11 +16,17 @@
     @apply font-Roboto text-black;
   }
   .btn-contained {
-    @apply bg-secondary hover:bg-secondaryDark inline-flex items-center justify-center w-auto h-12 px-6  font-medium tracking-wide text-white transition duration-200 rounded shadow-md  focus:outline-none;
+    @apply bg-secondary cursor-pointer hover:bg-secondaryDark inline-flex items-center justify-center w-auto h-12 px-6  font-medium tracking-wide text-white transition duration-200 rounded shadow-md  focus:outline-none;
   }
   .btn-text {
-    @apply text-black   hover:text-secondary hover:underline hover:underline-offset-8;
+    @apply cursor-pointer hover:text-secondary hover:underline hover:underline-offset-8;
   }
+}
+.slick-dots {
+  bottom: unset !important;
+}
+.slick-dots li {
+  margin: 0 0px !important;
 }
 
 @tailwind base;

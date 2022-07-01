@@ -1,8 +1,11 @@
 import React from "react";
 import TitleRow from "./TitleRow";
 import Link from "next/link";
+import { handleNav } from "./Functions";
+import { useRouter } from "next/router";
 
 function Goals() {
+  const router = useRouter();
   const mission = [
     {
       title: "Vission",
@@ -60,13 +63,13 @@ function Goals() {
               <p className="mb-2 text-sm text-gray-900 line-clamp-2">
                 {item.subText}
               </p>
-              <Link
-                href={item.url}
-                aria-label=""
+              <a
+                onClick={(e) => handleNav(router, e, item.url)}
+                aria-label={item.title}
                 className="text-sm font-semibold btn-text"
               >
                 Learn more
-              </Link>
+              </a>
             </div>
           </div>
         ))}

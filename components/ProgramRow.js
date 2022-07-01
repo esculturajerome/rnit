@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
+import { handleNav } from "./Functions";
 
 function ProgramRow() {
+  const router = useRouter();
   return (
     <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
       <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
@@ -20,9 +23,13 @@ function ProgramRow() {
             </p>
           </div>
           <div className="flex  items-center gap-4">
-            <Link href="/" className="btn-contained">
+            <a
+              onClick={(e) => handleNav(router, e, "/programs")}
+              href="#"
+              className="btn-contained"
+            >
               Learn more
-            </Link>
+            </a>
           </div>
         </div>
       </div>

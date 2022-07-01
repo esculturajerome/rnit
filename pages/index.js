@@ -8,7 +8,7 @@ import Mission from "../components/Mission";
 import Blogs from "../components/Blogs";
 import ProgramRow from "../components/ProgramRow";
 import Goals from "../components/Goals";
-import ImageRow from "../components/SealRow";
+import ImageRow from "../components/ImageRow";
 
 export default function Home() {
   return (
@@ -28,13 +28,10 @@ export default function Home() {
       </Head>
       <Nav />
       <Header />
-      {/* <Mission /> */}
-      {/* <Goals /> */}
-
       <Blogs />
-      <ImageRow />
-      <Teams />
       <ProgramRow />
+      <Teams />
+
       <Footer />
     </>
   );

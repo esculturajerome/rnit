@@ -4,6 +4,18 @@ import TitleRow from "./TitleRow";
 import Slider from "react-slick";
 import Link from "next/link";
 
+const cache = {};
+
+function importAll(r) {
+  r.keys().forEach((key) => (cache[key] = r(key)));
+}
+
+importAll(
+  require.context("/public/employees-gallery", false, /\.(png|jpe?g|svg)$/)
+);
+
+const images = Object.entries(cache).map((module) => module[1].default);
+
 const Teams = () => {
   const employees = [
     {
@@ -41,7 +53,7 @@ const Teams = () => {
   var settings = {
     centerMode: false,
     infinite: false,
-    slidesToShow: 4,
+    slidesToShow: 5,
     speed: 500,
     initialSlide: 1,
     arrows: false,
@@ -51,7 +63,7 @@ const Teams = () => {
         breakpoint: 1440,
         settings: {
           centerMode: false,
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           initialSlide: 4,
           infinite: false,
@@ -61,7 +73,7 @@ const Teams = () => {
         breakpoint: 1300,
         settings: {
           centerMode: false,
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
           initialSlide: 4,
           infinite: false,
@@ -101,16 +113,25 @@ const Teams = () => {
       },
     ],
   };
-
+  // console.log(images, "images");
   return (
     <>
-      <div className="px-4 py-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-32">
+      <div className="px-4 pb-32 py-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-32 ">
         <TitleRow title="Meet our team" />
-        <Slider {...settings}>
-          {employees.map((item, i) => (
+        <div className="mt-24">
+          <Slider {...settings}>
+            {Object.entries(images).map((image, i) => (
+              <Employee
+                picture={image[1].src}
+                blurData={image[1].blurDataURL}
+                key={i}
+              />
+            ))}
+          </Slider>
+        </div>
+        {/* {employees.map((item, i) => (
             <Employee picture={item.picture} name={item.name} key={i} />
-          ))}
-        </Slider>
+          ))} */}
       </div>
     </>
   );
@@ -118,9 +139,9 @@ const Teams = () => {
 
 export default Teams;
 
-function Employee({ picture, name }) {
+function Employee({ picture, name, blurData }) {
   return (
-    <div className="mx-8">
+    <div className="mx-2 lg:mx-6">
       <div className="relative mb-4 rounded  w-full">
         <Image
           src={picture}
@@ -128,6 +149,8 @@ function Employee({ picture, name }) {
           width={400}
           height={400}
           className="absolute object-cover w-full h-full rounded"
+          blurDataURL={blurData}
+          placeholder="blur"
         />
         {/* <img
           className="absolute object-cover w-full h-full rounded"

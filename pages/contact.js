@@ -37,7 +37,7 @@ function Contact() {
                   We always want to hear from you! Let us know how we can best
                   help you and we&apos;ll do our very best.
                 </p>
-                <Link
+                <a
                   href="https://goo.gl/maps/nxYjrUPPdfPnVgx88"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
@@ -52,7 +52,7 @@ function Contact() {
                   >
                     <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
                   </svg>
-                </Link>
+                </a>
               </div>
               <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
