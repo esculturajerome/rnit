@@ -121,12 +121,12 @@ const Teams = () => {
         <div className="mt-24">
           <Slider {...settings}>
             {Object.entries(images).map(
-              (image, i) => console.log(image[1], "image[1]")
-              // <Employee
-              //   picture={image[1].src}
-              //   blurData={image[1].blurDataURL}
-              //   key={i}
-              // />
+              // (image, i) => console.log(image[1], "image[1]")
+              <Employee
+                picture={image[1].src}
+                blurData={image[1].blurDataURL}
+                key={i}
+              />
             )}
           </Slider>
         </div>
