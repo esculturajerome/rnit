@@ -4,7 +4,16 @@ import Course from "../components/Course";
 import Link from "next/link";
 import { handleNav } from "../components/Functions";
 import { useRouter } from "next/router";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
+
+import HeroImage from "../public/images/hero-sm.png";
+import ProgramRow from "../components/ProgramRow";
+
+function convertToLink(str) {
+  str = str.replace(/\s+/g, "-").toLowerCase();
+  return str;
+}
 
 function Programs() {
   const router = useRouter();
@@ -20,6 +29,12 @@ function Programs() {
         "Provide a learning environment of close, relevant hands-on experience and meaningful interaction between trainer and trainees instilling values like teamwork, professionalism and work safety among others.",
       desc3:
         "Continually strive to provide high level of student satisfaction to produce a consistently high rate of graduates certification and placement through partnership with industries.",
+      image1:
+        "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image2:
+        "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image3:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
     },
     {
       id: 2,
@@ -32,6 +47,12 @@ function Programs() {
         "Provide a learning environment of close, relevant hands-on experience and meaningful interaction between trainer and trainees instilling values like teamwork, professionalism and work safety among others.",
       desc3:
         "Continually strive to provide high level of student satisfaction to produce a consistently high rate of graduates certification and placement through partnership with industries.",
+      image1:
+        "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image2:
+        "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image3:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
     },
     {
       id: 3,
@@ -44,6 +65,12 @@ function Programs() {
         "Provide a learning environment of close, relevant hands-on experience and meaningful interaction between trainer and trainees instilling values like teamwork, professionalism and work safety among others.",
       desc3:
         "Continually strive to provide high level of student satisfaction to produce a consistently high rate of graduates certification and placement through partnership with industries.",
+      image1:
+        "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image2:
+        "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image3:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
     },
     {
       id: 4,
@@ -56,6 +83,12 @@ function Programs() {
         "Provide a learning environment of close, relevant hands-on experience and meaningful interaction between trainer and trainees instilling values like teamwork, professionalism and work safety among others.",
       desc3:
         "Continually strive to provide high level of student satisfaction to produce a consistently high rate of graduates certification and placement through partnership with industries.",
+      image1:
+        "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image2:
+        "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image3:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
     },
     {
       id: 5,
@@ -68,12 +101,105 @@ function Programs() {
         "Provide a learning environment of close relevant workshop experience and meaningful interaction between trainer and learners instilling work values like teamwork, collaboration, professionalism and work safety among others.",
       desc3:
         "Continually strive to provide a high level of satisfaction to produce consistently high rate of graduate certification and job placement through partnership with industries.",
+      image1:
+        "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image2:
+        "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
+      image3:
+        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260",
     },
   ];
+
   return (
     <>
       <Nav />
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+
+      <div className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 max-w-full">
+          {courses.map((course, i) => (
+            <div
+              key={i}
+              className="overflow-hidden transition-shadow duration-300 bg-white rounded "
+            >
+              <a
+                onClick={(e) => handleNav(router, e, "/")}
+                href="#"
+                aria-label="Article"
+              >
+                <img
+                  src={course.image1}
+                  className="object-cover w-full h-64 rounded "
+                  alt=""
+                />
+              </a>
+              <div className="py-5">
+                <p className="mb-6 text-xs font-light text-gray-600 uppercase">
+                  13 Jul 2020
+                </p>
+                <a
+                  onClick={(e) => handleNav(router, e, "/")}
+                  href="#"
+                  aria-label="Article"
+                  className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
+                >
+                  <h2 className="text-2xl font-bold font-Lora text-secondary hover:underline hover:underline-offset-4">
+                    {course.title}
+                  </h2>
+                </a>
+                <p className="text-gray-700">{course.subText}</p>
+                <p className="btn-text mt-4">Learn more</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* <Header
+        mainText="Programs & Services"
+        subText="We believe in competence, integrity, high level of commitment, transparency, 5S, strong desire for improvement, teamwork and cooperation"
+        image={HeroImage}
+      /> */}
+      {/* <div className="grid  auto-cols-max gap-5 grid-flow-col-dense">
+        {courses.map((course, i) => (
+          <div
+            className="overflow-hidden transition-shadow duration-300 bg-white rounded max-w-[350px]"
+            key={i}
+          >
+            <a
+              onClick={(e) => handleNav(router, e, "/")}
+              href="#"
+              aria-label="Article"
+            >
+              <img
+                src="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                className="object-cover w-full h-64 rounded hover:opacity-75"
+                alt=""
+              />
+            </a>
+            <div className="py-5">
+              <p className="mb-6 text-xs font-light text-gray-600 uppercase">
+                13 Jul 2020
+              </p>
+              <a
+                onClick={(e) => handleNav(router, e, "/")}
+                href="#"
+                aria-label="Article"
+                className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
+              >
+                <p className="text-2xl font-bold leading-5 font-Lora text-secondary">
+                  FOOD AND BEVERAGE SERVICES NC II GOALS
+                </p>
+              </a>
+              <p className="text-gray-700">
+                To produce competent food and beverage service attendants with
+                highly employable skills through quality instruction and an
+                extensive hands on experience and make them highly competitive
+                in a rapidly changing world of food and beverage services.
+              </p>
+            </div>
+          </div>
+        ))}
+      </div> */}
+      {/* <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
             <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
@@ -169,17 +295,61 @@ function Programs() {
             </div>
           </div>
         </div>
-      </div>
-      {courses.map((course, i) => {
+      </div> */}
+
+      {/* <Course
+        title={courses[0].title}
+        subText={courses[0].subText}
+        desc1={courses[0].desc1}
+        desc2={courses[0].desc2}
+        desc3={courses[0].desc3}
+        image1={courses[0].image1}
+        image2={courses[0].image2}
+        image3={courses[0].image3}
+      />
+      <Course
+        title={courses[1].title}
+        subText={courses[1].subText}
+        desc1={courses[1].desc1}
+        desc2={courses[1].desc2}
+        desc3={courses[1].desc3}
+        image1={courses[0].image1}
+        image2={courses[0].image2}
+        image3={courses[0].image3}
+        type
+      />
+      <Course
+        title={courses[3].title}
+        subText={courses[3].subText}
+        desc1={courses[3].desc1}
+        desc2={courses[3].desc2}
+        desc3={courses[3].desc3}
+        image1={courses[0].image1}
+        image2={courses[0].image2}
+        image3={courses[0].image3}
+      />
+      <Course
+        title={courses[4].title}
+        subText={courses[4].subText}
+        desc1={courses[4].desc1}
+        desc2={courses[4].desc2}
+        desc3={courses[4].desc3}
+        image1={courses[0].image1}
+        image2={courses[0].image2}
+        image3={courses[0].image3}
+        type
+      /> */}
+      {/* {courses.slice(0, 1).map((course, i) => (
         <Course
+          key={i}
           title={course?.title}
-          // subText={course?.subText}
-          // desc1={course?.desc1}
-          // desc2={course?.desc2}
-          // desc3={course?.desc3}
-        />;
-      })}
-      <Course />
+          subText={course?.subText}
+          desc1={course?.desc1}
+          desc2={course?.desc2}
+          desc3={course?.desc3}
+        />
+      ))} */}
+      {/* <Course /> */}
       <Footer />
       {/* <Course type />
       <Course type /> */}

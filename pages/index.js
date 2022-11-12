@@ -31,7 +31,9 @@ export default function Home() {
       <Blogs />
       <ProgramRow />
       <Teams />
-
+      <ImageRow>
+        <Goals />
+      </ImageRow>
       <Footer />
     </>
   );

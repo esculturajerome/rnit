@@ -4,12 +4,14 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import ProgramRow from "../components/ProgramRow";
 import Link from "next/link";
+import ImageRow from "../components/ImageRow";
+import Goals from "../components/Goals";
 
 function Contact() {
   return (
     <>
       <Nav />
-      <div className="relative">
+      <div className="relative font-serif">
         <div className="absolute inset-0 object-cover w-full h-full">
           <Image
             src="/images/building.png"
@@ -28,7 +30,7 @@ function Contact() {
         <div className="relative bg-gray-900 bg-opacity-75">
           <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="flex flex-col items-center justify-between xl:flex-row">
-              <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+              <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12 ">
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                   Poblacion, Alcantara,
                   <br className="hidden md:block" /> Romblon
@@ -42,9 +44,9 @@ function Contact() {
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   aria-label="map"
-                  className="btn-text text-white/70"
+                  className="btn-text text-white"
                 >
-                  Learn more
+                  View in Google Maps
                   <svg
                     className="inline-block w-3 ml-2"
                     fill="currentColor"
@@ -68,10 +70,10 @@ function Contact() {
                         First name
                       </label>
                       <input
-                        placeholder="John"
+                        placeholder="Juan"
                         required
                         type="text"
-                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
                         id="firstName"
                         name="firstName"
                       />
@@ -84,10 +86,10 @@ function Contact() {
                         Last name
                       </label>
                       <input
-                        placeholder="Doe"
+                        placeholder="Dela Cruz"
                         required
                         type="text"
-                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
                         id="lastName"
                         name="lastName"
                       />
@@ -100,10 +102,10 @@ function Contact() {
                         E-mail
                       </label>
                       <input
-                        placeholder="john.doe@example.org"
+                        placeholder="juan.delacruz@example.com"
                         required
                         type="text"
-                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
                         id="email"
                         name="email"
                       />
@@ -111,14 +113,14 @@ function Contact() {
                     <div className="mt-4 mb-2 sm:mb-4">
                       <button
                         type="submit"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-main hover:bg-main/80 focus:shadow-outline focus:outline-none"
                       >
                         Subscribe
                       </button>
                     </div>
-                    <p className="text-xs text-gray-600 sm:text-sm">
+                    {/* <p className="text-xs text-gray-600 sm:text-sm">
                       We respect your privacy. Unsubscribe at any time.
-                    </p>
+                    </p> */}
                   </form>
                 </div>
               </div>
@@ -127,6 +129,9 @@ function Contact() {
         </div>
       </div>
       <ProgramRow />
+      <ImageRow>
+        <Goals />
+      </ImageRow>
       <Footer />
     </>
   );
