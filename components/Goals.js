@@ -1,6 +1,4 @@
 import React from "react";
-import TitleRow from "./TitleRow";
-import Link from "next/link";
 import { handleNav } from "./Functions";
 import { useRouter } from "next/router";
 
