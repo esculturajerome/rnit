@@ -90,7 +90,7 @@ function Footer() {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 ">
                 <div>
                   <h3 className="text-gray-700 uppercase dark:text-white">
-                    Blog
+                    Programs
                   </h3>
                   <a
                     href="#"
@@ -114,7 +114,7 @@ function Footer() {
 
                 <div>
                   <h3 className="text-gray-700 uppercase dark:text-white">
-                    Products
+                    About Us
                   </h3>
                   <a
                     href="#"
@@ -140,12 +140,42 @@ function Footer() {
                   <h3 className="text-gray-700 uppercase dark:text-white">
                     Contact
                   </h3>
+                  <a
+                    href="https://goo.gl/maps/nxYjrUPPdfPnVgx88"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    aria-label="map"
+                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                  >
+                    <span>Poblacion, Alcantara, Romblon</span>
+                  </a>
+                  <a
+                    href="mailto:ant@tesda.gov.ph"
+                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                  >
+                    <span>ant@tesda.gov.ph</span>
+                  </a>
+                  <a
+                    href="tel:09985731845"
+                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                  >
+                    <span>09985731845</span>
+                  </a>
+                  <a
+                    href="tel:09487705807"
+                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                  >
+                    <span>09487705807</span>
+                  </a>
+                  {/* <h3 className="text-gray-700 uppercase dark:text-white">
+                    Contact
+                  </h3>
                   <span className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
-                    +1 526 654 8965
+                    Poblacion, Alcantara, Romblon
                   </span>
                   <span className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
                     example@email.com
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>
