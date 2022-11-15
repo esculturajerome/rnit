@@ -10,6 +10,7 @@ module.exports = {
         "values-bg": "url('../public/images/bg/values-bg.png')",
         "pattern-bg": "url('../public/images/bg/pattern-bg.png')",
         "pattern-bg-2": "url('../public/images/bg/pattern-bg-2.png')",
+        "pattern-bg-3": "url('../public/images/bg/pattern-bg-3.png')",
       },
       colors: {
         black: "#232323",

@@ -17,7 +17,7 @@ export default function Home() {
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
+          charSet="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
@@ -31,7 +31,7 @@ export default function Home() {
       <Blogs />
       <ProgramRow />
       <Teams />
-      <ImageRow>
+      <ImageRow variant="bg-pattern-bg-2">
         <Goals />
       </ImageRow>
       <Footer />

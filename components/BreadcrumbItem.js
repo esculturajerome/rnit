@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { convertToText } from "./Functions";
 
 const BreadcrumbItem = ({ children, href, ...props }) => {
   return (
@@ -8,7 +9,9 @@ const BreadcrumbItem = ({ children, href, ...props }) => {
         passHref
         className="text-gray-600 dark:text-gray-200 hover:underline underline-offset-4"
       >
-        <a className="text-white/70 hover:text-white text-sm">{children}</a>
+        <a className="text-white/70 hover:text-white text-sm capitalize">
+          {children}
+        </a>
       </Link>
     </li>
   );

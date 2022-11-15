@@ -76,6 +76,29 @@ const PROGRAMS_DATA = [
   },
 ];
 
+const ABOUT_US = [
+  {
+    title: "Vision",
+    subText:
+      "Skilling Romblon thru quality TVET Delivery for Peoples Prosperity.",
+  },
+  {
+    title: "Mission",
+    subText:
+      "Equipping the province with competent, flexible, economically stable and dignified human resources for domestic and global demands.",
+  },
+  {
+    title: "Philosophy",
+    subText:
+      "An institution that nurtures the total development of the Filipino youth, rich in knowledge, competent in their skills and imbued with positive attitude and work-values; whose program and services reflect the needs of its clientele and that of the greater community it servers; a school that is student centered enabling them to grow into producing, responsible, and loving individuals.",
+  },
+  {
+    title: "Values Statement",
+    subText:
+      "We believe in competence, integrity, high level of commitment, transparency, 5S, strong desire for improvement, teamwork and cooperation.",
+  },
+];
+
 export function getAllPrograms() {
   return PROGRAMS_DATA;
 }
@@ -83,12 +106,32 @@ export function getAllPrograms() {
 export function getProgramById(id) {
   return PROGRAMS_DATA.find((project) => convertToLink(project.title) === id);
 }
+
 export function getOtherPrograms(id) {
   let filteredPrograms = PROGRAMS_DATA.filter(
     (project) => convertToLink(project.title) !== id
   );
   return filteredPrograms;
 }
+
+// About Page
+
+export function getAboutUs() {
+  return ABOUT_US;
+}
+
+export function getAboutById(id) {
+  return ABOUT_US.find((about) => convertToLink(about.title) === id);
+}
+
+export function getOtheAbout(id) {
+  let filteredAbout = ABOUT_US.filter(
+    (project) => convertToLink(project.title) !== id
+  );
+  return filteredAbout;
+}
+
+// Other
 
 export function handleNav(router, e, url) {
   e.preventDefault();

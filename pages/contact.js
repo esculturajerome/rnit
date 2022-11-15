@@ -129,7 +129,7 @@ function Contact() {
         </div>
       </div>
       <ProgramRow />
-      <ImageRow>
+      <ImageRow variant="bg-pattern-bg-2">
         <Goals />
       </ImageRow>
       <Footer />

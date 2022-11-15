@@ -13,7 +13,7 @@
   }
 
   p {
-    @apply font-Roboto text-black;
+    @apply font-Roboto;
   }
   .btn-contained {
     @apply bg-secondary cursor-pointer hover:bg-secondaryDark inline-flex items-center justify-center w-auto h-12 px-6  font-medium tracking-wide text-white transition duration-200 rounded shadow-md  focus:outline-none;
@@ -24,9 +24,17 @@
 }
 .slick-dots {
   bottom: unset !important;
+  padding: 40px 50px;
 }
 .slick-dots li {
-  margin: 0 0px !important;
+  margin: 0 4px !important;
+}
+.slick-dots li button::before {
+  font-size: 20px;
+  color: #0972b1;
+}
+.slick-dots li.slick-active button::before {
+  color: #0972b1;
 }
 
 @tailwind base;

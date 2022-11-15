@@ -4,6 +4,7 @@ import { handleNav } from "./Functions";
 import { useRouter } from "next/router";
 
 import HeroImage from "../public/images/hero-transparent.png";
+import Link from "next/link";
 
 function Header() {
   const router = useRouter();
@@ -12,7 +13,7 @@ function Header() {
       <div className="flex flex-col items-center z-10  w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl order-2 lg:order-1">
         <div className="mb-0 lg:my-40 lg:mt-32 lg:max-w-lg lg:-ml-96 lg:px-8 bg-white lg:py-5 lg:border-b-8 border-secondary">
           <div className="max-w-xl mb-6">
-            <h2 className="max-w-lg mb-6  text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            <h2 className="max-w-lg mb-6  text-3xl font-bold tracking-tight text-main sm:text-4xl sm:leading-none">
               Undertake direct training activities for TESDA
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
@@ -20,22 +21,12 @@ function Header() {
             </p>
           </div>
           <div className="flex  items-center gap-4 mb-8">
-            <a
-              onClick={(e) => handleNav(router, e, "/enrol")}
-              href="#"
-              className="btn-contained"
-              aria-label="Enrol now"
-            >
-              Enrol now
-            </a>
-            <a
-              onClick={(e) => handleNav(router, e, "/")}
-              href="#"
-              className="btn-text"
-              aria-label="Learn more"
-            >
-              Learn more
-            </a>
+            <Link href="/enrol">
+              <p className="btn-contained">Enrol now</p>
+            </Link>
+            <Link href="/about">
+              <p className="btn-text"> Learn more</p>
+            </Link>
           </div>
         </div>
       </div>

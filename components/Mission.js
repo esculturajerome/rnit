@@ -25,7 +25,7 @@ function Mission() {
             </div>
           </div>
           <div>
-            <h6 className="mb-3 text-xl font-bold leading-5">Our Vission</h6>
+            <h6 className="mb-3 text-xl font-bold leading-5">Our Vision</h6>
             <p className="mb-3 text-sm text-gray-900">
               Skilling Romblon thru quality TVET Delivery for Peoples
               Prosperity.

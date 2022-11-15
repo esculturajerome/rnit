@@ -96,7 +96,7 @@ function Nav() {
                     currentUrl === "/announcements" &&
                     "underline underline-offset-8 text-secondary"
                   } `}
-                  onClick={(e) => handleNav(router, e, "/")}
+                  onClick={(e) => handleNav(router, e, "/announcements")}
                 >
                   Announcements
                 </li>
@@ -178,7 +178,9 @@ function Nav() {
                           </li>
                           <li
                             className="btn-text"
-                            onClick={(e) => handleNav(router, e, "/")}
+                            onClick={(e) =>
+                              handleNav(router, e, "/announcements")
+                            }
                           >
                             Announcements
                           </li>

@@ -28,7 +28,7 @@ function Footer() {
                   />
                 </div>
 
-                <p className="max-w-sm text-sm mt-2 text-white font-serif">
+                <p className="max-w-sm text-sm text-white font-serif">
                   A Transparency Seal, prominently displayed on the main page of
                   the website of a particular government agency, is a
                   certificate that it has complied with the requirements of
@@ -37,7 +37,7 @@ function Footer() {
                   of the above-mentioned documents.
                 </p>
 
-                <div className="flex mt-6 -mx-2">
+                <div className=" mt-6 -mx-2 hidden">
                   <a
                     href="#"
                     className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
@@ -88,92 +88,92 @@ function Footer() {
 
             <div className="mt-6 lg:mt-0 lg:flex-1 lg:ml-8">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 ">
-                <div>
-                  <h3 className="text-gray-700 uppercase dark:text-white">
-                    Programs
-                  </h3>
+                <div className="space-y-1">
+                  <h3 className="uppercase text-white">Programs</h3>
                   <a
                     href="#"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
                     Tec
                   </a>
                   <a
                     href="#"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
                     Music
                   </a>
                   <a
                     href="#"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
                     Videos
                   </a>
                 </div>
 
-                <div>
-                  <h3 className="text-gray-700 uppercase dark:text-white">
-                    About Us
-                  </h3>
+                <div className="space-y-1">
+                  <h3 className="uppercase text-white">About Us</h3>
                   <a
                     href="#"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
-                    Mega cloud
+                    Vision
                   </a>
                   <a
                     href="#"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
-                    Aperion UI
+                    Mission
                   </a>
                   <a
                     href="#"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
-                    Meraki UI
+                    Philosophy
+                  </a>
+                  <a
+                    href="#"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                  >
+                    Value Statement
                   </a>
                 </div>
 
                 <div>
-                  <h3 className="text-gray-700 uppercase dark:text-white">
-                    Contact
-                  </h3>
+                  <h3 className="uppercase text-white">Contact</h3>
                   <a
                     href="https://goo.gl/maps/nxYjrUPPdfPnVgx88"
                     target="_blank"
                     rel="nofollow noopener noreferrer"
                     aria-label="map"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
                     <span>Poblacion, Alcantara, Romblon</span>
                   </a>
                   <a
                     href="mailto:ant@tesda.gov.ph"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
                     <span>ant@tesda.gov.ph</span>
                   </a>
                   <a
                     href="tel:09985731845"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
                     <span>09985731845</span>
                   </a>
                   <a
                     href="tel:09487705807"
-                    className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
+                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
                   >
                     <span>09487705807</span>
                   </a>
-                  {/* <h3 className="text-gray-700 uppercase dark:text-white">
+                  {/* <h3 className="uppercase text-white">
                     Contact
                   </h3>
-                  <span className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
+                  <span className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
                     Poblacion, Alcantara, Romblon
                   </span>
-                  <span className="block mt-2 text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
+                  <span className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
                     example@email.com
                   </span> */}
                 </div>
