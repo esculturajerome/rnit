@@ -31,10 +31,10 @@ const AboutDetails = () => {
           </div>
         </div>
       </ImageRow>
-      <ImageRow>
+      <ImageRow variant="bg-pattern-bg-2">
         <Goals aboutUsData={filterAbout} />
       </ImageRow>
-      <ProgramRow />
+      {/* <ProgramRow /> */}
       <Footer />
     </>
   );

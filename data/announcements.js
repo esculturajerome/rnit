@@ -9,6 +9,7 @@ export const ANNOUNCEMENT_DATA = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
     image: "/images/announcements/sample.png",
     tags: "announcement",
+    featured: false,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const ANNOUNCEMENT_DATA = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
     image: "/images/announcements/sample.png",
     tags: "announcement",
+    featured: true,
   },
   {
     id: 3,
@@ -27,12 +29,19 @@ export const ANNOUNCEMENT_DATA = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
     image: "/images/announcements/sample.png",
     tags: "announcement",
+    featured: true,
   },
 ];
 export function getAnnouncementById(id) {
   return ANNOUNCEMENT_DATA.find(
     (announcement) => convertToLink(announcement.title) === id
   );
+}
+export function getAnnouncementHomepage() {
+  let featuredAnnouncements = ANNOUNCEMENT_DATA.filter(
+    (announcement) => announcement.featured === true
+  );
+  return featuredAnnouncements;
 }
 
 export function getOtheAnnouncement(id) {

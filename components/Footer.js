@@ -9,8 +9,101 @@ import { handleNav } from "./Functions";
 import ImageRow from "./ImageRow";
 
 function Footer() {
-  const router = useRouter();
-
+  const Links = [
+    {
+      id: 1,
+      title: "Programs",
+      url: "/programs",
+      lists: [
+        {
+          name: "Automotice Servicing",
+          url: "/programs/automotive-servicing-nc-ii-goals",
+        },
+        {
+          name: "Dressmaking",
+          url: "/programs/dressmaking-nc-ii-goals",
+        },
+        {
+          name: "RAC Servicing",
+          url: "/programs/rac-servicing-nc-ii-goals",
+        },
+        {
+          name: "Metal Arc Welding",
+          url: "/programs/shielded-metal-arc-welding-nc-ii-goals",
+        },
+        {
+          name: "Food and Beverage Services",
+          url: "/programs/food-and-beverage-services-nc-ii-goals",
+        },
+        {
+          name: "Accredited Assessments",
+          url: "/programs/#AS",
+        },
+        {
+          name: "Accredited Programs",
+          url: "/programs/#AP",
+        },
+        {
+          name: "UTPRAS",
+          url: "/programs/#UTPRAS",
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: "About Us",
+      url: "/about",
+      lists: [
+        {
+          name: "Vision",
+          url: "/about/vision",
+        },
+        {
+          name: "Mission",
+          url: "/about/mission",
+        },
+        {
+          name: "Philosophy",
+          url: "/about/philosophy",
+        },
+        {
+          name: "Values Statement",
+          url: "/about/values-statement",
+        },
+        {
+          name: "Meet our team",
+          url: "/about/#meetourteam",
+        },
+        {
+          name: "Organizational Chart",
+          url: "/about/#orgchart",
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: "Contact Us",
+      url: "/contact",
+      lists: [
+        {
+          name: "Poblacion, Alcantara, Romblon",
+          url: "https://goo.gl/maps/nxYjrUPPdfPnVgx88",
+        },
+        {
+          name: "ant@tesda.gov.ph",
+          url: "mailto:ant@tesda.gov.ph",
+        },
+        {
+          name: "09985731845",
+          url: "tel:09985731845",
+        },
+        {
+          name: "09487705807",
+          url: "tel:09487705807",
+        },
+      ],
+    },
+  ];
   return (
     <>
       <footer className="bg-main">
@@ -88,57 +181,27 @@ function Footer() {
 
             <div className="mt-6 lg:mt-0 lg:flex-1 lg:ml-8">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 ">
-                <div className="space-y-1">
-                  <h3 className="uppercase text-white">Programs</h3>
-                  <a
-                    href="#"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    Tec
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    Music
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    Videos
-                  </a>
-                </div>
+                {Links.map((item, i) => (
+                  <div key={i}>
+                    <Link href={item.url}>
+                      <h3 className="uppercase text-white cursor-pointer btn-text">
+                        {item.title}
+                      </h3>
+                    </Link>
+                    {/* <hr /> */}
+                    <div className="mt-2">
+                      {item.lists.map((list, key) => (
+                        <Link href={list?.url} key={key}>
+                          <p className="btn-text text-white/80 text-xs mt-1 normal-case">
+                            {list.name}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
 
-                <div className="space-y-1">
-                  <h3 className="uppercase text-white">About Us</h3>
-                  <a
-                    href="#"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    Vision
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    Mission
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    Philosophy
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    Value Statement
-                  </a>
-                </div>
-
-                <div>
+                {/* <div>
                   <h3 className="uppercase text-white">Contact</h3>
                   <a
                     href="https://goo.gl/maps/nxYjrUPPdfPnVgx88"
@@ -149,34 +212,8 @@ function Footer() {
                   >
                     <span>Poblacion, Alcantara, Romblon</span>
                   </a>
-                  <a
-                    href="mailto:ant@tesda.gov.ph"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    <span>ant@tesda.gov.ph</span>
-                  </a>
-                  <a
-                    href="tel:09985731845"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    <span>09985731845</span>
-                  </a>
-                  <a
-                    href="tel:09487705807"
-                    className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline"
-                  >
-                    <span>09487705807</span>
-                  </a>
-                  {/* <h3 className="uppercase text-white">
-                    Contact
-                  </h3>
-                  <span className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
-                    Poblacion, Alcantara, Romblon
-                  </span>
-                  <span className="block text-sm text-white/80 hover:text-white underline-offset-4 hover:underline">
-                    example@email.com
-                  </span> */}
-                </div>
+                 
+                </div> */}
               </div>
             </div>
           </div>

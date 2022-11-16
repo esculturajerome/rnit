@@ -9,8 +9,10 @@ import Blogs from "../components/Blogs";
 import ProgramRow from "../components/ProgramRow";
 import Goals from "../components/Goals";
 import ImageRow from "../components/ImageRow";
+import { getAnnouncementHomepage } from "../data/announcements";
 
 export default function Home() {
+  const ANNOUNCEMENT_DATA = getAnnouncementHomepage();
   return (
     <>
       <Head>
@@ -28,7 +30,7 @@ export default function Home() {
       </Head>
       <Nav />
       <Header />
-      <Blogs />
+      <Blogs data={ANNOUNCEMENT_DATA} />
       <ProgramRow />
       <Teams />
       <ImageRow variant="bg-pattern-bg-2">
