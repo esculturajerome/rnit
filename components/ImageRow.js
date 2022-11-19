@@ -3,8 +3,12 @@ import Layout from "./Layout";
 
 function ImageRow({ variant, children }) {
   return (
-    <div className={`${variant && variant} bg-cover bg-white`}>
-      <div className="px-4 py-6 md:py-0 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div
+      className={`${
+        variant && variant
+      } bg-cover bg-white lg:max-w-screen-xl mx-auto`}
+    >
+      <div className="px-4 py-6 md:py-0 md:px-24 lg:px-8">
         {children}
         {/* <div className="flex flex-col items-center justify-between xl:flex-row">
           <div className="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">

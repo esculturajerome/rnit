@@ -5,7 +5,7 @@ import { getAboutById, getOtheAbout } from "../../components/Functions";
 import Goals from "../../components/Goals";
 import ImageRow from "../../components/ImageRow";
 import Layout from "../../components/Layout";
-import Nav from "../../components/Nav";
+import NavBar from "../../components/NavBar";
 import ProgramRow from "../../components/ProgramRow";
 
 const AboutDetails = () => {
@@ -20,8 +20,8 @@ const AboutDetails = () => {
 
   return (
     <>
-      <Nav />
-      <ImageRow variant="bg-pattern-bg-3">
+      <NavBar />
+      <ImageRow variant="bg-pattern-3">
         <div className="grid place-items-center">
           <div className="max-w-xl text-main py-8 md:py-24 ">
             <h2 className="text-3xl lg:text-5xl mb-4 lg:mb-12  font-bold ">
@@ -31,7 +31,7 @@ const AboutDetails = () => {
           </div>
         </div>
       </ImageRow>
-      <ImageRow variant="bg-pattern-bg-2">
+      <ImageRow variant="bg-pattern-2">
         <Goals aboutUsData={filterAbout} />
       </ImageRow>
       {/* <ProgramRow /> */}

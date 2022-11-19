@@ -8,8 +8,8 @@ function Goals({ aboutUsData }) {
   const aboutUs = aboutUsData || getAboutUs();
 
   return (
-    <div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="grid gap-8 row-gap-5 lg:grid-flow-col-dense">
+    <div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8 lg:py-20">
+      <div className="grid gap-8 row-gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {aboutUs.map((item, i) => (
           <div
             key={i}
@@ -28,7 +28,9 @@ function Goals({ aboutUsData }) {
                 )}`}
                 aria-label={item.title}
               >
-                <p className="text-sm font-semibold btn-text">Learn more</p>
+                <p className="text-sm text-black/80 hover:text-black font-semibold btn-text">
+                  Learn more
+                </p>
               </Link>
             </div>
           </div>

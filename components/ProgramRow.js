@@ -9,7 +9,7 @@ import ProgramImage from "../public/images/programs/mechanic/mechanic1.jpg";
 function ProgramRow() {
   const router = useRouter();
   return (
-    <div className="grid md:grid-cols-2 gap-4 -mb-1.5 lg:max-w-screen-xl mx-auto items-center mt-0 bg-gray-100">
+    <div className="grid md:grid-cols-2 gap-4 -mb-1.5 lg:max-w-screen-xl mx-auto items-center mt-0">
       <div className="lg:order-1 flex-1 mx-4 py-8 lg:py-0 sm:mx-auto md:ml-8 lg:ml-16">
         <h2 className="max-w-lg lg:mb-6 text-2xl font-bold tracking-tight text-secondaryDark md:text-3xl lg:leading-none">
           AUTOMOTIVE

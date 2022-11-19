@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import logo from "../../public/images/rnit-logo.svg";
-import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import ImageRow from "../../components/ImageRow";
 import Image from "next/image";
@@ -12,26 +11,15 @@ import Teams from "../../components/Teams";
 import ProgramRow from "../../components/ProgramRow";
 
 import OrgChart from "../../public/images/org-chart.jpg";
+import NavBar from "../../components/NavBar";
 console.log(OrgChart, "OrgChart");
 
 function About() {
   return (
     <>
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          charSet="UTF-8"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
-      </Head>
-      <Nav />
-      <ImageRow variant="bg-pattern-bg-2">
+      <Head></Head>
+      <NavBar />
+      <ImageRow variant="bg-pattern-2">
         <Goals />
         {/* <a
           onClick={(e) => handleNav(router, e, "/")}
@@ -53,7 +41,7 @@ function About() {
         </a> */}
       </ImageRow>
       <Teams />
-      <ImageRow variant>
+      <ImageRow variant id="orgchart">
         <a
           href={OrgChart.src}
           target="_blank"

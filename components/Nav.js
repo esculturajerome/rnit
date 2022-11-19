@@ -78,7 +78,8 @@ function Nav() {
                   alt="logo"
                 />
                 <p className="ml-3 uppercase font-serif text-white tracking-wider">
-                  Romblon National Institute <br /> of Technology
+                  Romblon National <br />
+                  Institute of Technology
                 </p>
               </a>
               <ul className="text-white items-center hidden space-x-8 lg:flex">

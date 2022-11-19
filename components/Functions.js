@@ -99,6 +99,102 @@ const ABOUT_US = [
   },
 ];
 
+export const FooterLinks = [
+  {
+    id: 1,
+    title: "Programs",
+    url: "/programs",
+    lists: [
+      {
+        name: "Automotice Servicing",
+        url: "/programs/automotive-servicing-nc-ii-goals",
+      },
+      {
+        name: "Dressmaking",
+        url: "/programs/dressmaking-nc-ii-goals",
+      },
+      {
+        name: "RAC Servicing",
+        url: "/programs/rac-servicing-nc-ii-goals",
+      },
+      {
+        name: "Metal Arc Welding",
+        url: "/programs/shielded-metal-arc-welding-nc-ii-goals",
+      },
+      {
+        name: "Food and Beverage Services",
+        url: "/programs/food-and-beverage-services-nc-ii-goals",
+      },
+      {
+        name: "Accredited Assessments",
+        url: "/programs/#AS",
+      },
+      {
+        name: "Accredited Programs",
+        url: "/programs/#AS",
+      },
+      {
+        name: "UTPRAS",
+        url: "/programs/#AS",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "About Us",
+    url: "/about",
+    lists: [
+      {
+        name: "Vision",
+        url: "/about/vision",
+      },
+      {
+        name: "Mission",
+        url: "/about/mission",
+      },
+      {
+        name: "Philosophy",
+        url: "/about/philosophy",
+      },
+      {
+        name: "Values Statement",
+        url: "/about/values-statement",
+      },
+      {
+        name: "Meet our team",
+        url: "/about/#meetourteam",
+      },
+      {
+        name: "Organizational Chart",
+        url: "/about/#orgchart",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Contact Us",
+    url: "/contact",
+    lists: [
+      {
+        name: "Poblacion, Alcantara, Romblon",
+        url: "https://goo.gl/maps/nxYjrUPPdfPnVgx88",
+      },
+      {
+        name: "ant@tesda.gov.ph",
+        url: "mailto:ant@tesda.gov.ph",
+      },
+      {
+        name: "09985731845",
+        url: "tel:09985731845",
+      },
+      {
+        name: "09487705807",
+        url: "tel:09487705807",
+      },
+    ],
+  },
+];
+
 export function getAllPrograms() {
   return PROGRAMS_DATA;
 }

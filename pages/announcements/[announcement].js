@@ -11,7 +11,7 @@ import {
 import Goals from "../../components/Goals";
 import ImageRow from "../../components/ImageRow";
 import Layout from "../../components/Layout";
-import Nav from "../../components/Nav";
+Import Navbar from "../../Navbar";
 import ProgramRow from "../../components/ProgramRow";
 import ProgramsGrid from "../../components/ProgramsGrid";
 import TitleRow from "../../components/TitleRow";
@@ -34,7 +34,7 @@ const Announcement = () => {
 
   return (
     <>
-      <Nav />
+      <Navbar />
       <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <h2>{item?.title}</h2>
         <p>{item?.subText}</p>
@@ -51,7 +51,7 @@ const Announcement = () => {
         </div>
       </div>
       {/* <ProgramRow /> */}
-      <ImageRow variant="bg-pattern-bg-2">
+      <ImageRow variant="bg-pattern-2">
         <Goals />
       </ImageRow>
       <Footer />

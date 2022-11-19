@@ -8,13 +8,18 @@ module.exports = {
     extend: {
       backgroundImage: {
         "values-bg": "url('../public/images/bg/values-bg.png')",
-        "pattern-bg": "url('../public/images/bg/pattern-bg.png')",
-        "pattern-bg-2": "url('../public/images/bg/pattern-bg-2.png')",
-        "pattern-bg-3": "url('../public/images/bg/pattern-bg-3.png')",
+        "pattern-1": "url('../public/images/bg/pattern-1.png')",
+        "pattern-2": "url('../public/images/bg/pattern-2.png')",
+        "pattern-3": "url('../public/images/bg/pattern-3.png')",
+        "pattern-4": "url('../public/images/bg/pattern-4.png')",
       },
       colors: {
         black: "#232323",
-        main: "#0972b1",
+        main: {
+          light: "#217fb8",
+          DEFAULT: "#0972b1",
+          dark: "#076095",
+        },
         secondary: "#fd830d",
         secondaryDark: "#fd660d",
       },

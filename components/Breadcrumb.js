@@ -17,7 +17,7 @@ const Breadcrumb = ({ children }) => {
 
   return (
     <div className="bg-sky-900">
-      <nav className="px-4 py-2 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <nav className="px-4 py-1 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <ol className="flex items-center space-x-4">{childrenWtihSeperator}</ol>
       </nav>
     </div>

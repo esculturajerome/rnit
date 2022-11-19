@@ -1,4 +1,3 @@
-import Nav from "../../components/Nav";
 import { getAllPrograms } from "../../components/Functions";
 import Footer from "../../components/Footer";
 import Link from "next/link";
@@ -12,6 +11,7 @@ import { UTPRASData } from "../../data/UTPRASData";
 import ProgramRow from "../../components/ProgramRow";
 import ImageRow from "../../components/ImageRow";
 import Goals from "../../components/Goals";
+import NavBar from "../../components/NavBar";
 
 function Programs() {
   const [courses, setCourses] = useState([]);
@@ -32,10 +32,12 @@ function Programs() {
 
   return (
     <>
-      <Nav />
+      <NavBar />
       <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8">
         <ProgramsGrid courses={courses} />
-        <section className="antialiased bg-gray-100 text-gray-600 px-4 mt-8 lg:mt-16  py-6 lg:py-14">
+      </div>
+      <section className="antialiased lg:max-w-screen-xl mx-auto" id="AS">
+        <div className="bg-gray-100 py-6 lg:py-14">
           <div className="flex gap-1 lg:gap-4 justify-between max-w-4xl mx-auto rounded-sm border border-gray-200 mb-4">
             {buttonTabs.map((tab, i) => (
               <div
@@ -198,9 +200,9 @@ function Programs() {
               </div>
             </div>
           )}
-        </section>
-      </div>
-      <ImageRow variant="bg-pattern-bg-2">
+        </div>
+      </section>
+      <ImageRow variant="bg-pattern-2">
         <Goals />
       </ImageRow>
       <Footer />
