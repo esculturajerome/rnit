@@ -1,26 +1,29 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
-import TitleRow from "../components/TitleRow";
-import ReactJotformEmbed from "react-jotform-embed";
 import NavBar from "../components/NavBar";
-import { loadingAnimation } from "../components/Functions";
 
-function Assessment() {
-  const [isLoading, setLoading] = useState(true);
+const Success = () => {
+  const router = useRouter();
+  //   const [isLoading, setLoading] = useState(true);
+  console.log(router);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1500);
-  }, []);
+    setTimeout(() => router.push("/"), 2000);
+  }, [router]);
+
   return (
     <>
       <NavBar />
-      <div className="px-4 pb-16 pt-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20">
-        {isLoading && (
-          <div className="w-full grid place-items-center h-80">
+      <div className="w-full h-80 grid place-items-center">
+        <div className="text-center space-y-3">
+          <h2 className="text-3xl">Thank you for contacting us!</h2>
+          <p>Redirecting you back to the Homepage</p>
+          <div className="w-full grid place-items-center">
             <div role="status">
               <svg
                 aria-hidden="true"
-                className="mr-2 w-8 h-8 text-gray-200 animate-spin fill-secondary"
+                className="mr-2 w-8 h-8 text-gray-200 animate-spin  fill-secondary"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,22 +40,11 @@ function Assessment() {
               <span className="sr-only">Loading...</span>
             </div>
           </div>
-        )}
-        <div
-          className={`${
-            isLoading ? "opacity-0 " : " opacity-100 "
-          }mx-auto sm:text-center lg:max-w-2xl`}
-        >
-          <ReactJotformEmbed
-            src="https://form.jotform.com/202118431802039"
-            scrolling="true"
-            initialHeight={800}
-          />
         </div>
       </div>
       <Footer />
     </>
   );
-}
+};
 
-export default Assessment;
+export default Success;

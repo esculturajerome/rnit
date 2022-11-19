@@ -6,6 +6,7 @@ const ContactForm = () => {
         method="post"
         name="Contact Form"
         data-netlify-honeypot="bot-field"
+        action="/success"
       >
         <input type="hidden" name="contact-form" value="Contact Form" />
         <div hidden>
