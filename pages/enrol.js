@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import ReactJotformEmbed from "react-jotform-embed";
 import NavBar from "../components/NavBar";
+import Head from "next/head";
 
 function Enrol() {
   const [isLoading, setLoading] = useState(true);
@@ -12,6 +13,13 @@ function Enrol() {
 
   return (
     <>
+      <Head>
+        <title>RNIT | Enrol</title>
+        <meta
+          name="description"
+          content="RNIT Online Enrolment tool for students"
+        />
+      </Head>
       <NavBar />
       <div className="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20">
         {isLoading && (

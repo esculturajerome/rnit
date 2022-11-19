@@ -4,6 +4,7 @@ import TitleRow from "../components/TitleRow";
 import ReactJotformEmbed from "react-jotform-embed";
 import NavBar from "../components/NavBar";
 import { loadingAnimation } from "../components/Functions";
+import Head from "next/head";
 
 function Assessment() {
   const [isLoading, setLoading] = useState(true);
@@ -13,6 +14,13 @@ function Assessment() {
   }, []);
   return (
     <>
+      <Head>
+        <title>RNIT | Assessment</title>
+        <meta
+          name="description"
+          content="RNIT Online Assessment tool for students"
+        />
+      </Head>
       <NavBar />
       <div className="px-4 pb-16 pt-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20">
         {isLoading && (

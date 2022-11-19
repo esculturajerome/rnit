@@ -40,14 +40,14 @@ function Footer() {
               {FooterLinks.map((item, i) => (
                 <div key={i}>
                   <Link href={item.url}>
-                    <h3 className="uppercase text-white cursor-pointer btn-text">
+                    <h3 className="uppercase text-white cursor-pointer hover:underline ">
                       {item.title}
                     </h3>
                   </Link>
                   <div className="mt-2">
                     {item.lists.map((list, key) => (
                       <Link href={list?.url} key={key}>
-                        <p className="btn-text text-white/80 text-xs mt-1 normal-case">
+                        <p className="cursor-pointer text-white/80 text-xs mt-1 normal-case hover:underline">
                           {list.name}
                         </p>
                       </Link>
@@ -66,7 +66,11 @@ function Footer() {
           <p className="text-center text-white/60 font-serif text-xs">
             © Romblon National Institute of Technology -{" "}
             <Link href="https://junowebservices.netlify.app/">
-              <a target="_blank" rel="nofollow noopener noreferrer">
+              <a
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="hover:underline"
+              >
                 By Juno Web Services
               </a>
             </Link>

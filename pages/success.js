@@ -1,5 +1,6 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
@@ -14,6 +15,10 @@ const Success = () => {
 
   return (
     <>
+      <Head>
+        <title>Thank you</title>
+        <meta name="description" content="Thank you for contacting RNIT" />
+      </Head>
       <NavBar />
       <div className="w-full h-80 grid place-items-center">
         <div className="text-center space-y-3">

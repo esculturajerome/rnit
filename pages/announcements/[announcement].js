@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -34,6 +35,10 @@ const Announcement = () => {
 
   return (
     <>
+      <Head>
+        <title>{item?.title}</title>
+        <meta name="description" content={item?.subText} />
+      </Head>
       <NavBar />
       <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <h2>{item?.title}</h2>

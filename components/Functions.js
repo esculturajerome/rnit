@@ -1,7 +1,7 @@
 const PROGRAMS_DATA = [
   {
     id: 1,
-    title: "AUTOMOTIVE SERVICING NC II GOALS",
+    title: "Automotive Servicing NC II",
     subText:
       "To produce qualified automotive service technicians with highly employable skills through quality instruction and an extensive shop experience and make them highly competitive in a rapidly changing world of automotive.",
     desc1:
@@ -16,7 +16,7 @@ const PROGRAMS_DATA = [
   },
   {
     id: 2,
-    title: "DRESSMAKING NC II GOALS",
+    title: "Dressmaking NC II",
     subText:
       "To produce qualified dressmakers/garment sewers with highly employable skills through quality instruction and an extensive shop experience and make them highly competitive in a rapidly changing world of dressmaking.",
     desc1:
@@ -31,7 +31,7 @@ const PROGRAMS_DATA = [
   },
   {
     id: 3,
-    title: "RAC SERVICING NC II GOALS",
+    title: "RAC Servicing NC II",
     subText:
       "To produce DomRAC technician with highly employable skills through quality instruction and an extensive shop experience and make them highly competitive in a rapidly changing world of DomRAC.",
     desc1:
@@ -46,7 +46,7 @@ const PROGRAMS_DATA = [
   },
   {
     id: 4,
-    title: "SHIELDED METAL ARC WELDING NC II GOALS",
+    title: "Shielded Metal ARC Welding NC II ",
     subText:
       "To produce qualified welders/fabricator with highly employable skills through quality instruction and an extensive shop experience and make them highly competitive in a rapidly changing world of welding and fabrication.",
     desc1:
@@ -61,7 +61,7 @@ const PROGRAMS_DATA = [
   },
   {
     id: 5,
-    title: "FOOD AND BEVERAGE SERVICES NC II GOALS",
+    title: "Food and Beverage Services NC II",
     subText:
       "To produce competent food and beverage service attendants with highly employable skills through quality instruction and an extensive hands on experience and make them highly competitive in a rapidly changing world of food and beverage services.",
     desc1:

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
@@ -20,6 +21,10 @@ const AboutDetails = () => {
 
   return (
     <>
+      <Head>
+        <title>{about?.title}</title>
+        <meta name="description" content={about?.subText} />
+      </Head>
       <NavBar />
       <ImageRow variant="bg-pattern-3">
         <div className="grid place-items-center">

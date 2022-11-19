@@ -12,6 +12,7 @@ import ProgramRow from "../../components/ProgramRow";
 import ImageRow from "../../components/ImageRow";
 import Goals from "../../components/Goals";
 import NavBar from "../../components/NavBar";
+import Head from "next/head";
 
 function Programs() {
   const [courses, setCourses] = useState([]);
@@ -32,6 +33,13 @@ function Programs() {
 
   return (
     <>
+      <Head>
+        <title>RNIT | Programs</title>
+        <meta
+          name="description"
+          content="RNIT page with all Programs and Services offered"
+        />
+      </Head>
       <NavBar />
       <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8">
         <ProgramsGrid courses={courses} />

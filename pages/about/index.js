@@ -17,7 +17,10 @@ console.log(OrgChart, "OrgChart");
 function About() {
   return (
     <>
-      <Head></Head>
+      <Head>
+        <title>RNIT | About us</title>
+        <meta name="description" content="Get to know more about RNIT" />
+      </Head>
       <NavBar />
       <ImageRow variant="bg-pattern-2">
         <Goals />

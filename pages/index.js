@@ -16,7 +16,13 @@ export default function Home() {
   const ANNOUNCEMENT_DATA = getAnnouncementHomepage();
   return (
     <>
-      <Head></Head>
+      <Head>
+        <title>RNIT</title>
+        <meta
+          name="description"
+          content="Skilling Romblon thru quality TVET Delivery for Peoples Prosperity"
+        />
+      </Head>
       <NavBar />
       {/* <Nav /> */}
       <Header />

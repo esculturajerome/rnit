@@ -25,9 +25,9 @@ const Card = ({ title, date, subText, image, url, readmore }) => {
         )}
         {url && (
           <Link href={url}>
-            <p className="text-2xl font-bold font-Lora text-secondary cursor-pointer line-clamp-1 hover:underline">
+            <h2 className="text-2xl font-bold font-Lora text-secondary cursor-pointer line-clamp-1 hover:underline uppercase">
               {title}
-            </p>
+            </h2>
           </Link>
         )}
         {subText && (

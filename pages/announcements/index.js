@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import Blogs from "../../components/Blogs";
 import Footer from "../../components/Footer";
@@ -12,6 +13,10 @@ const Announcements = () => {
   const ANNOUNCEMENTS_DATA = ANNOUNCEMENT_DATA;
   return (
     <>
+      <Head>
+        <title>RNIT | Announcements</title>
+        <meta name="description" content="RNIT latest announcements" />
+      </Head>
       <NavBar />
       <Blogs data={ANNOUNCEMENTS_DATA} />
       <ProgramRow />

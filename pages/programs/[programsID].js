@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -21,11 +22,15 @@ const ProgramDetails = () => {
 
   return (
     <>
+      <Head>
+        <title>{program?.title}</title>
+        <meta name="description" content={program?.subText} />
+      </Head>
       <NavBar />
       <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="flex flex-col gap-6 lg:gap-10 lg:flex-row flex-wrap justify-center mb-32">
           <div className="flex-1 order-2 lg:order-1 space-y-4 ">
-            <h2 className="text-2xl lg:text-4xl text-secondary pr-6 lg:pr-12 font-bold">
+            <h2 className="text-2xl lg:text-4xl text-secondary pr-6 lg:pr-12 font-bold uppercase">
               {program?.title}
             </h2>
             <p className="text-black/85">{program?.subText}</p>
