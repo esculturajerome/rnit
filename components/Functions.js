@@ -46,7 +46,7 @@ const PROGRAMS_DATA = [
   },
   {
     id: 4,
-    title: "Shielded Metal ARC Welding NC II ",
+    title: "Shielded Metal ARC Welding NC II",
     subText:
       "To produce qualified welders/fabricator with highly employable skills through quality instruction and an extensive shop experience and make them highly competitive in a rapidly changing world of welding and fabrication.",
     desc1:
@@ -107,35 +107,35 @@ export const FooterLinks = [
     lists: [
       {
         name: "Automotice Servicing",
-        url: "/programs/automotive-servicing-nc-ii-goals",
+        url: "/programs/automotive-servicing-nc-ii",
       },
       {
         name: "Dressmaking",
-        url: "/programs/dressmaking-nc-ii-goals",
+        url: "/programs/dressmaking-nc-ii",
       },
       {
         name: "RAC Servicing",
-        url: "/programs/rac-servicing-nc-ii-goals",
+        url: "/programs/rac-servicing-nc-ii",
       },
       {
         name: "Metal Arc Welding",
-        url: "/programs/shielded-metal-arc-welding-nc-ii-goals",
+        url: "/programs/shielded-metal-arc-welding-nc-ii",
       },
       {
         name: "Food and Beverage Services",
-        url: "/programs/food-and-beverage-services-nc-ii-goals",
+        url: "/programs/food-and-beverage-services-nc-ii",
       },
       {
         name: "Accredited Assessments",
-        url: "/programs/#AS",
+        url: "/programs/#table",
       },
       {
         name: "Accredited Programs",
-        url: "/programs/#AS",
+        url: "/programs/#table",
       },
       {
         name: "UTPRAS",
-        url: "/programs/#AS",
+        url: "/programs/#table",
       },
     ],
   },

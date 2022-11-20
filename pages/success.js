@@ -6,9 +6,6 @@ import NavBar from "../components/NavBar";
 
 const Success = () => {
   const router = useRouter();
-  //   const [isLoading, setLoading] = useState(true);
-  console.log(router);
-
   useEffect(() => {
     setTimeout(() => router.push("/"), 2000);
   }, [router]);

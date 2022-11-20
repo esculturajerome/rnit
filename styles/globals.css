@@ -18,6 +18,10 @@
   .btn-contained {
     @apply bg-secondary cursor-pointer hover:bg-secondaryDark inline-flex items-center justify-center w-auto h-12 px-6  font-medium tracking-wide text-white transition duration-200 rounded shadow-md  focus:outline-none;
   }
+
+  .btn-text {
+    @apply cursor-pointer hover:underline;
+  }
 }
 .slick-dots {
   bottom: unset !important;

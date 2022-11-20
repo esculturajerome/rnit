@@ -24,14 +24,14 @@ export default function NavBar() {
         >
           <div>
             <Link href="/enrol">
-              <Menu.Button className="inline-flex w-full justify-center px-3 lg:px-4 py-1 text-sm text-white hover:bg-secondary focus:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+              <Menu.Button className="inline-flex w-full justify-center px-3 lg:px-4 py-2 text-white hover:bg-secondary focus:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                 Online Enrolment
               </Menu.Button>
             </Link>
           </div>
           <div>
             <Link href="/assessment">
-              <Menu.Button className="inline-flex w-full justify-center px-3 lg:px-4 py-1 text-sm text-white hover:bg-secondary focus:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+              <Menu.Button className="inline-flex w-full justify-center px-3 lg:px-4 py-2 text-white hover:bg-secondary focus:bg-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                 Online Assessment
               </Menu.Button>
             </Link>

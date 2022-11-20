@@ -28,7 +28,7 @@ function Goals({ aboutUsData }) {
                 )}`}
                 aria-label={item.title}
               >
-                <p className="text-sm text-black/80 hover:text-black font-semibold btn-text">
+                <p className="text-sm text-black/80 hover:text-black font-semibold btn-text ">
                   Learn more
                 </p>
               </Link>

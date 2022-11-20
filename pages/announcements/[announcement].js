@@ -24,7 +24,6 @@ import {
 const Announcement = () => {
   const router = useRouter();
   const announcementID = router.query.announcement;
-  console.log(announcementID);
   const [item, setItem] = useState([]);
   const [others, setOthers] = useState([]);
 

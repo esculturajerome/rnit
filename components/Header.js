@@ -25,7 +25,7 @@ function Header() {
               <p className="btn-contained">Enrol now</p>
             </Link>
             <Link href="/about">
-              <p className="btn-text"> Learn more</p>
+              <p className="btn-text "> Learn more</p>
             </Link>
           </div>
         </div>

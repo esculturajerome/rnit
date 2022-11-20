@@ -12,7 +12,6 @@ import ProgramRow from "../../components/ProgramRow";
 
 import OrgChart from "../../public/images/org-chart.jpg";
 import NavBar from "../../components/NavBar";
-console.log(OrgChart, "OrgChart");
 
 function About() {
   return (
@@ -43,25 +42,29 @@ function About() {
           </p>
         </a> */}
       </ImageRow>
-      <Teams />
-      <ImageRow variant id="orgchart">
-        <a
-          href={OrgChart.src}
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          aria-label="Org Chart"
-        >
-          <Image
-            src={OrgChart}
-            width={OrgChart.width}
-            height={OrgChart.height}
-            alt="Mechanic"
-            objectFit="cover"
-            blurDataURL={OrgChart.blurData}
-            placeholder="blur"
-          />
-        </a>
-      </ImageRow>
+      <div id="meetourteam">
+        <Teams />
+      </div>
+      <div id="orgchart">
+        <ImageRow variant>
+          <a
+            href={OrgChart.src}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label="Org Chart"
+          >
+            <Image
+              src={OrgChart}
+              width={OrgChart.width}
+              height={OrgChart.height}
+              alt="Mechanic"
+              objectFit="cover"
+              blurDataURL={OrgChart.blurData}
+              placeholder="blur"
+            />
+          </a>
+        </ImageRow>
+      </div>
       <ProgramRow />
       <Footer />
     </>
