@@ -5,11 +5,11 @@ import Slider from "react-slick";
 
 const Teams = () => {
   const images = [
-    {
-      "No.": 1,
-      NAME: "JERRY P. PAMINDALAN",
-      POSITION: "Vocational School Administrator II",
-    },
+    // {
+    //   "No.": 1,
+    //   NAME: "JERRY P. PAMINDALAN",
+    //   POSITION: "Vocational School Administrator II",
+    // },
     {
       "No.": 2,
       NAME: "JOYSEDYLL M. FAJUTNAO",
@@ -203,7 +203,7 @@ const Teams = () => {
   // console.log(images, "images");
   return (
     <>
-      <div className="px-4 pb-32 py-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-32">
+      <div className="px-4 pb-32 py-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-32">
         <TitleRow title="Meet our team" />
         <div className="mt-24">
           <Slider {...settings}>

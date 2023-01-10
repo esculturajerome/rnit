@@ -17,7 +17,7 @@ function Contact() {
         <meta name="description" content="RNIT page with contact information" />
       </Head>
       <NavBar />
-      <div className="relative font-serif lg:max-w-screen-xl mx-auto">
+      <div className="relative font-serif lg:max-w-screen-2xl mx-auto">
         <div className="absolute inset-0 object-cover w-full h-full">
           <Image
             src="/images/building.png"

@@ -37,7 +37,7 @@ function Nav() {
     <>
       <div className="text-white text-sm ">
         <div className="bg-main/90 ">
-          <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+          <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 ">
             <div className="flex justify-end gap-2">
               <a
                 onClick={(e) => handleNav(router, e, "/enrol")}
@@ -61,7 +61,7 @@ function Nav() {
           </div>
         </div>
         <div className="bg-main">
-          <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+          <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 ">
             <div className="relative flex items-center justify-between">
               <a
                 onClick={(e) => handleNav(router, e, "/")}

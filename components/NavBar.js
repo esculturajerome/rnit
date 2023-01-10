@@ -16,7 +16,7 @@ import logo from "../public/images/rnit-logo.svg";
 
 export default function NavBar() {
   return (
-    <div className="lg:max-w-screen-xl mx-auto">
+    <div className="lg:max-w-screen-2xl mx-auto">
       <div className="w-full bg-main-light">
         <Menu
           as="div"
@@ -38,7 +38,7 @@ export default function NavBar() {
           </div>
         </Menu>
       </div>
-      <div className="w-full bg-main flex justify-between py-4 px-4 lg:px-8 items-center md:max-w-full lg:max-w-screen-xl">
+      <div className="w-full bg-main flex justify-between py-4 px-4 lg:px-8 items-center md:max-w-full lg:max-w-screen-2xl">
         <Link href="/">
           <div className="flex cursor-pointer items-center">
             <Image

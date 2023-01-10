@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 
 <div className="bg-sky-900">
-  <div className=" flex items-center py-2 overflow-y-auto whitespace-nowrap px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+  <div className=" flex items-center py-2 overflow-y-auto whitespace-nowrap px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
     <a href="#" className="text-gray-600 dark:text-gray-200">
       <svg
         xmlns="http://www.w3.org/2000/svg"

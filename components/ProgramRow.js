@@ -9,7 +9,7 @@ import ProgramImage from "../public/images/programs/mechanic/mechanic1.jpg";
 function ProgramRow() {
   const router = useRouter();
   return (
-    <div className="grid md:grid-cols-2 gap-4 -mb-1.5 lg:max-w-screen-xl mx-auto items-center mt-0">
+    <div className="grid md:grid-cols-2 gap-4 -mb-1.5 lg:max-w-screen-2xl mx-auto items-center mt-0">
       <div className="lg:order-1 flex-1 mx-4 py-8 lg:py-0 sm:mx-auto md:ml-8 lg:ml-16">
         <h2 className="max-w-lg lg:mb-6 text-2xl font-bold tracking-tight text-secondaryDark md:text-3xl lg:leading-none">
           AUTOMOTIVE
@@ -43,7 +43,7 @@ function ProgramRow() {
       </div>
     </div>
     // <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
-    //   <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
+    //   <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-2xl">
     //     <div className="mb-16 lg:mb-0 lg:py-20 pb-0 lg:max-w-lg lg:pr-5">
     //       <div className="max-w-xl mb-6">
     //         <h2 className="max-w-lg mb-6 text-3xl font-bold tracking-tight text-secondaryDark sm:text-4xl sm:leading-none">

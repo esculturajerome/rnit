@@ -39,7 +39,7 @@ const Announcement = () => {
         <meta name="description" content={item?.subText} />
       </Head>
       <NavBar />
-      <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <h2>{item?.title}</h2>
         <p>{item?.subText}</p>
         <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">

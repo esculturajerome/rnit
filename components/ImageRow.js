@@ -6,7 +6,7 @@ function ImageRow({ variant, children }) {
     <div
       className={`${
         variant && variant
-      } bg-cover bg-white lg:max-w-screen-xl mx-auto`}
+      } bg-cover bg-white lg:max-w-screen-2xl mx-auto`}
     >
       <div className="px-4 py-6 md:py-0 md:px-24 lg:px-8">
         {children}

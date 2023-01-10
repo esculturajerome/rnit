@@ -8,7 +8,7 @@ function Goals({ aboutUsData }) {
   const aboutUs = aboutUsData || getAboutUs();
 
   return (
-    <div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8 lg:py-20">
+    <div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl lg:px-8 lg:py-20">
       <div className="grid gap-8 row-gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {aboutUs.map((item, i) => (
           <div

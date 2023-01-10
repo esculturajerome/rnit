@@ -12,7 +12,7 @@ import ViewMore from "./ViewMore";
 function Footer() {
   return (
     <>
-      <footer className="bg-main lg:max-w-screen-xl mx-auto">
+      <footer className="bg-main lg:max-w-screen-2xl mx-auto">
         <div className="md:flex md:gap-4 md:justify-around px-4 md:px-16 py-6 md:py-12">
           <div className="">
             <div>
