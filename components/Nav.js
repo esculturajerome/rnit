@@ -6,6 +6,7 @@ import Breadcrumb from "../components/Breadcrumb";
 import BreadcrumbItem from "../components/BreadcrumbItem";
 
 import logo from "../public/images/rnit-logo.svg";
+import logoDark from "../public/logo.svg";
 import { handleNav } from "./Functions";
 
 function Nav() {
@@ -32,7 +33,6 @@ function Nav() {
 
     setBreadcrumbs(breadcrumbs);
   }, [router.asPath]);
-
   return (
     <>
       <div className="text-white text-sm ">
@@ -44,7 +44,9 @@ function Nav() {
                 href="#"
                 aria-label="Enrol now"
                 title="Enrol now"
-                className="inline-flex items-center py-2 px-4  transition duration-200   hover:bg-secondary focus:shadow-outline focus:outline-none"
+                className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none ${
+                  currentUrl === "/enrol" && "bg-secondaryDark "
+                } `}
               >
                 Online Enrolment
               </a>
@@ -53,7 +55,9 @@ function Nav() {
                 href="#"
                 aria-label="Enrol now"
                 title="Enrol now"
-                className="inline-flex items-center py-2 px-4 transition duration-200   hover:bg-secondary focus:shadow-outline focus:outline-none"
+                className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none ${
+                  currentUrl === "/assessment" && "bg-secondaryDark "
+                } `}
               >
                 Online Assessment
               </a>
@@ -152,7 +156,18 @@ function Nav() {
                 {isMenuOpen && (
                   <div className="absolute top-0 left-0 w-full z-50">
                     <div className="p-5 bg-white text-black border rounded shadow-sm">
-                      <div className="flex items-center justify-end mb-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <Link href="/">
+                          <div className="cursor-pointer">
+                            <Image
+                              src={logoDark}
+                              width={50}
+                              height={50}
+                              objectFit="contain"
+                              alt="logo"
+                            />
+                          </div>
+                        </Link>
                         <div>
                           <button
                             aria-label="Close Menu"

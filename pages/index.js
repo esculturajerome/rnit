@@ -9,7 +9,6 @@ import ProgramRow from "../components/ProgramRow";
 import Goals from "../components/Goals";
 import ImageRow from "../components/ImageRow";
 import { getAnnouncementHomepage } from "../data/announcements";
-import NavBar from "../components/NavBar";
 import Nav from "../components/Nav";
 
 export default function Home() {
@@ -18,12 +17,23 @@ export default function Home() {
     <>
       <Head>
         <title>RNIT</title>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
         <meta
           name="description"
           content="Skilling Romblon thru quality TVET Delivery for Peoples Prosperity"
         />
       </Head>
-      <NavBar />
+      <Nav />
       {/* <Nav /> */}
       <Header />
       <Blogs data={ANNOUNCEMENT_DATA} />

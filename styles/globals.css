@@ -27,11 +27,12 @@
   bottom: unset !important;
   /* padding: 40px 50px; */
 }
+
 /* .slick-dots li {
   margin: 0 4px !important;
 } */
 .slick-dots li button::before {
-  font-size: 10px;
+  font-size: 24px;
   color: #0972b1;
 }
 .slick-dots li.slick-active button::before {

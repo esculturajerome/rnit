@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import { getOtherPrograms, getProgramById } from "../../components/Functions";
 import Layout from "../../components/Layout";
-import NavBar from "../../components/NavBar";
+import Nav from "../../components/Nav";
 import ProgramsGrid from "../../components/ProgramsGrid";
 import TitleRow from "../../components/TitleRow";
 
@@ -18,7 +18,7 @@ const ProgramDetails = () => {
   useEffect(() => {
     setProgram(getProgramById(programID));
     setCourses(getOtherPrograms(programID));
-  }, [programID, router]);
+  }, [programID]);
 
   return (
     <>
@@ -26,7 +26,7 @@ const ProgramDetails = () => {
         <title>{program?.title}</title>
         <meta name="description" content={program?.subText} />
       </Head>
-      <NavBar />
+      <Nav />
       <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <div className="flex flex-col gap-6 lg:gap-10 lg:flex-row flex-wrap justify-center mb-32">
           <div className="flex-1 order-2 lg:order-1 space-y-4 ">

@@ -65,7 +65,7 @@ function Footer() {
         <div className="py-2 bg-main-dark">
           <p className="text-center text-white/60 font-serif text-xs">
             © Romblon National Institute of Technology -{" "}
-            <Link href="https://junowebservices.netlify.app/">
+            <Link href="https://junowebservices.com/">
               <a
                 target="_blank"
                 rel="nofollow noopener noreferrer"

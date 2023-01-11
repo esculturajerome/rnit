@@ -8,6 +8,7 @@ import Goals from "../components/Goals";
 import ContactForm from "../components/ContactForm";
 import NavBar from "../components/NavBar";
 import Head from "next/head";
+import Nav from "../components/Nav";
 
 function Contact() {
   return (
@@ -16,7 +17,7 @@ function Contact() {
         <title>RNIT | Contact us</title>
         <meta name="description" content="RNIT page with contact information" />
       </Head>
-      <NavBar />
+      <Nav />
       <div className="relative font-serif lg:max-w-screen-2xl mx-auto">
         <div className="absolute inset-0 object-cover w-full h-full">
           <Image

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import ReactJotformEmbed from "react-jotform-embed";
-import NavBar from "../components/NavBar";
+import Nav from "../components/Nav";
 import Head from "next/head";
 
 function Enrol() {
@@ -20,7 +20,7 @@ function Enrol() {
           content="RNIT Online Enrolment tool for students"
         />
       </Head>
-      <NavBar />
+      <Nav />
       <div className="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:pb-20">
         {isLoading && (
           <div className="w-full grid place-items-center h-80">

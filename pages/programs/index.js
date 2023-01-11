@@ -10,7 +10,7 @@ import { programsData } from "../../data/programsData";
 import { UTPRASData } from "../../data/UTPRASData";
 import ImageRow from "../../components/ImageRow";
 import Goals from "../../components/Goals";
-import NavBar from "../../components/NavBar";
+import Nav from "../../components/Nav";
 import TabsComponent from "../../components/TabsComponent";
 import Head from "next/head";
 
@@ -29,7 +29,7 @@ function Programs() {
           content="RNIT page with all Programs and Services offered"
         />
       </Head>
-      <NavBar />
+      <Nav />
       <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8">
         <ProgramsGrid courses={courses} />
       </div>
