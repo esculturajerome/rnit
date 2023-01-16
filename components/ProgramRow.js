@@ -1,13 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import React from "react";
-import { handleNav } from "./Functions";
 
 import ProgramImage from "../public/images/programs/mechanic/mechanic1.jpg";
 
 function ProgramRow() {
-  const router = useRouter();
   return (
     <div className="grid md:grid-cols-2 gap-4 -mb-1.5 lg:max-w-screen-2xl mx-auto items-center mt-0">
       <div className="lg:order-1 flex-1 mx-4 py-8 lg:py-0 sm:mx-auto md:ml-8 lg:ml-16">

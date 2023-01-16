@@ -203,10 +203,7 @@ const Teams = () => {
   // console.log(images, "images");
   return (
     <>
-      <div
-        className="px-4 pb-32 py-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-32"
-        id="meetourteam"
-      >
+      <div className="px-4 pb-32 py-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-32">
         <TitleRow title="Meet our team" />
         <div className="mt-24">
           <Slider {...settings}>

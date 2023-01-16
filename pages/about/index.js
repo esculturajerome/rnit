@@ -20,30 +20,10 @@ function About() {
         <meta name="description" content="Get to know more about RNIT" />
       </Head>
       <Nav />
-      <ImageRow variant="bg-pattern-2">
-        <Goals />
-        {/* <a
-          onClick={(e) => handleNav(router, e, "/")}
-          href="#"
-          aria-label="Company"
-          title="Company"
-          className="inline-flex items-center"
-        >
-          <Image
-            src={logo}
-            width={50}
-            height={50}
-            objectFit="contain"
-            alt="logo"
-          />
-          <p className="ml-3 uppercase font-serif text-white tracking-wider">
-            Romblon National Institute <br /> of Technology
-          </p>
-        </a> */}
-      </ImageRow>
       <div id="meetourteam">
         <Teams />
       </div>
+
       <div id="orgchart">
         <ImageRow variant>
           <a
@@ -64,7 +44,9 @@ function About() {
           </a>
         </ImageRow>
       </div>
-      <ProgramRow />
+      <ImageRow variant="bg-pattern-2">
+        <Goals />
+      </ImageRow>
       <Footer />
     </>
   );

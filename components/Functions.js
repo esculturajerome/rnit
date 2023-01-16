@@ -168,6 +168,10 @@ export const FooterLinks = [
         name: "Organizational Chart",
         url: "/about/#orgchart",
       },
+      {
+        name: "Citizen's Charter",
+        url: "/charter",
+      },
     ],
   },
   {
