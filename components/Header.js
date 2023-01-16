@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { handleNav } from "./Functions";
 import { useRouter } from "next/router";
 
 import HeroImage from "../public/images/hero-transparent.png";

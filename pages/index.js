@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>RNIT</title>
+        <title>Romblon National Institute of Technology</title>
         <link
           rel="stylesheet"
           type="text/css"
@@ -34,7 +34,6 @@ export default function Home() {
         />
       </Head>
       <Nav />
-      {/* <Nav /> */}
       <Header />
       <Blogs data={ANNOUNCEMENT_DATA} />
       <ProgramRow />

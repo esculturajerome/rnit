@@ -20,7 +20,7 @@
   }
 
   .btn-text {
-    @apply cursor-pointer hover:underline;
+    @apply cursor-pointer hover:underline hover:underline-offset-8;
   }
 }
 .slick-dots {
@@ -32,7 +32,7 @@
   margin: 0 4px !important;
 } */
 .slick-dots li button::before {
-  font-size: 24px;
+  font-size: 20px;
   color: #0972b1;
 }
 .slick-dots li.slick-active button::before {

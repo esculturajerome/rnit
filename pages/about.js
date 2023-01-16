@@ -4,6 +4,9 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import Teams from "../components/Teams";
 import Head from "next/head";
+import ImageRow from "../components/ImageRow";
+import Goals from "../components/Goals";
+import OrgChart from "../components/OrgChart";
 
 function About() {
   return (
@@ -23,7 +26,11 @@ function About() {
       </Head>
       <Nav />
       <Teams />
-      <ProgramRow />
+      {/* <ProgramRow /> */}
+      <OrgChart />
+      <ImageRow variant="bg-pattern-2">
+        <Goals />
+      </ImageRow>
       <Footer />
     </>
   );

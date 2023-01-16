@@ -2,6 +2,9 @@ import { Children, Fragment } from "react";
 
 const Breadcrumb = ({ children }) => {
   const childrenArray = Children.toArray(children);
+  console.log(childrenArray, "wwww");
+
+  // var removeHash = #+[a-zA-Z0-9(_)]{1,}/g
 
   const childrenWtihSeperator = childrenArray.map((child, index) => {
     if (index !== childrenArray.length - 1) {

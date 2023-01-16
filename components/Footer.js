@@ -5,7 +5,7 @@ import logo from "../public/images/rnit-logo.svg";
 import seal from "../public/images/transparency_seal.webp";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { handleNav, FooterLinks } from "./Functions";
+import { FooterLinks } from "./Functions";
 import ImageRow from "./ImageRow";
 import ViewMore from "./ViewMore";
 
@@ -65,6 +65,7 @@ function Footer() {
         <div className="py-2 bg-main-dark">
           <p className="text-center text-white/60 font-serif text-xs">
             © Romblon National Institute of Technology -{" "}
+            <br className="lg:hidden" />
             <Link href="https://junowebservices.com/">
               <a
                 target="_blank"

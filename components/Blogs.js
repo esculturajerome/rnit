@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import Card from "./Card";
-import { convertToLink, handleNav } from "./Functions";
+import { convertToLink } from "./Functions";
 import TitleRow from "./TitleRow";
 
 function Blogs({ data }) {

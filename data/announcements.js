@@ -14,7 +14,7 @@ export const ANNOUNCEMENT_DATA = [
   {
     id: 2,
     date: "July 14, 2022",
-    title: "explicabo, libero molestiae numquam",
+    title: "expcxxcblicabo, libero molestiae numquam",
     subText:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
     image: "/images/announcements/sample.png",
@@ -24,7 +24,47 @@ export const ANNOUNCEMENT_DATA = [
   {
     id: 3,
     date: "June 14, 2022",
-    title: "adipisicing elit. Magnam",
+    title: "adipisiasdgcing elit. Magnam",
+    subText:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
+    image: "/images/announcements/sample.png",
+    tags: "announcement",
+    featured: true,
+  },
+  {
+    id: 4,
+    date: "June 14, 2022",
+    title: "adipisicingswe elit. Magnam",
+    subText:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
+    image: "/images/announcements/sample.png",
+    tags: "announcement",
+    featured: true,
+  },
+  {
+    id: 5,
+    date: "June 14, 2022",
+    title: "adipisicing elit. fffMagnam",
+    subText:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
+    image: "/images/announcements/sample.png",
+    tags: "announcement",
+    featured: true,
+  },
+  {
+    id: 6,
+    date: "June 14, 2022",
+    title: "adipisicing elit. Magnamaaa",
+    subText:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
+    image: "/images/announcements/sample.png",
+    tags: "announcement",
+    featured: true,
+  },
+  {
+    id: 7,
+    date: "June 14, 2022",
+    title: "adipisicing elit. Magnamsss",
     subText:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam suscipit aperiam porro eum enim officiis hic? Sunt ullam officia, totam explicabo, libero molestiae numquam assumenda neque quis dolore laborum. Nisi.",
     image: "/images/announcements/sample.png",

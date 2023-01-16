@@ -21,13 +21,11 @@ function ProgramRow() {
           experience and make them highly competitive in a rapidly changing
           world of automotive.
         </p>
-        <a
-          onClick={(e) => handleNav(router, e, "/programs")}
-          href="#"
-          className="btn-contained mt-4 lg:mt-8 text-sm lg:text-base"
-        >
-          Learn more
-        </a>
+        <Link href="/programs">
+          <div className="btn-contained mt-4 lg:mt-8 text-sm lg:text-base">
+            Learn more
+          </div>
+        </Link>
       </div>
 
       <div className="order-1 flex-1">

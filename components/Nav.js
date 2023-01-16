@@ -7,7 +7,6 @@ import BreadcrumbItem from "../components/BreadcrumbItem";
 
 import logo from "../public/images/rnit-logo.svg";
 import logoDark from "../public/logo.svg";
-import { handleNav } from "./Functions";
 
 function Nav() {
   const router = useRouter();
@@ -39,97 +38,80 @@ function Nav() {
         <div className="bg-main/90 ">
           <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 ">
             <div className="flex justify-end gap-2">
-              <a
-                onClick={(e) => handleNav(router, e, "/enrol")}
-                href="#"
-                aria-label="Enrol now"
-                title="Enrol now"
-                className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none ${
-                  currentUrl === "/enrol" && "bg-secondaryDark "
-                } `}
-              >
-                Online Enrolment
-              </a>
-              <a
-                onClick={(e) => handleNav(router, e, "/assessment")}
-                href="#"
-                aria-label="Enrol now"
-                title="Enrol now"
-                className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none ${
-                  currentUrl === "/assessment" && "bg-secondaryDark "
-                } `}
-              >
-                Online Assessment
-              </a>
+              <Link href="/enrol">
+                <div
+                  className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none cursor-pointer ${
+                    currentUrl === "/enrol" && "bg-secondaryDark "
+                  } `}
+                >
+                  Online Enrolment
+                </div>
+              </Link>
+              <Link href="/assessment">
+                <div
+                  className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none cursor-pointer ${
+                    currentUrl === "/assessment" && "bg-secondaryDark "
+                  } `}
+                >
+                  Online Assessment
+                </div>
+              </Link>
             </div>
           </div>
         </div>
         <div className="bg-main">
           <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 ">
             <div className="relative flex items-center justify-between">
-              <a
-                onClick={(e) => handleNav(router, e, "/")}
-                href="#"
-                aria-label="Company"
-                title="Company"
-                className="inline-flex items-center"
-              >
-                <Image
-                  src={logo}
-                  width={50}
-                  height={50}
-                  objectFit="contain"
-                  alt="logo"
-                />
-                <p className="ml-3 uppercase font-serif text-white tracking-wider">
-                  Romblon National <br />
-                  Institute of Technology
-                </p>
-              </a>
+              <Link href="/">
+                <div className="inline-flex items-center cursor-pointer">
+                  <Image
+                    src={logo}
+                    width={50}
+                    height={50}
+                    objectFit="contain"
+                    alt="logo"
+                  />
+                  <p className="ml-3 uppercase font-serif text-white tracking-wider">
+                    Romblon National <br />
+                    Institute of Technology
+                  </p>
+                </div>
+              </Link>
               <ul className="text-white items-center hidden space-x-8 lg:flex">
-                <li
-                  className={`btn-text   ${
-                    currentUrl === "/programs" &&
-                    "underline underline-offset-8 text-secondary"
-                  } `}
-                  onClick={(e) => handleNav(router, e, "/programs")}
-                >
-                  Programs
-                </li>
-                <li
-                  className={`btn-text   ${
-                    currentUrl === "/announcements" &&
-                    "underline underline-offset-8 text-secondary"
-                  } `}
-                  onClick={(e) => handleNav(router, e, "/announcements")}
-                >
-                  Announcements
-                </li>
-                <li
-                  className={`btn-text   ${
-                    currentUrl === "/about" &&
-                    "underline underline-offset-8 text-secondary"
-                  } `}
-                  onClick={(e) => handleNav(router, e, "/about")}
-                >
-                  About Us
-                </li>
-                <li
-                  className={`btn-text   ${
-                    currentUrl === "/contact" &&
-                    "underline underline-offset-8 text-secondary"
-                  } `}
-                  onClick={(e) => handleNav(router, e, "/contact")}
-                >
-                  Contact Us
-                </li>
+                <Link href="/programs">
+                  <li
+                    className={`btn-text   ${
+                      currentUrl === "/programs" &&
+                      "underline underline-offset-8 text-secondary"
+                    } `}
+                  >
+                    Programs
+                  </li>
+                </Link>
+                <Link href="/announcements">
+                  <li
+                    className={`btn-text   ${
+                      currentUrl === "/announcements" &&
+                      "underline underline-offset-8 text-secondary"
+                    } `}
+                  >
+                    Announcements
+                  </li>
+                </Link>
+                <Link href="/about">
+                  <li
+                    className={`btn-text   ${
+                      currentUrl === "/about" &&
+                      "underline underline-offset-8 text-secondary"
+                    } `}
+                  >
+                    About Us
+                  </li>
+                </Link>
 
-                <li
-                  className="btn-contained h-8"
-                  onClick={(e) => handleNav(router, e, "/")}
-                >
-                  Sign up
-                </li>
+                <Link href="contact">
+                  <li className="btn-contained h-8">Contact Us</li>
+                </Link>
               </ul>
               <div className="lg:hidden">
                 <button
@@ -186,39 +168,18 @@ function Nav() {
                       </div>
                       <nav>
                         <ul className="space-y-4 text-black">
-                          <li
-                            className="btn-text "
-                            onClick={(e) => handleNav(router, e, "/programs")}
-                          >
-                            Programs
-                          </li>
-                          <li
-                            className="btn-text"
-                            onClick={(e) =>
-                              handleNav(router, e, "/announcements")
-                            }
-                          >
-                            Announcements
-                          </li>
-                          <li
-                            className="btn-text"
-                            onClick={(e) => handleNav(router, e, "/about")}
-                          >
-                            About Us
-                          </li>
-                          <li
-                            className="btn-text"
-                            onClick={(e) => handleNav(router, e, "/contact")}
-                          >
-                            Contact Us
-                          </li>
-
-                          <li
-                            className="btn-contained"
-                            onClick={(e) => handleNav(router, e, "/")}
-                          >
-                            Sign up
-                          </li>
+                          <Link href="/programs">
+                            <li className="btn-text ">Programs</li>
+                          </Link>
+                          <Link href="/announcements">
+                            <li className="btn-text">Announcements</li>
+                          </Link>
+                          <Link href="/about">
+                            <li className="btn-text">About Us</li>
+                          </Link>
+                          <Link href="/contact">
+                            <li className="btn-contained">Contact Us</li>
+                          </Link>
                         </ul>
                       </nav>
                     </div>

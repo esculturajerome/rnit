@@ -1,5 +1,5 @@
 import React from "react";
-import { convertToLink, getAboutUs, handleNav } from "./Functions";
+import { convertToLink, getAboutUs } from "./Functions";
 import { useRouter } from "next/router";
 import Link from "next/link";
 

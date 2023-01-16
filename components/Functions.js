@@ -229,11 +229,6 @@ export function getOtheAbout(id) {
 
 // Other
 
-export function handleNav(router, e, url) {
-  e.preventDefault();
-  router.push(url);
-}
-
 export function convertToLink(str) {
   str = str.replace(/\s+/g, "-").toLowerCase();
   return str;

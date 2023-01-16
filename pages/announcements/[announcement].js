@@ -12,7 +12,7 @@ import {
 import Goals from "../../components/Goals";
 import ImageRow from "../../components/ImageRow";
 import Layout from "../../components/Layout";
-import NavBar from "../../components/NavBar";
+import Nav from "../../components/Nav";
 import ProgramRow from "../../components/ProgramRow";
 import ProgramsGrid from "../../components/ProgramsGrid";
 import TitleRow from "../../components/TitleRow";
@@ -38,18 +38,22 @@ const Announcement = () => {
         <title>{item?.title}</title>
         <meta name="description" content={item?.subText} />
       </Head>
-      <NavBar />
-      <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
-        <h2>{item?.title}</h2>
-        <p>{item?.subText}</p>
-        <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-          {others?.map((item, i) => (
+      <Nav />
+      <div className="px-4 py-2 mx-auto max-w-full lg:max-w-screen-2xl lg:pt-20 lg:px-24 mt-4 lg:mt-0">
+        <div>
+          <h2>{item?.title}</h2>
+          <p>{item?.subText}</p>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full mt-16">
+          {others?.slice(0, 3).map((item, i) => (
             <Card
               key={i}
               title={item?.title}
               subText={item?.subText}
               image={item?.image}
               url={"../announcements/" + convertToLink(item?.title)}
+              // url={"../announcements/" + item?.id}
             />
           ))}
         </div>

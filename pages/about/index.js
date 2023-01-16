@@ -4,14 +4,13 @@ import logo from "../../public/images/rnit-logo.svg";
 import Footer from "../../components/Footer";
 import ImageRow from "../../components/ImageRow";
 import Image from "next/image";
-import { handleNav } from "../../components/Functions";
 import { useRouter } from "next/router";
 import Goals from "../../components/Goals";
 import Teams from "../../components/Teams";
 import ProgramRow from "../../components/ProgramRow";
 
 import OrgChart from "../../public/images/org-chart.jpg";
-import NavBar from "../../components/NavBar";
+import Nav from "../../components/Nav";
 
 function About() {
   return (
@@ -20,7 +19,7 @@ function About() {
         <title>RNIT | About us</title>
         <meta name="description" content="Get to know more about RNIT" />
       </Head>
-      <NavBar />
+      <Nav />
       <ImageRow variant="bg-pattern-2">
         <Goals />
         {/* <a

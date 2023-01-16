@@ -6,7 +6,7 @@ import { getAboutById, getOtheAbout } from "../../components/Functions";
 import Goals from "../../components/Goals";
 import ImageRow from "../../components/ImageRow";
 import Layout from "../../components/Layout";
-import NavBar from "../../components/NavBar";
+import Nav from "../../components/Nav";
 import ProgramRow from "../../components/ProgramRow";
 
 const AboutDetails = () => {
@@ -25,7 +25,7 @@ const AboutDetails = () => {
         <title>{about?.title}</title>
         <meta name="description" content={about?.subText} />
       </Head>
-      <NavBar />
+      <Nav />
       <ImageRow variant="bg-pattern-3">
         <div className="grid place-items-center">
           <div className="max-w-xl text-main py-8 md:py-24 ">
