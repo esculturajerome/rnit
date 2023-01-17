@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
+import Nav from "../components/Nav";
 
 const Success = () => {
   const router = useRouter();
@@ -16,7 +16,7 @@ const Success = () => {
         <title>Thank you</title>
         <meta name="description" content="Thank you for contacting RNIT" />
       </Head>
-      <NavBar />
+      <Nav />
       <div className="w-full h-80 grid place-items-center">
         <div className="text-center space-y-3">
           <h2 className="text-3xl">Thank you for contacting us!</h2>
