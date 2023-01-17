@@ -6,14 +6,15 @@ import { convertToLink } from "./Functions";
 import TitleRow from "./TitleRow";
 
 function Blogs({ data }) {
+  console.log(data, "www");
   return (
     <div
       className={`${
         data.length < 1 && "hidden"
-      } px-4 py-2 mx-auto max-w-full lg:max-w-screen-2xl lg:py-20 lg:px-24 mt-4 lg:mt-0`}
+      } px-4 py-2 mx-auto lg:py-20 lg:px-24 mt-4 lg:mt-0 widest`}
     >
       <TitleRow title="What's new?" />
-      <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  lg:max-w-full">
+      <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
         {data?.map((item, i) => (
           <Card
             key={i}

@@ -8,8 +8,8 @@ import Link from "next/link";
 function Header() {
   const router = useRouter();
   return (
-    <div className="relative flex flex-col px-0 pb-16 lg:flex-col lg:pb-0 lg:max-w-screen-2xl mx-auto">
-      <div className="flex flex-col items-center z-10  w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-2xl order-2 lg:order-1">
+    <div className="relative flex flex-col px-0 pb-16 lg:flex-col lg:pb-0 widest">
+      <div className="flex flex-col items-center z-10  w-full px-4 lg:px-8 -2xl order-2 lg:order-1">
         <div className="mb-0 lg:my-40 lg:mt-32 lg:max-w-lg lg:-ml-96 lg:px-8 bg-white lg:py-5 lg:border-b-8 border-secondary">
           <div className="max-w-xl mb-6">
             <h2 className="max-w-lg mb-6  text-3xl font-bold tracking-tight text-main sm:text-4xl sm:leading-none">

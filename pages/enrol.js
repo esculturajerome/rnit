@@ -21,7 +21,7 @@ function Enrol() {
         />
       </Head>
       <Nav />
-      <div className="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:pb-20">
+      <div className="px-4 pb-16 md:px-24 lg:px-8 lg:pb-20 widest">
         {isLoading && (
           <div className="w-full grid place-items-center h-80">
             <div role="status">

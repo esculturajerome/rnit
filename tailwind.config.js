@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1600px",
+      },
       backgroundImage: {
         "values-bg": "url('../public/images/bg/values-bg.png')",
         "pattern-1": "url('../public/images/bg/pattern-1.png')",

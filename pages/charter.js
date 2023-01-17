@@ -19,7 +19,7 @@ const charter = () => {
       </Head>
       <Nav />
       {/* <Teams /> */}
-      <div className="grid md:grid-cols-2 gap-4 -mb-1.5 lg:max-w-screen-2xl mx-auto items-center mt-0">
+      <div className="grid md:grid-cols-2 gap-4 -mb-1.5 items-center mt-0 widest">
         <div className="lg:order-1 flex-1 mx-4 py-8 lg:py-0 sm:mx-auto md:ml-8 lg:ml-16">
           <h2 className="max-w-lg lg:mb-6 text-2xl font-bold tracking-tight text-secondaryDark md:text-3xl lg:leading-none">
             Citizen&apos;s Charter

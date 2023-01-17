@@ -4,7 +4,7 @@ const nextConfig = {
   modules: true,
   future: { webpack5: true },
   images: {
-    domains: ["https://...", "images.pexels.com"],
+    domains: ["https://...", "images.pexels.com", "images.unsplash.com"],
   },
 };
 

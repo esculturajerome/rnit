@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import { getOtherPrograms, getProgramById } from "../../components/Functions";
+import ImageRow from "../../components/ImageRow";
 import Nav from "../../components/Nav";
 import ProgramsGrid from "../../components/ProgramsGrid";
 import TitleRow from "../../components/TitleRow";
@@ -32,7 +33,7 @@ const ProgramDetails = () => {
         <meta name="description" content={program?.subText} />
       </Head>
       <Nav />
-      <div className="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-24">
+      <div className="px-4 py-6 lg:py-24 lg:px-24 widest">
         <div className="flex flex-col gap-6 lg:gap-10 lg:flex-row flex-wrap justify-center mb-12">
           <div className="flex-1 order-2 lg:order-1 space-y-4 ">
             <h2 className="text-2xl lg:text-4xl text-secondary pr-6 lg:pr-12 font-bold uppercase">
@@ -149,8 +150,11 @@ const ProgramDetails = () => {
           </div>
         </div>
       </div>
-      <TitleRow title="Other Programs &amp; Services" />
-      <ProgramsGrid minimal courses={courses} />
+
+      <div className="widest">
+        <TitleRow title="Other Programs &amp; Services" />
+        <ProgramsGrid minimal courses={courses} />
+      </div>
       <Footer />
     </>
   );

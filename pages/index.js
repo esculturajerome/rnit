@@ -37,7 +37,7 @@ export default function Home() {
       <Header />
       <Blogs data={ANNOUNCEMENT_DATA} />
       <ProgramRow />
-      <Teams />
+      {/* <Teams /> */}
       <ImageRow variant="bg-pattern-2">
         <Goals />
       </ImageRow>

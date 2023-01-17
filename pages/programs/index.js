@@ -30,7 +30,7 @@ function Programs() {
         />
       </Head>
       <Nav />
-      <div className="px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8">
+      <div className="px-4 py-6 md:py-14 md:px-24 lg:px-8 widest">
         <ProgramsGrid courses={courses} />
       </div>
       <div id="table">

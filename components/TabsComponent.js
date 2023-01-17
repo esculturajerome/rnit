@@ -27,7 +27,7 @@ export default function TabsComponent({
   });
 
   return (
-    <div className="w-full px-4 py-6 md:py-14 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 bg-gray-100">
+    <div className="w-full px-4 py-6 md:py-14 md:px-24 lg:px-8 bg-gray-100 widest">
       <div className="lg:max-w-screen-lg mx-auto">
         <Tab.Group
         //  selectedIndex={selectIndex}

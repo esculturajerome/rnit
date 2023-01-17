@@ -22,6 +22,10 @@
   .btn-text {
     @apply cursor-pointer hover:underline hover:underline-offset-8;
   }
+
+  .widest {
+    @apply max-w-full xl:max-w-screen-3xl mx-auto;
+  }
 }
 .slick-dots {
   bottom: unset !important;

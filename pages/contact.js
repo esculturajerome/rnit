@@ -18,7 +18,7 @@ function Contact() {
         <meta name="description" content="RNIT page with contact information" />
       </Head>
       <Nav />
-      <div className="relative font-serif lg:max-w-screen-2xl mx-auto">
+      <div className="relative font-serif widest">
         <div className="absolute inset-0 object-cover w-full h-full">
           <Image
             src="/images/building.png"
@@ -29,11 +29,6 @@ function Contact() {
           />
         </div>
 
-        {/* <img
-          src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-          className="absolute inset-0 object-cover w-full h-full"
-          alt=""
-        /> */}
         <div className="relative bg-gray-900 bg-opacity-75 flex flex-col md:flex-row items-center w-full justify-between px-6 md:px-16 py-8">
           <div className="w-full max-w-md mb-12">
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">

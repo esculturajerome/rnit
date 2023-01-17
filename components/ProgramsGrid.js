@@ -6,7 +6,7 @@ const ProgramsGrid = ({ courses, minimal }) => {
     <div
       className={`${
         minimal ? "lg:grid-cols-4 " : "lg:grid-cols-3 "
-      } grid grid-cols-1 sm:grid-cols-2 gap-8 lg:pb-12 px-4 md:px-24 lg:max-w-screen-2xl mx-auto`}
+      } grid grid-cols-1 sm:grid-cols-2 gap-8 lg:pb-12 px-4 md:px-8 lg:px-24`}
     >
       {courses?.map((item, i) => (
         <Card

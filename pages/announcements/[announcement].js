@@ -39,12 +39,47 @@ const Announcement = () => {
         <meta name="description" content={item?.subText} />
       </Head>
       <Nav />
-      <div className="px-4 py-2 mx-auto max-w-full lg:max-w-screen-2xl lg:pt-20 lg:px-24 mt-4 lg:mt-0">
-        <div>
-          <h2>{item?.title}</h2>
-          <p>{item?.subText}</p>
+      <div className="widest mt-8 p-4 lg:my-12 md:px-24 md:text-center">
+        <div className="max-w-4xl mx-4 md:mx-auto">
+          <div className="flex place-content-center gap-2 md:gap-4">
+            {item?.image && (
+              <Image
+                src={item?.image}
+                width={800}
+                height={500}
+                className="h-52 object-cover w-full rounded"
+                alt=""
+              />
+            )}
+            {item?.image2 && (
+              <Image
+                src={item?.image2}
+                width={800}
+                height={500}
+                className="h-52 object-cover w-full rounded"
+                alt=""
+              />
+            )}
+          </div>
+          <h2 className="text-2xl lg:text-4xl text-secondary font-bold uppercase mb-4 mt-6 lg:my-16 md:leading-loose">
+            {item?.title}
+          </h2>
+          <p className="text-black/85 md:leading-loose">
+            {item?.subText} Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Mollitia perspiciatis quaerat tempora ea maxime harum aliquid
+            natus odit facere, rem obcaecati, cumque dolores consequatur quidem
+            error eius aperiam a ipsum. Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Consectetur nostrum minima ea! Possimus animi hic,
+            repellendus praesentium provident, incidunt voluptatibus cumque
+            repudiandae velit dignissimos nobis itaque, quo dolorem molestiae
+            corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatum, quae blanditiis tenetur expedita a repellat quaerat odio
+            sapiente dolore, dolores neque, consequuntur maiores fugiat adipisci
+            dolorum rem exercitationem velit cum!
+          </p>
         </div>
-
+      </div>
+      <div className="widest p-4 md:px-16 lg:px-24 lg:py-24">
         <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full mt-16">
           {others?.slice(0, 3).map((item, i) => (
             <Card
@@ -58,7 +93,6 @@ const Announcement = () => {
           ))}
         </div>
       </div>
-      {/* <ProgramRow /> */}
       <ImageRow variant="bg-pattern-2">
         <Goals />
       </ImageRow>

@@ -33,10 +33,10 @@ function Nav() {
     setBreadcrumbs(breadcrumbs);
   }, [router.asPath]);
   return (
-    <>
+    <div className="widest">
       <div className="text-white text-sm ">
         <div className="bg-main/90 ">
-          <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 ">
+          <div className="px-4 md:px-24 lg:px-8 ">
             <div className="flex justify-end gap-2">
               <Link href="/enrol">
                 <div
@@ -60,7 +60,7 @@ function Nav() {
           </div>
         </div>
         <div className="bg-main">
-          <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 ">
+          <div className="px-4 py-5 md:px-24 lg:px-8 ">
             <div className="relative flex items-center justify-between">
               <Link href="/">
                 <div className="inline-flex items-center cursor-pointer">
@@ -82,7 +82,7 @@ function Nav() {
                   <li
                     className={`btn-text   ${
                       currentUrl === "/programs" &&
-                      "underline underline-offset-8 text-secondary"
+                      "tracking-wider decoration-2 underline underline-offset-8 text-secondary"
                     } `}
                   >
                     Programs
@@ -92,7 +92,7 @@ function Nav() {
                   <li
                     className={`btn-text   ${
                       currentUrl === "/announcements" &&
-                      "underline underline-offset-8 text-secondary"
+                      "tracking-wider decoration-2 underline underline-offset-8 text-secondary"
                     } `}
                   >
                     Announcements
@@ -102,7 +102,7 @@ function Nav() {
                   <li
                     className={`btn-text   ${
                       currentUrl === "/about" &&
-                      "underline underline-offset-8 text-secondary"
+                      "tracking-wider decoration-2 underline underline-offset-8 text-secondary"
                     } `}
                   >
                     About Us
@@ -212,7 +212,7 @@ function Nav() {
             ))}
         </Breadcrumb>
       )}
-    </>
+    </div>
   );
 }
 
