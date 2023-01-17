@@ -10,11 +10,11 @@ module.exports = {
         "3xl": "1600px",
       },
       backgroundImage: {
-        "values-bg": "url('../public/images/bg/values-bg.png')",
-        "pattern-1": "url('../public/images/bg/pattern-1.png')",
-        "pattern-2": "url('../public/images/bg/pattern-2.png')",
-        "pattern-3": "url('../public/images/bg/pattern-3.png')",
-        "pattern-4": "url('../public/images/bg/pattern-4.png')",
+        "values-bg": "url('/images/bg/values-bg.png')",
+        "pattern-1": "url('/images/bg/pattern-1.png')",
+        "pattern-2": "url('/images/bg/pattern-2.png')",
+        "pattern-3": "url('/images/bg/pattern-3.png')",
+        "pattern-4": "url('/images/bg/pattern-4.png')",
       },
       colors: {
         black: "#232323",
