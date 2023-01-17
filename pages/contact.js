@@ -6,7 +6,6 @@ import Link from "next/link";
 import ImageRow from "../components/ImageRow";
 import Goals from "../components/Goals";
 import ContactForm from "../components/ContactForm";
-import NavBar from "../components/NavBar";
 import Head from "next/head";
 import Nav from "../components/Nav";
 
