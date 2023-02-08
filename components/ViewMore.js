@@ -11,7 +11,7 @@ export default function ViewMore() {
           <Disclosure key={i}>
             {({ open }) => (
               <>
-                <Disclosure.Button className="flex w-full justify-between bg-main-dark px-4 py-4 text-left text-sm font-medium text-white  hover:underline focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 ">
+                <Disclosure.Button className="flex w-full justify-between bg-main-dark px-4 py-4 text-left text-sm font-medium text-white  hover:text-secondary underline-offset-4 underline focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 ">
                   <span>{link.title}</span>
                   <ChevronUpIcon
                     className={`${
@@ -22,8 +22,8 @@ export default function ViewMore() {
                 <Disclosure.Panel className="bg-main-light">
                   {link.lists?.map((item, key) => (
                     <Link href={item.url} key={key}>
-                      <div className="group px-4 py-4 text-sm text-white">
-                        <p className=" cursor-pointer group-hover:underline">
+                      <div className="group px-4 py-2 text-sm text-white">
+                        <p className=" cursor-pointer underline underline-offset-4 hover:text-secondary">
                           {item.name}
                         </p>
                       </div>
