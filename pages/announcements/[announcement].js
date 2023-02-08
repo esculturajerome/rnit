@@ -64,19 +64,7 @@ const Announcement = () => {
           <h2 className="text-2xl lg:text-4xl text-secondary font-bold uppercase mb-4 mt-6 lg:my-16 md:leading-loose">
             {item?.title}
           </h2>
-          <p className="text-black/85 md:leading-loose">
-            {item?.subText} Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Mollitia perspiciatis quaerat tempora ea maxime harum aliquid
-            natus odit facere, rem obcaecati, cumque dolores consequatur quidem
-            error eius aperiam a ipsum. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Consectetur nostrum minima ea! Possimus animi hic,
-            repellendus praesentium provident, incidunt voluptatibus cumque
-            repudiandae velit dignissimos nobis itaque, quo dolorem molestiae
-            corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatum, quae blanditiis tenetur expedita a repellat quaerat odio
-            sapiente dolore, dolores neque, consequuntur maiores fugiat adipisci
-            dolorum rem exercitationem velit cum!
-          </p>
+          <p className="text-black/85 md:leading-loose">{item?.subText}</p>
         </div>
       </div>
       <div className="widest p-4 md:px-16 lg:px-24 lg:py-24">
