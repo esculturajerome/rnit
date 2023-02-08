@@ -67,20 +67,21 @@ const Announcement = () => {
           <p className="text-black/85 md:leading-loose">{item?.subText}</p>
         </div>
       </div>
-      <div className="widest p-4 md:px-16 lg:px-24 lg:py-24">
-        <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full mt-16">
-          {others?.slice(0, 3).map((item, i) => (
-            <Card
-              key={i}
-              title={item?.title}
-              subText={item?.subText}
-              image={item?.image}
-              url={"../announcements/" + convertToLink(item?.title)}
-              // url={"../announcements/" + item?.id}
-            />
-          ))}
+      {others.length > 1 && (
+        <div className="widest p-4 md:px-16 lg:px-24 lg:py-24">
+          <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full mt-16">
+            {others?.slice(0, 3).map((item, i) => (
+              <Card
+                key={i}
+                title={item?.title}
+                subText={item?.subText}
+                image={item?.image}
+                url={"../announcements/" + convertToLink(item?.title)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <ImageRow variant="bg-pattern-2">
         <Goals />
       </ImageRow>

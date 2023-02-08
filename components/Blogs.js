@@ -6,7 +6,6 @@ import { convertToLink } from "./Functions";
 import TitleRow from "./TitleRow";
 
 function Blogs({ data }) {
-  console.log(data, "www");
   return (
     <div
       className={`${

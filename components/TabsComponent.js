@@ -15,11 +15,6 @@ export default function TabsComponent({
   const id = parseInt(router.query?.id);
   const [selectIndex, setSelectIndex] = useState();
 
-  // useEffect(() => {
-  //   setSelectIndex(id);
-  // }, [id, router]);
-  // console.log(router, "router");
-
   let [categories] = useState({
     " Accredited Assessments": [assessmentData],
     "Accredited Programs": [programsData],
@@ -29,9 +24,7 @@ export default function TabsComponent({
   return (
     <div className="w-full px-4 py-6 md:py-14 md:px-24 lg:px-8 bg-gray-100 widest">
       <div className="lg:max-w-screen-lg mx-auto">
-        <Tab.Group
-        //  selectedIndex={selectIndex}
-        >
+        <Tab.Group>
           <Tab.List className="flex space-x-1 rounded-sm bg-main-light p-1">
             {Object.keys(categories).map((category) => (
               <Tab

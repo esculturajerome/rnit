@@ -200,7 +200,6 @@ const Teams = () => {
       },
     ],
   };
-  // console.log(images, "images");
   return (
     <>
       <div className="px-4 pb-32 py-20 md:px-24 lg:px-8 lg:py-32 widest">

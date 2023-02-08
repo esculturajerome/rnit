@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 const Card = ({ title, date, subText, image, url, readmore }) => {
-  console.log(image, "wwwimage");
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded ">
       {image && (
