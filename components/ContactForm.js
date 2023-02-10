@@ -12,16 +12,16 @@ const ContactForm = () => {
           <input name="bot-field" />
         </div>
         <div className="mb-1 sm:mb-2">
-          <label htmlFor="name" className="inline-block mb-1 font-medium">
+          <label className="inline-block mb-1 font-medium" htmlFor="username">
             Name*
           </label>
           <input
+            className="flex-grow w-full py-2 text-sm px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
             placeholder="Juan Dela Cruz"
             required
-            type="text"
-            className="flex-grow w-full py-2 text-sm px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
-            id="name"
-            name="name"
+            name="Name"
           />
         </div>
         <div className="mb-1 sm:mb-2">
@@ -38,7 +38,7 @@ const ContactForm = () => {
             }}
             className="flex-grow w-full py-2 text-sm px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
             id="number"
-            name="number"
+            name="Number"
           />
         </div>
         <div className="mb-1 sm:mb-2">
@@ -50,7 +50,7 @@ const ContactForm = () => {
             placeholder="juan.delacruz@example.com"
             className="flex-grow w-full py-2 text-sm px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
             id="email"
-            name="email"
+            name="Email"
           />
         </div>
         <div className="mb-1 sm:mb-2">
@@ -63,7 +63,7 @@ const ContactForm = () => {
             required
             className="flex-grow w-full h-32 pt-4 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-main focus:outline-none focus:shadow-outline"
             id="message"
-            name="message"
+            name="Message"
           />
         </div>
         <div className="mt-4 mb-2 sm:mb-4">
