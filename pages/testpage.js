@@ -1,7 +1,7 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Head from "next/head";
-import ContactFormTest from "../components/ContactFormTest";
+import TestForms from "../components/TestForms";
 
 function TestPage() {
   return (
@@ -26,7 +26,7 @@ function TestPage() {
       </Head>
       <Nav />
       <div className="grid  place-content-center p-16">
-        <ContactFormTest />
+        <TestForms />
       </div>
 
       <Footer />
