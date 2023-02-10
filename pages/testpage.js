@@ -24,31 +24,38 @@ function TestPage() {
         />
       </Head>
       <Nav />
-      <form name="contact" method="POST" data-netlify="true">
-        <input
-          type="hidden"
-          name="subject"
-          value="Sales inquiry from mysitename.netlify.app"
-        />
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
+      <div className="grid grid-cols-2">
+        <form name="contact" method="POST" data-netlify="true">
+          <input
+            type="hidden"
+            name="subject"
+            value="Sales inquiry from mysitename.netlify.app"
+          />
+          <p>
+            <label>
+              Your Name: <input type="text" name="name" />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
+        <form name="contact" netlify>
+          <input
+            type="hidden"
+            name="test"
+            value="Sales inquiry from mysitename.netlify.app"
+          />
+          <p>
+            <label>
+              Message with netlify: <textarea name="message"></textarea>
+            </label>
+          </p>
+          <p>
+            <button type="submit">Sendxx</button>
+          </p>
+        </form>
+      </div>
 
       <Footer />
     </>
