@@ -1,9 +1,10 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target, "xxx");
+    const router = useRouter();
     const myForm = event.target;
     const formData = new FormData(myForm);
 
@@ -12,7 +13,7 @@ const ContactForm = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log("Form successfully submitted"))
+      .then(() => router.push("/success"))
       .catch((error) => alert(error));
   };
   return (
