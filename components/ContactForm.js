@@ -1,11 +1,26 @@
 const ContactForm = () => {
   return (
     <div id="contact">
-      <form name="Contact Form" netlify>
-        <input type="hidden" name="contact-form" value="Contact Form" />
+      <form
+        data-netlify="true"
+        method="post"
+        name="RNIT Contact Form"
+        data-netlify-honeypot="bot-field"
+        action="/success"
+      >
+        <input type="hidden" name="contact-form" value="RNIT Contact Form" />
         <div hidden>
           <input name="bot-field" />
         </div>
+        {/* <form name="RNIT Contact Form" netlify> */}
+        {/* <input
+          type="hidden"
+          name="rnit-contact-form"
+          value="RNIT Contact Form"
+        /> */}
+        {/* <div hidden>
+          <input name="bot-field" />
+        </div> */}
         <div className="mb-1 sm:mb-2">
           <label className="inline-block mb-1 font-medium" htmlFor="username">
             Name*
