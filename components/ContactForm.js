@@ -8,7 +8,6 @@ const ContactForm = () => {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -25,6 +24,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value="RNITContact" />
+      <input type="hidden" name="subject" value="RNIT Website Inquiry" />
       <div className="mb-1 sm:mb-2">
         <label className="inline-block mb-1 font-medium" htmlFor="username">
           Name*
