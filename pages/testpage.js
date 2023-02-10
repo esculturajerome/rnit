@@ -59,4 +59,4 @@ function TestPage() {
   );
 }
 
-export default About;
+export default TestPage;
