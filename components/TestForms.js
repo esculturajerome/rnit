@@ -3,7 +3,6 @@ import React from "react";
 const TestForms = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target, "xxx");
     const myForm = event.target;
     const formData = new FormData(myForm);
 
@@ -18,11 +17,11 @@ const TestForms = () => {
   return (
     <form
       data-netlify="true"
-      name="pizzaOrder"
+      name="sampleForm"
       method="post"
       onSubmit={handleSubmit}
     >
-      <input type="hidden" name="form-name" value="pizzaOrder" />
+      <input type="hidden" name="form-name" value="sampleForm" />
       <label>
         What order did the pizza give to the pineapple?
         <input name="order" type="text" />

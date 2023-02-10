@@ -3,6 +3,7 @@ import React from "react";
 export default function ContactForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(event.target, "xxx");
     const myForm = event.target;
     const formData = new FormData(myForm);
 
