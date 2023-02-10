@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ContactForm() {
+const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target, "xxx");
@@ -19,13 +19,10 @@ export default function ContactForm() {
     <form
       data-netlify="true"
       method="post"
-      name="RNIT Contact Form"
+      name="RNITContact"
       onSubmit={handleSubmit}
     >
-      <input type="hidden" name="contact-form" value="RNIT Contact Form" />
-      <div hidden>
-        <input name="bot-field" />
-      </div>
+      <input type="hidden" name="form-name" value="RNITContact" />
       <div className="mb-1 sm:mb-2">
         <label className="inline-block mb-1 font-medium" htmlFor="username">
           Name*
@@ -91,4 +88,5 @@ export default function ContactForm() {
       </div>
     </form>
   );
-}
+};
+export default ContactForm;
