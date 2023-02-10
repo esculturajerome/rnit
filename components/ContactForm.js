@@ -2,9 +2,10 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const ContactForm = () => {
+  const router = useRouter();
   const handleSubmit = (event) => {
     event.preventDefault();
-    const router = useRouter();
+
     const myForm = event.target;
     const formData = new FormData(myForm);
 
