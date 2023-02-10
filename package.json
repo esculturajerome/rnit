@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
+    "@netlify/plugin-nextjs": "^4.30.4",
     "@tailwindcss/line-clamp": "^0.4.0",
     "next": "12.2.0",
     "react": "18.2.0",
