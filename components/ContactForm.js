@@ -1,6 +1,6 @@
 const ContactForm = () => {
   return (
-    <div>
+    <div id="contact">
       <form
         data-netlify="true"
         method="post"
