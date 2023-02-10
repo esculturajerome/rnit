@@ -12,15 +12,6 @@ const ContactForm = () => {
         <div hidden>
           <input name="bot-field" />
         </div>
-        {/* <form name="RNIT Contact Form" netlify> */}
-        {/* <input
-          type="hidden"
-          name="rnit-contact-form"
-          value="RNIT Contact Form"
-        /> */}
-        {/* <div hidden>
-          <input name="bot-field" />
-        </div> */}
         <div className="mb-1 sm:mb-2">
           <label className="inline-block mb-1 font-medium" htmlFor="username">
             Name*

@@ -57,7 +57,7 @@ function Contact() {
           </div>
           <div className="w-full max-w-md">
             <div className="bg-white rounded shadow-2xl p-7 sm:py-6 px-6">
-              <ContactForm />
+              <ContactForm />{" "}
             </div>
           </div>
         </div>
