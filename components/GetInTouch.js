@@ -13,7 +13,7 @@ function GetInTouch() {
             Get in touch
           </h2>
           <p className="md:text-lg mt-3 text-secondaryTextColor">
-            Want to know more us? <br /> We're ready to answer any and all
+            Want to know more us? <br /> We&apos;re ready to answer any and all
             questions.
           </p>
         </div>
