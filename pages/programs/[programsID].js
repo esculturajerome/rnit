@@ -30,7 +30,11 @@ const ProgramDetails = () => {
     <>
       <Head>
         <title>{program?.title}</title>
-        <meta name="description" content={program?.subText} />
+        <meta property="og:url" content="https://rnit-tesda.org/programs" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={program?.title} />
+        <meta property="og:description" content={program?.subText} />
+        <meta property="og:image" content={program?.image1} />
       </Head>
       <Nav />
       <div className="px-4 py-6 lg:py-24 lg:px-24 widest">

@@ -24,6 +24,14 @@ const AboutDetails = () => {
       <Head>
         <title>{about?.title}</title>
         <meta name="description" content={about?.subText} />
+        <meta property="og:url" content="https://rnit-tesda.org/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={about?.title} />
+        <meta property="og:description" content={about?.subText} />
+        <meta
+          property="og:image"
+          content="https://rnit-tesda.org/images/charter.png"
+        />
       </Head>
       <Nav />
       <ImageRow variant="bg-pattern-3">

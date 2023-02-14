@@ -29,9 +29,19 @@ export default function Home() {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
+        <meta property="og:url" content="https://rnit-tesda.org/" />
+        <meta property="og:type" content="website" />
         <meta
-          name="description"
-          content="Skilling Romblon thru quality TVET Delivery for Peoples Prosperity"
+          property="og:title"
+          content="Romblon National Institute of Technology"
+        />
+        <meta
+          property="og:description"
+          content="Skilling Romblon thru quality TVET Delivery for Peoples Prosperity?"
+        />
+        <meta
+          property="og:image"
+          content="https://rnit-tesda.org/images/charter.png"
         />
       </Head>
       <Nav />

@@ -24,9 +24,16 @@ function Programs() {
     <>
       <Head>
         <title>RNIT | Programs</title>
+        <meta property="og:url" content="https://rnit-tesda.org/programs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="RNIT | Programs" />
         <meta
-          name="description"
+          property="og:description"
           content="RNIT page with all Programs and Services offered"
+        />
+        <meta
+          property="og:image"
+          content="https://rnit-tesda.org/images/charter.png"
         />
       </Head>
       <Nav />

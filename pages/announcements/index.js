@@ -15,7 +15,17 @@ const Announcements = () => {
     <>
       <Head>
         <title>RNIT | Announcements</title>
-        <meta name="description" content="RNIT latest announcements" />
+        <meta
+          property="og:url"
+          content="https://rnit-tesda.org/announcements"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="RNIT | Announcements" />
+        <meta property="og:description" content="RNIT latest announcements" />
+        <meta
+          property="og:image"
+          content="https://rnit-tesda.org/images/charter.png"
+        />
       </Head>
       <Nav />
       <Blogs data={ANNOUNCEMENTS_DATA} />

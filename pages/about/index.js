@@ -17,7 +17,14 @@ function About() {
     <>
       <Head>
         <title>RNIT | About us</title>
-        <meta name="description" content="Get to know more about RNIT" />
+        <meta property="og:url" content="https://rnit-tesda.org/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="RNIT | About us" />
+        <meta property="og:description" content="Get to know more about RNIT" />
+        <meta
+          property="og:image"
+          content="https://rnit-tesda.org/images/charter.png"
+        />
       </Head>
       <Nav />
       <div id="meetourteam">

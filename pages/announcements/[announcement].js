@@ -37,6 +37,14 @@ const Announcement = () => {
       <Head>
         <title>{item?.title}</title>
         <meta name="description" content={item?.subText} />
+        <meta
+          property="og:url"
+          content="https://rnit-tesda.org/announcements"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={item?.title} />
+        <meta property="og:description" content={item?.subText} />
+        <meta property="og:image" content={item?.image} />
       </Head>
       <Nav />
       <div className="widest mt-8 p-4 lg:my-12 md:px-24 md:text-center">
