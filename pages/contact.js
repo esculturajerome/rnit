@@ -14,7 +14,14 @@ function Contact() {
     <>
       <Head>
         <title>RNIT | Contact us</title>
+        <meta property="og:title" content="RNIT | Contact us" />
         <meta name="description" content="RNIT page with contact information" />
+        <meta property="og:url" content="https://rnit-tesda.org/contact" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://rnit-tesda.org/images/charter.png"
+        />
       </Head>
       <Nav />
       <div className="relative font-serif widest">
