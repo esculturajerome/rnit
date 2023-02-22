@@ -17,7 +17,10 @@ export default function Home() {
     <>
       <Head>
         <title>Romblon National Institute of Technology</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="shortcut icon"
+          href="https://rnit-tesda.org/RNIT-logo.webp"
+        />
         <link
           rel="stylesheet"
           type="text/css"
