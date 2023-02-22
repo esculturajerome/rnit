@@ -6,7 +6,7 @@ import ProgramImage from "../public/images/programs/mechanic/mechanic1.jpg";
 function ProgramRow() {
   return (
     <div className="grid md:grid-cols-2 gap-4 -mb-1.5 widest items-center mt-0">
-      <div className="lg:order-1 flex-1 mx-4 py-8 lg:py-0 sm:mx-auto md:ml-8 lg:ml-16">
+      <div className="lg:order-1 flex-1 py-8 lg:py-0 mx-auto px-4">
         <h2 className="max-w-lg lg:mb-6 text-2xl font-bold tracking-tight text-secondaryDark md:text-3xl lg:leading-none">
           AUTOMOTIVE
           <br className="hidden md:block" /> SERVICING NC II

@@ -8,12 +8,12 @@ function Goals({ aboutUsData }) {
   const aboutUs = aboutUsData || getAboutUs();
 
   return (
-    <div className="px-4 py-6 lg:px-8 lg:py-20">
+    <div className="py-6 lg:py-20">
       <div className="grid gap-8 row-gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {aboutUs.map((item, i) => (
           <div
             key={i}
-            className="relative p-px overflow-hidden transition duration-300 transform rounded shadow-sm hover:bg-white hover:scale-105 group hover:shadow-xl "
+            className="relative overflow-hidden transition duration-300 transform rounded shadow-sm hover:bg-white hover:scale-105 group hover:shadow-xl "
           >
             <div className="relative p-5 bg-white/90 rounded-sm">
               <div className="flex flex-col mb-2 lg:items-center lg:flex-row">

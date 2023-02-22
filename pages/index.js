@@ -37,7 +37,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Skilling Romblon thru quality TVET Delivery for Peoples Prosperity?"
+          content="Skilling Romblon thru quality TVET Delivery for Peoples Prosperity"
         />
         <meta
           property="og:image"

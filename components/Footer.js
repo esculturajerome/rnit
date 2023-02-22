@@ -13,7 +13,7 @@ function Footer() {
   return (
     <>
       <footer className="bg-main widest">
-        <div className="md:flex md:gap-4 md:justify-around px-4 md:px-16 py-6 md:py-12">
+        <div className="md:flex md:gap-4 md:justify-around inside py-6 md:py-12">
           <div className="">
             <div>
               <Image

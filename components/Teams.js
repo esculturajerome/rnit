@@ -202,9 +202,9 @@ const Teams = () => {
   };
   return (
     <>
-      <div className="px-4 pb-32 py-20 md:px-24 lg:px-8 lg:py-32 widest">
+      <div className="pb-32 py-20 lg:py-32 widest">
         <TitleRow title="Meet our team" />
-        <div className="mt-24">
+        <div className="mt-24 inside">
           <Slider {...settings}>
             {images.map((image, i) => (
               <Employee
