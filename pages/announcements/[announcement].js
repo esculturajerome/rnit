@@ -38,16 +38,18 @@ const Announcement = () => {
   return (
     <>
       <Head>
-        <title>{item?.title}</title>
-        <meta name="description" content={item?.subText} />
+        <title>RNIT | Announcements</title>
         <meta
           property="og:url"
           content="https://rnit-tesda.org/announcements"
         />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={item?.title} />
-        <meta property="og:description" content={item?.subText} />
-        <meta property="og:image" content={item?.image} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="RNIT | Announcements" />
+        <meta property="og:description" content="RNIT latest announcements" />
+        <meta
+          property="og:image"
+          content="https://rnit-tesda.org/images/charter.png"
+        />
       </Head>
       <Nav />
       <div className="widest mt-8 lg:my-12">
