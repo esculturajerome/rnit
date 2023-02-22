@@ -28,7 +28,7 @@ function Contact() {
           />
         </div>
 
-        <div className="relative bg-gray-900 bg-opacity-75 flex flex-col md:flex-row items-center w-full justify-between px-6 md:px-16 py-8">
+        <div className="relative bg-gray-900 bg-opacity-75 flex flex-col md:flex-row items-center w-full justify-between px-6 md:px-24 py-8">
           <div className="w-full max-w-md mb-12">
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
               Poblacion, Alcantara,
@@ -57,7 +57,7 @@ function Contact() {
           </div>
           <div className="w-full max-w-md">
             <div className="bg-white rounded shadow-2xl p-7 sm:py-6 px-6">
-              <ContactForm />{" "}
+              <ContactForm />
             </div>
           </div>
         </div>

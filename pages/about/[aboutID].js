@@ -35,7 +35,7 @@ const AboutDetails = () => {
       </Head>
       <Nav />
       <ImageRow variant="bg-pattern-3">
-        <div className="grid place-items-center">
+        <div className="grid place-items-center h-[60vh]">
           <div className="max-w-xl text-main py-8 md:py-24 ">
             <h2 className="text-3xl lg:text-5xl mb-4 lg:mb-12  font-bold ">
               {about?.title}
