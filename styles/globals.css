@@ -26,7 +26,20 @@
   .widest {
     @apply max-w-full xl:max-w-screen-3xl mx-auto;
   }
+  .inside {
+    @apply w-11/12 lg:w-10/12 mx-auto;
+  }
+  .article {
+    @apply w-10/12 lg:w-8/12 mx-auto;
+  }
+  .p-content p {
+    @apply leading-loose mt-2;
+  }
+  .p-content h3 {
+    @apply leading-loose font-semibold text-xl font-Lora w-7/12 mx-auto text-center;
+  }
 }
+
 .slick-dots {
   bottom: unset !important;
   /* padding: 40px 50px; */

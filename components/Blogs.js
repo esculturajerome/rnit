@@ -6,6 +6,8 @@ import { convertToLink } from "./Functions";
 import TitleRow from "./TitleRow";
 
 function Blogs({ data }) {
+  const router = useRouter();
+  console.log(router.pathname, "wwwrouter");
   return (
     <div
       className={`${
@@ -24,6 +26,15 @@ function Blogs({ data }) {
           />
         ))}
       </div>
+      {router.pathname === "/" && (
+        <Link href="/announcements">
+          <div className="text-center">
+            <div className="btn-contained mt-4 lg:mt-8 text-sm lg:text-base">
+              Read More
+            </div>
+          </div>
+        </Link>
+      )}
     </div>
   );
 }
