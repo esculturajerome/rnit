@@ -74,6 +74,36 @@ const PROGRAMS_DATA = [
     image2: "/images/programs/food/food2.jpg",
     image3: "/images/programs/food/food3.jpg",
   },
+  {
+    id: 6,
+    title: "Bread and Pastry Production NC II",
+    subText:
+      "To produce highly skilled and competent patissier/ baker with employable skills in transforming raw materials into attractive and marketable products considering customer satisfaction and safety through quality assured instruction and demonstrated competence to meet the industry standards and global demands.",
+    desc1:
+      "Teach trainees the fundamental knowledge and skills required a patissier/ baker in the high demand and high paying job in the food industry.",
+    desc2:
+      "Provide a learning environment of hands-on experience and close interaction between the learner and the trainer instilling the value of professionalism, teamwork, cooperation,  occupational health and safety for a meaningful teaching and learning experiences.",
+    desc3:
+      "Strive to pursue high level learner’s/ customer’s satisfaction to produce high rate of graduates, certified and employed through partnership and linkages with industries.",
+    image1: "/images/programs/bake/bake2.jpg",
+    image2: "/images/programs/bake/bake1.jpg",
+    image3: "/images/programs/bake/bake3.jpg",
+  },
+  {
+    id: 7,
+    title: "Driving NC II",
+    subText:
+      "To produce qualified drivers with highly employable skills through quality instructions and extensive shop experience that will make them highly competitive individuals who will meet the demands of the Driving Industry.",
+    desc1:
+      "Teach Learners the fundamental knowledge and skills required of a driver in the high demand and high paying job in the driving industry.",
+    desc2:
+      "Provide a learning environment of hands-on experience and close interaction between the leaner and the trainer instilling the value of professionalism, teamwork, cooperation, occupational health and safety for a meaningful teaching and learning experiences.",
+    desc3:
+      "Strive to pursue high level of learners’/ customers’ satisfaction to produce high rate of graduates, certified and employed through partnership and linkages with industries.",
+    image1: "/images/programs/driving/driving3.jpg",
+    image2: "/images/programs/driving/driving2.jpg",
+    image3: "/images/programs/driving/driving1.jpg",
+  },
 ];
 
 const ABOUT_US = [
