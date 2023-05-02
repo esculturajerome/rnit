@@ -10,6 +10,7 @@ import Teams from "../../components/Teams";
 import ProgramRow from "../../components/ProgramRow";
 
 import OrgChart from "../../public/images/org-chart.jpg";
+import AssessmentMission from "../../public/images/assessment-mission.jpg";
 import Nav from "../../components/Nav";
 
 function About() {
@@ -43,13 +44,33 @@ function About() {
               src={OrgChart}
               width={OrgChart.width}
               height={OrgChart.height}
-              alt="Mechanic"
+              alt="OrgChart"
               objectFit="cover"
               blurDataURL={OrgChart.blurData}
               placeholder="blur"
             />
           </a>
         </ImageRow>
+      </div>
+      <div id="assessmentCenter" className="max-w-[550px] mx-auto my-8">
+        {/* <ImageRow variant> */}
+        <a
+          href={AssessmentMission.src}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          aria-label="Org Chart"
+        >
+          <Image
+            src={AssessmentMission}
+            width={AssessmentMission.width}
+            height={AssessmentMission.height}
+            alt="assessmentCenter"
+            objectFit="cover"
+            blurDataURL={AssessmentMission.blurData}
+            placeholder="blur"
+          />
+        </a>
+        {/* </ImageRow> */}
       </div>
       <ImageRow variant="bg-pattern-2">
         <Goals />

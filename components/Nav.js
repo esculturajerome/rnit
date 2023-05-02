@@ -38,7 +38,7 @@ function Nav() {
         <div className="bg-main/90 ">
           <div className="px-4 md:px-24 lg:px-8 ">
             <div className="flex justify-end gap-2">
-              <Link href="/enrol">
+              <Link href="https://bsrs.tesda.gov.ph/">
                 <div
                   className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none cursor-pointer ${
                     currentUrl === "/enrol" && "bg-secondaryDark "
@@ -47,6 +47,15 @@ function Nav() {
                   Online Enrolment
                 </div>
               </Link>
+              {/* <Link href="/enrol">
+                <div
+                  className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none cursor-pointer ${
+                    currentUrl === "/enrol" && "bg-secondaryDark "
+                  } `}
+                >
+                  Online Enrolment
+                </div>
+              </Link> */}
               <Link href="/assessment">
                 <div
                   className={`inline-flex items-center py-2 px-4  transition duration-200 hover:bg-secondary focus:shadow-outline focus:outline-none cursor-pointer ${
