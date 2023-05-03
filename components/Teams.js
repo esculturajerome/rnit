@@ -5,45 +5,35 @@ import Slider from "react-slick";
 
 const Teams = () => {
   const images = [
-    // {
-    //   "No.": 1,
-    //   NAME: "JERRY P. PAMINDALAN",
-    //   POSITION: "Vocational School Administrator II",
-    // },
+    {
+      "No.": 1,
+      NAME: "ANNA CHRISTINA C. MARTINEZ",
+      POSITION: "Officer-in-Charge",
+    },
     {
       "No.": 2,
-      NAME: "JOYSEDYLL M. FAJUTNAO",
-      POSITION: "Vocational Instruction Supervisor I",
+      NAME: "FELIPE S. GADO",
+      POSITION: "Assistant professor IV",
     },
     {
       "No.": 3,
-      NAME: "ANNA CHRISTINA C. MARTINEZ",
-      POSITION: "Associate Professor II",
+      NAME: "JOYSEDYLL M. FAJUTNAO",
+      POSITION: "Assistant professor III",
     },
     {
-      "No.": 4,
-      NAME: "ONIE F. GALICIA",
-      POSITION: "Assistant Professor III",
+      "No.": 21,
+      NAME: "TERESA F. GALICIA",
+      POSITION: "Assistant professor I",
     },
     {
-      "No.": 5,
-      NAME: "FELIPE S. GADO",
-      POSITION: "Assistant Professor III",
+      "No.": 25,
+      NAME: "PRENZ JUMER B. LOTA",
+      POSITION: "Assistant professor I",
     },
     {
-      "No.": 6,
-      NAME: "GIL M. FRANCISCO",
-      POSITION: "Assistant Professor I",
-    },
-    {
-      "No.": 7,
-      NAME: "PERRY JOY M. GALASAO",
-      POSITION: "Instructor III",
-    },
-    {
-      "No.": 8,
-      NAME: "JONAS C. LORENZO",
-      POSITION: "Instructor II",
+      "No.": 12,
+      NAME: "MARIA ELENA G. GACA",
+      POSITION: "Administrative Assistant VI",
     },
     {
       "No.": 9,
@@ -61,30 +51,68 @@ const Teams = () => {
       POSITION: "Administrative Officer I",
     },
     {
-      "No.": 12,
-      NAME: "MARIA ELENA G. GACA",
-      POSITION: "Administrative Assistant VI",
-    },
-    {
-      "No.": 13,
-      NAME: "MA. MELODY G. GALICIA",
-      POSITION: "Nurse II",
-    },
-    {
       "No.": 14,
       NAME: "MARILOU G. MAESTRO",
       POSITION: "Administrative Aide III",
     },
     {
-      "No.": 15,
-      NAME: "MELANIE P. MENDOZA",
-      POSITION: "School Librarian II",
+      "No.": 26,
+      NAME: "JHERALDIN V. VILLAN",
+      POSITION: "Administrative Aide III",
     },
     {
       "No.": 16,
       NAME: "RUSTUM M. RUBIO",
       POSITION: "Administrative Aide I",
     },
+    {
+      "No.": 20,
+      NAME: "MELANIS BALDEA",
+      POSITION: "Instructor III",
+    },
+    {
+      "No.": 7,
+      NAME: "PERRY JOY M. GALASAO",
+      POSITION: "Instructor III",
+    },
+    {
+      "No.": 23,
+      NAME: "ROMESTAN G. FERNANDEZ",
+      POSITION: "Instructor II",
+    },
+    {
+      "No.": 8,
+      NAME: "JONAS C. LORENZO",
+      POSITION: "Instructor II",
+    },
+    {
+      "No.": 22,
+      NAME: "MA. DIANNE LU L. GALICIA",
+      POSITION: "Instructor I",
+    },
+    {
+      "No.": 221,
+      NAME: "NICO C. GALISANAO",
+      POSITION: "Instructor I",
+    },
+
+    {
+      "No.": 24,
+      NAME: "JUNE RYAN G. FUENTES",
+      POSITION: "Instructor I",
+    },
+
+    {
+      "No.": 13,
+      NAME: "MA. MELODY G. GALICIA",
+      POSITION: "Nurse II",
+    },
+    {
+      "No.": 15,
+      NAME: "MELANIE P. MENDOZA",
+      POSITION: "School Librarian II",
+    },
+
     {
       "No.": 17,
       NAME: "ISIDRO M. GALASAO",
@@ -99,41 +127,6 @@ const Teams = () => {
       "No.": 19,
       NAME: "ELIZALDE D. CATAJAY",
       POSITION: "Security Guard I",
-    },
-    {
-      "No.": 20,
-      NAME: "MELANIS BALDEA",
-      POSITION: "Instructor I",
-    },
-    {
-      "No.": 21,
-      NAME: "TERESA F. GALICIA",
-      POSITION: "Instructor I",
-    },
-    {
-      "No.": 22,
-      NAME: "MA. DIANNE LU L. GALICIA",
-      POSITION: "Instructor I",
-    },
-    {
-      "No.": 23,
-      NAME: "ROMESTAN G. FERNANDEZ",
-      POSITION: "Instructor I",
-    },
-    {
-      "No.": 24,
-      NAME: "JUNE RYAN G. FUENTES",
-      POSITION: "Instructor I",
-    },
-    {
-      "No.": 25,
-      NAME: "PRENZ JUMER B. LOTA",
-      POSITION: "Instructor I",
-    },
-    {
-      "No.": 26,
-      NAME: "JHERALDIN V. VILLAN",
-      POSITION: "Administrative Aide III",
     },
   ];
 
