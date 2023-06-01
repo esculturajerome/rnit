@@ -78,16 +78,41 @@ const PROGRAMS_DATA = [
     id: 6,
     title: "Bread and Pastry Production NC II",
     subText:
-      "To produce highly skilled and competent patissier/ baker with employable skills in transforming raw materials into attractive and marketable products considering customer satisfaction and safety through quality assured instruction and demonstrated competence to meet the industry standards and global demands.",
-    desc1:
-      "Teach trainees the fundamental knowledge and skills required a patissier/ baker in the high demand and high paying job in the food industry.",
+      "A STAR-rated program offering quality learning experiences for Bread and Pastry Production NC II",
+    desc1: "Integrate the 21st Century Skills in the curriculum;",
     desc2:
-      "Provide a learning environment of hands-on experience and close interaction between the learner and the trainer instilling the value of professionalism, teamwork, cooperation,  occupational health and safety for a meaningful teaching and learning experiences.",
-    desc3:
-      "Strive to pursue high level learner’s/ customer’s satisfaction to produce high rate of graduates, certified and employed through partnership and linkages with industries.",
+      "Produce Baking and Pastry professionals through hands-on experience and competency-based skills;",
+    desc3: "100% of graduates are certified and",
+    desc4: "80% of graduates are employed per  year",
     image1: "/images/programs/bake/bake2.jpg",
     image2: "/images/programs/bake/bake1.jpg",
     image3: "/images/programs/bake/bake3.jpg",
+    qualifications: [
+      {
+        qualification: "Bread and Pastry Production NC II",
+        venue: "Mabini, Corcuera, Romblon",
+        date: "August 12, 2022 - September 2, 2022",
+        image1: "/images/programs/bake/bpp.jpg",
+        image2: "/images/programs/bake/bpp1.jpg",
+        image3: "/images/programs/bake/bpp2.jpg",
+      },
+      {
+        qualification: "Pastry Making",
+        venue: "Pandan, Santa Fe, Romblon",
+        date: "October 13-24, 2022",
+        image1: "/images/programs/bake/bpp3.jpg",
+        image2: "/images/programs/bake/bpp4.jpg",
+        image3: "/images/programs/bake/bpp5.jpg",
+      },
+      {
+        qualification: "Pastry Making",
+        venue: "Santa Andres, Romblon",
+        date: "April 25, 2022",
+        image1: "/images/programs/bake/bpp6.jpg",
+        image2: "/images/programs/bake/bpp7.jpg",
+        image3: "/images/programs/bake/bpp8.jpg",
+      },
+    ],
   },
   {
     id: 7,
