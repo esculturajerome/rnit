@@ -2,6 +2,30 @@ import { convertToLink } from "../components/Functions";
 
 export const ANNOUNCEMENT_DATA = [
   {
+    id: 6,
+    date: "February 17, 2023",
+    title: "Calling the Attention of the 2022 TVET Graduates",
+    subText: `<h3>"TESDA is conducting the 2023 Study on the Employment of TVET Graduates (SETG)"</h3> <br/>
+      
+      <p>
+      An annual tracer study designed to gather information about the graduates' employment, feedback on programs, curricula teaching, and assessment, which will aid in the formulation of relevant policies and enhancement of programs.</p>
+      
+      <p>Survey Period is until December 2023</p>
+      <p>Graduates will be randomly contacted via mobile phones and/or email. Kindly answer a few questions from our representatives.
+      We appreciate your feedback!</p>`,
+    image: "/images/announcements/10-10-2023/tvet-graduations.jpg",
+    // image2: "/images/announcements/02-17-2023/2.jpeg",
+    // image3: "/images/announcements/02-17-2023/3.jpeg",
+    // image4: "/images/announcements/02-17-2023/4.jpeg",
+    tags: [
+      "GanapSaTesda",
+      "MIMAROPAngyayari2023",
+      "DiutuRNITyTechnicalExcellence",
+      "PusumuanMoSiRNIT",
+    ],
+    featured: true,
+  },
+  {
     id: 5,
     date: "February 17, 2023",
     title: "RNIT Celebrates 53rd Founding Anniversary",
