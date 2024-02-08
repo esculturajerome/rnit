@@ -2,7 +2,7 @@ import { convertToLink } from "../components/Functions";
 
 export const ANNOUNCEMENT_DATA = [
   {
-    id: 7,
+    id: 8,
     date: "February 06, 2024",
     title: "BSWM Conducts Ocular Inspection for Potential Funding of Agricultural Facilities at RNIT",
     subText: `<p>
@@ -31,7 +31,7 @@ export const ANNOUNCEMENT_DATA = [
     featured: true,
   },
   {
-    id: 6,
+    id: 7,
     date: "February 02, 2024",
     title: "Blueprint for Triump: A Symphony of Strategic Planning",
     subText: `<p>
@@ -92,6 +92,29 @@ export const ANNOUNCEMENT_DATA = [
     tags: [
       "GanapSaTesda",
       "MIMAROPAngyayari2024",
+    ],
+    featured: true,
+  },
+  {
+    id: 6,
+    date: "October 10, 2023",
+    title: "CALLING THE ATTENTION OF THE 2022 TVET GRADUATES",
+    subText: `<h3>"TESDA is conducting the 2023 Study on the Employment of TVET Graduates (SETG)"</h3><br/>
+    <p>
+    An annual tracer study designed to gather information about the graduates' employment, feedback on programs, curricula teaching, and assessment, which will aid in the formulation of relevant policies and enhancement of programs.
+    </p><p>
+    Survey Period is until December 2023
+    </p><p>
+    Graduates will be randomly contacted via mobile phones and/or email. Kindly answer a few questions from our representatives. We appreciate your feedback!
+    </p>`,
+    images : [
+      "/images/announcements/10-10-2023/1.jpg",
+    ],
+    tags: [
+      "GanapSaTesda",
+      "MIMAROPAngyayari2023",
+      "DiutuRNITyTechnicalExcellence",
+      "PusumuanMoSiRNIT",
     ],
     featured: true,
   },
@@ -170,7 +193,10 @@ export const ANNOUNCEMENT_DATA = [
       <p>In line with this, 15 personnel were trained in Sardines Making under the supervision of Ma. Dianne Lu L. Galicia, Instructor I and 6 others were trained in Cupcake Making with Melanis Baldea, Instructor I as the trainer. </p> <br/>
       
       <p>The said trainings will impact on the economic aspect of the employees' lives giving them an opportunity for an added income or to engage in other entrepreneurial activities.</p>`,
-    images: ["/images/announcements/02-14-2023/13.jpg", "/images/announcements/02-14-2023/1.jpg", "/images/announcements/02-14-2023/4.jpg", "/images/announcements/02-14-2023/10.jpg"],
+    images: ["/images/announcements/02-14-2023/13.jpg",
+            "/images/announcements/02-14-2023/1.jpg",
+            "/images/announcements/02-14-2023/4.jpg",
+            "/images/announcements/02-14-2023/10.jpg"],
     tags: [
       "GanapSaTesda",
       "MIMAROPAngyayari2023",
