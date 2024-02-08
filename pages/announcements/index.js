@@ -10,7 +10,8 @@ import ProgramRow from "../../components/ProgramRow";
 import { ANNOUNCEMENT_DATA } from "../../data/announcements";
 
 const Announcements = () => {
-  const ANNOUNCEMENTS_DATA = ANNOUNCEMENT_DATA;
+  const ANNOUNCEMENTS_DATA = ANNOUNCEMENT_DATA.slice(0, 15);
+
   return (
     <>
       <Head>

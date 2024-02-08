@@ -6,22 +6,23 @@ import { convertToLink } from "./Functions";
 import TitleRow from "./TitleRow";
 
 function Blogs({ data }) {
+  const ANNOUNCEMENT_DATA = data.slice(0, 6);
   const router = useRouter();
-  console.log(router.pathname, "wwwrouter");
+
   return (
     <div
       className={`${
-        data.length < 1 && "hidden"
+        ANNOUNCEMENT_DATA.length < 1 && "hidden"
       } px-4 py-2 mx-auto lg:py-20 lg:px-32 mt-4 lg:mt-0 widest`}
     >
       <TitleRow title="What's new?" />
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
-        {data?.map((item, i) => (
+        {ANNOUNCEMENT_DATA?.map((item, i) => (
           <Card
             key={i}
             title={item?.title}
             subText={item?.subText}
-            image={item?.images[1]}
+            image={item?.images[0]}
             url={"announcements/" + convertToLink(item?.title)}
           />
         ))}

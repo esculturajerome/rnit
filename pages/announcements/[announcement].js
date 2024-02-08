@@ -124,13 +124,13 @@ const Announcement = () => {
               />
             )} */}
           </div>
-          <h2 className="text-2xl lg:text-4xl text-secondary font-bold uppercase mb-4 mt-6 lg:my-16 md:leading-loose">
+          <h2 className="text-2xl lg:text-4xl text-secondary font-bold uppercase mb-4 mt-6 lg:mt-16 md:leading-loose">
             {item?.title}
           </h2>
-          {/* <p className="text-black/85 leading-loose">
-           
-          </p> */}
-          <div className="p-content">
+          <p className="text-black/50 italic">
+           {item?.date}
+          </p>
+          <div className="p-content mt-4 lg:mt-12">
             <PostContent content={item?.subText} />
           </div>
           {item?.tags && item?.tags.length > 0 && (
@@ -152,7 +152,7 @@ const Announcement = () => {
                 key={i}
                 title={item?.title}
                 subText={item?.subText}
-                image={item?.images[1]}
+                image={item?.images[0]}
                 url={"../announcements/" + convertToLink(item?.title)}
               />
             ))}
