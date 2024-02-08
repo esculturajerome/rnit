@@ -22,6 +22,23 @@ import {
   getOtheAnnouncement,
 } from "../../data/announcements";
 
+import ImageGallery from "react-image-gallery";
+
+const images = [
+  {
+    original: "https://picsum.photos/id/1018/1000/600/",
+    thumbnail: "https://picsum.photos/id/1018/1000/600/",
+  },
+  {
+    original: "https://picsum.photos/id/1015/1000/600/",
+    thumbnail: "https://picsum.photos/id/1015/1000/600/",
+  },
+  {
+    original: "https://picsum.photos/id/1019/1000/600/",
+    thumbnail: "https://picsum.photos/id/1019/1000/600/",
+  },
+];
+
 const Announcement = () => {
   const router = useRouter();
   const announcementID = router.query.announcement;
@@ -31,9 +48,21 @@ const Announcement = () => {
   const PostContent = HTMLContent || Content;
 
   useEffect(() => {
-    setItem(getAnnouncementById(announcementID));
-    setOthers(getOtheAnnouncement(announcementID));
+    const fetchedItem = getAnnouncementById(announcementID);
+    if (fetchedItem) {
+      setItem(fetchedItem);
+      setOthers(getOtheAnnouncement(announcementID));
+    }
   }, [announcementID, router]);
+
+  let updatedImages = [];
+  if (item && item.images) {
+    updatedImages = item.images.map((image, index) => ({
+      original: image,
+      thumbnail: image,
+    }));
+  }
+  console.log(updatedImages);
 
   return (
     <>
@@ -55,11 +84,10 @@ const Announcement = () => {
       <div className="widest mt-8 lg:my-12">
         <div className="article">
           <div
-            className={`${
-              item?.image2 ? "grid-cols-2 " : "col-auto "
-            } grid gap-2 md:gap-4`}
+            className=""
           >
-            {item?.image && (
+            {item.images && <ImageGallery items={updatedImages} additionalClass="responsive-thumbnail-gallery"/>}
+            {/* {item?.image && (
               <Image
                 src={item?.image}
                 width={800}
@@ -94,7 +122,7 @@ const Announcement = () => {
                 className="h-52 object-cover w-full rounded"
                 alt=""
               />
-            )}
+            )} */}
           </div>
           <h2 className="text-2xl lg:text-4xl text-secondary font-bold uppercase mb-4 mt-6 lg:my-16 md:leading-loose">
             {item?.title}
@@ -124,7 +152,7 @@ const Announcement = () => {
                 key={i}
                 title={item?.title}
                 subText={item?.subText}
-                image={item?.image}
+                image={item?.images[1]}
                 url={"../announcements/" + convertToLink(item?.title)}
               />
             ))}
