@@ -6,12 +6,12 @@ import { FooterLinks } from "./Functions";
 export default function ViewMore() {
   return (
     <div className="w-full pt-2">
-      <div className="mx-auto w-full bg-main pt-2">
+      <div className="mx-auto w-full bg-main pt-2 divide-y divide-main">
         {FooterLinks.map((link, i) => (
           <Disclosure key={i}>
             {({ open }) => (
               <>
-                <Disclosure.Button className="flex w-full justify-between bg-main-dark px-4 py-4 text-left text-sm font-medium text-white  hover:text-secondary underline-offset-4 underline focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 ">
+                <Disclosure.Button className="flex w-full justify-between bg-main-dark px-4 py-4 text-left text-sm font-medium text-white  hover:text-secondary focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 ">
                   <span>{link.title}</span>
                   <ChevronUpIcon
                     className={`${
@@ -19,14 +19,12 @@ export default function ViewMore() {
                     } h-5 w-5 text-white`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="bg-main-light">
+                <Disclosure.Panel className="bg-main-light py-2">
                   {link.lists?.map((item, key) => (
                     <Link href={item.url} key={key}>
-                      <div className="group px-4 py-2 text-sm text-white">
-                        <p className=" cursor-pointer underline underline-offset-4 hover:text-secondary">
-                          {item.name}
-                        </p>
-                      </div>
+                      <p className=" cursor-pointer px-4 py-2 text-sm text-white">
+                        {item.name}
+                      </p>
                     </Link>
                   ))}
                 </Disclosure.Panel>

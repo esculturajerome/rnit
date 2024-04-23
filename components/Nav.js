@@ -5,8 +5,8 @@ import Link from "next/link";
 import Breadcrumb from "../components/Breadcrumb";
 import BreadcrumbItem from "../components/BreadcrumbItem";
 
-import logo from "../public/images/rnit-logo.svg";
-import logoDark from "../public/logo.svg";
+import logo from "../public/RNIT-logo.webp";
+import logoDark from "../public/RNIT-logo.webp";
 
 function Nav() {
   const router = useRouter();
@@ -88,37 +88,43 @@ function Nav() {
               </Link>
               <ul className="text-white items-center hidden space-x-8 lg:flex">
                 <Link href="/programs">
-                  <li
-                    className={`btn-text   ${
-                      currentUrl === "/programs" &&
-                      "tracking-wider decoration-2 underline underline-offset-8 text-secondary"
-                    } `}
-                  >
-                    Programs
+                  <li className="relative inline-block group cursor-pointer">
+                    <span className="relative z-10 transition-all duration-300 ">
+                      Programs
+                    </span>
+                    <span
+                      className={`${
+                        currentUrl === "/programs" && "scale-x-100"
+                      } absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
+                    ></span>
                   </li>
                 </Link>
-                <Link href="/announcements">
-                  <li
-                    className={`btn-text   ${
-                      currentUrl === "/announcements" &&
-                      "tracking-wider decoration-2 underline underline-offset-8 text-secondary"
-                    } `}
-                  >
-                    Announcements
+                <Link href="/blogs">
+                  <li className="relative inline-block group cursor-pointer">
+                    <span className="relative z-10 transition-all duration-300 ">
+                      Blogs
+                    </span>
+                    <span
+                      className={`${
+                        currentUrl === "/blogs" && "scale-x-100"
+                      } absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
+                    ></span>
                   </li>
                 </Link>
                 <Link href="/about">
-                  <li
-                    className={`btn-text   ${
-                      currentUrl === "/about" &&
-                      "tracking-wider decoration-2 underline underline-offset-8 text-secondary"
-                    } `}
-                  >
-                    About Us
+                  <li className="relative inline-block group cursor-pointer">
+                    <span className="relative z-10 transition-all duration-300 ">
+                      About Us
+                    </span>
+                    <span
+                      className={`${
+                        currentUrl === "/about" && "scale-x-100"
+                      } absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
+                    ></span>
                   </li>
                 </Link>
 
-                <Link href="contact">
+                <Link href="/contact">
                   <li className="btn-contained h-8">Contact Us</li>
                 </Link>
               </ul>
@@ -185,8 +191,8 @@ function Nav() {
                         <Link href="/programs">
                           <li className="btn-text ">Programs</li>
                         </Link>
-                        <Link href="/announcements">
-                          <li className="btn-text">Announcements</li>
+                        <Link href="/blogs">
+                          <li className="btn-text">Blogs</li>
                         </Link>
                         <Link href="/about">
                           <li className="btn-text">About Us</li>
@@ -219,11 +225,14 @@ function Nav() {
             </svg>
           </BreadcrumbItem>
           {breadcrumbs &&
-            breadcrumbs.map((breadcrumb) => (
-              <BreadcrumbItem key={breadcrumb.href} href={breadcrumb.href}>
-                {breadcrumb.label}
-              </BreadcrumbItem>
-            ))}
+            breadcrumbs.map((breadcrumb) => {
+              const decodeLabel = decodeURIComponent(breadcrumb.label);
+              return (
+                <BreadcrumbItem key={breadcrumb.href} href={breadcrumb.href}>
+                  {decodeLabel}
+                </BreadcrumbItem>
+              );
+            })}
         </Breadcrumb>
       )}
     </div>
