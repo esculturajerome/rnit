@@ -58,7 +58,7 @@ const ProgramDetails = () => {
               <li>- {program?.desc1}</li>
               <li>- {program?.desc2}</li>
               <li>- {program?.desc3}</li>
-              <li>- {program?.desc4}</li>
+              <li>{program?.desc4 && "- " + program?.desc4}</li>
             </ul>
             {program?.qualifications && (
               <div className="grid gap-3 grid-cols-1 md:grid-cols-2 pt-10 max-w-2xl">
@@ -320,7 +320,7 @@ const ProgramDetails = () => {
         </div>
       </div>
 
-      <div className="widest">
+      <div className="widest my-8">
         <TitleRow title="Other Programs &amp; Services" />
         <ProgramsGrid minimal courses={courses} />
       </div>

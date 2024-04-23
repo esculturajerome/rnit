@@ -35,11 +35,9 @@ const AboutDetails = () => {
       </Head>
       <Nav />
       <ImageRow variant="bg-pattern-3">
-        <div className="grid place-items-center h-[60vh]">
-          <div className="max-w-xl text-main py-8 md:py-24 ">
-            <h2 className="text-3xl lg:text-5xl mb-4 lg:mb-12  font-bold ">
-              {about?.title}
-            </h2>
+        <div className="grid place-items-center h-[50vh]">
+          <div className="max-w-xl text-main space-y-6">
+            <h2 className="text-3xl lg:text-5xl font-bold ">{about?.title}</h2>
             <p className="lg:text-xl text-main/90 ">{about?.subText}</p>
           </div>
         </div>

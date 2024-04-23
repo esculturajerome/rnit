@@ -1,37 +1,39 @@
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Head from "next/head";
-import TestForms from "../components/TestForms";
+// components/BlogImages.js
 
-function TestPage() {
+import React, { useEffect, useState } from "react";
+
+const BlogImages = () => {
+  const folderName = "ACelebrationOfLoveAndLegacy";
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await fetch(`/api/blogimages?folder=${folderName}`);
+        const data = await response.json();
+        setImages(data.images);
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+
+    fetchImages();
+  }, [folderName]);
+
+  console.log(images);
+
   return (
-    <>
-      <Head>
-        <title>RNIT | Test Page</title>
-        <meta
-          name="description"
-          content="RNIT page with Team Information and Organizational Chart"
+    <div>
+      sample
+      {images.map((fileName, index) => (
+        <img
+          key={index}
+          src={`/blogs/${folderName}/${fileName}`}
+          alt={`Image ${index + 1}`}
         />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          charset="UTF-8"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
-      </Head>
-      <Nav />
-      <div className="grid  place-content-center p-16">
-        <TestForms />
-      </div>
-
-      <Footer />
-    </>
+      ))}
+    </div>
   );
-}
+};
 
-export default TestPage;
+export default BlogImages;
