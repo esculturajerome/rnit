@@ -4,15 +4,17 @@ import Header from "../components/Header";
 import Teams from "../components/Teams";
 import Footer from "../components/Footer";
 import Mission from "../components/Mission";
-import Blogs from "../components/Blogs";
+import BlogsMultiple from "../components/BlogsMultiple";
 import ProgramRow from "../components/ProgramRow";
 import Goals from "../components/Goals";
 import ImageRow from "../components/ImageRow";
-import { getAnnouncementHomepage } from "../data/announcements";
 import Nav from "../components/Nav";
 
+import { allBlogs } from "/.contentlayer/generated";
+
 export default function Home() {
-  const ANNOUNCEMENT_DATA = getAnnouncementHomepage();
+  const blogs = allBlogs;
+
   return (
     <>
       <Head>
@@ -24,7 +26,7 @@ export default function Home() {
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
+          charSet="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
@@ -49,7 +51,7 @@ export default function Home() {
       </Head>
       <Nav />
       <Header />
-      <Blogs data={ANNOUNCEMENT_DATA} />
+      <BlogsMultiple data={blogs} />
       <ProgramRow />
       {/* <Teams /> */}
       <ImageRow variant="bg-pattern-2">

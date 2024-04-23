@@ -9,31 +9,34 @@ function Goals({ aboutUsData }) {
 
   return (
     <div className="py-6 lg:py-20">
-      <div className="grid gap-8 row-gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4">
         {aboutUs.map((item, i) => (
-          <div
+          <Link
             key={i}
-            className="relative overflow-hidden transition duration-300 transform rounded shadow-sm hover:bg-white hover:scale-105 group hover:shadow-xl "
+            href={`${aboutUsData ? "../about/" : "/about/"}${convertToLink(
+              item.title
+            )}`}
+            aria-label={item.title}
           >
-            <div className="relative p-5 bg-white/90 rounded-sm">
-              <div className="flex flex-col mb-2 lg:items-center lg:flex-row">
-                <h6 className="font-semibold leading-5">{item.title}</h6>
-              </div>
-              <p className="mb-2 text-sm text-gray-900 line-clamp-2">
-                {item.subText}
-              </p>
-              <Link
-                href={`${aboutUsData ? "../about/" : "/about/"}${convertToLink(
-                  item.title
-                )}`}
-                aria-label={item.title}
-              >
-                <p className="text-sm text-black/80 hover:text-black font-semibold btn-text ">
-                  Learn more
+            <div className="flex-1 flex-grow flex-shrink min-w-0 w-150px overflow-hidden transition duration-300 transform rounded shadow-sm hover:bg-white hover:scale-105 group hover:shadow-xl cursor-pointer">
+              <div className="relative p-5 lg:p-8 bg-white/90 rounded-sm group space-y-4">
+                <h3 className="font-semibold leading-5 text-2xl">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-900 line-clamp-2">
+                  {item.subText}
                 </p>
-              </Link>
+                <div className="relative inline-block group cursor-pointer">
+                  <p className="relative z-10 text-black/80 transition-all duration-300 normal-case font-semibold text-sm">
+                    Learn more
+                  </p>
+                  <span
+                    className={`absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
+                  ></span>
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
