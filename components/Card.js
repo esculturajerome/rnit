@@ -9,7 +9,7 @@ const Card = ({ title, date, description, image, url, readmore }) => {
 
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded  border-gray-200">
-      {url && (
+      {image && (
         <Image
           src={image}
           width={500}

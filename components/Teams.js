@@ -220,13 +220,15 @@ function Employee({ picture, name, position }) {
   return (
     <div className="mx-2 lg:mx-6">
       <div className="relative mb-4 rounded w-full">
-        <Image
-          src={picture}
-          alt={name}
-          width={400}
-          height={400}
-          className="absolute object-cover w-full h-full rounded"
-        />
+        {picture && (
+          <Image
+            src={picture}
+            alt={name}
+            width={400}
+            height={400}
+            className="absolute object-cover w-full h-full rounded"
+          />
+        )}
       </div>
       <div className="flex flex-col text-center">
         <p className="text-lg font-bold">{name}</p>
