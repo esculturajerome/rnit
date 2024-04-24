@@ -246,6 +246,7 @@ const ProgramDetails = () => {
                   height={500}
                   src={program?.image1}
                   alt=""
+                  priority
                 />
               )
             )}
@@ -281,6 +282,7 @@ const ProgramDetails = () => {
                     width={400}
                     height={200}
                     alt=""
+                    priority
                   />
                 )}
                 {isLoading ? (
@@ -312,6 +314,7 @@ const ProgramDetails = () => {
                     width={400}
                     height={200}
                     alt=""
+                    priority
                   />
                 )}
               </div>

@@ -28,10 +28,9 @@ function Contact() {
         <div className="absolute inset-0 object-cover w-full h-full">
           <Image
             src="/images/building.png"
-            width={720}
-            height={479}
             layout="fill"
             alt="RNIT Building"
+            priority
           />
         </div>
 

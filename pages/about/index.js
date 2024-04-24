@@ -28,7 +28,7 @@ function About() {
         />
       </Head>
       <Nav />
-      <div id="meetourteam" className="border-2">
+      <div id="meetourteam">
         <Teams />
       </div>
 

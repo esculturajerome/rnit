@@ -58,9 +58,6 @@ function Footer() {
                             ></span>
                           </div>
                         </div>
-                        {/* <p className="cursor-pointer text-white/80 text-xs mt-1 normal-case hover:underline">
-                          {list.name}
-                        </p> */}
                       </Link>
                     ))}
                   </div>

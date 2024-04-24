@@ -22,7 +22,7 @@ const AboutDetails = () => {
   return (
     <>
       <Head>
-        <title>{about?.title}</title>
+        <title>RNIT | {about?.title}</title>
         <meta name="description" content={about?.subText} />
         <meta property="og:url" content="https://rnit-tesda.org/about" />
         <meta property="og:type" content="website" />
@@ -45,7 +45,6 @@ const AboutDetails = () => {
       <ImageRow variant="bg-pattern-2">
         <Goals aboutUsData={filterAbout} />
       </ImageRow>
-      {/* <ProgramRow /> */}
       <Footer />
     </>
   );
