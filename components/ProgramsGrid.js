@@ -15,8 +15,6 @@ const ProgramsGrid = ({ courses, minimal }) => {
           title={item?.title}
           description={item?.subText}
           image={item?.image1}
-          image2={item?.image2}
-          image3={item?.image3}
           url={`
            ${minimal ? "../programs/" : "/programs/"}${convertToLink(
             item?.title

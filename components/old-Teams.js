@@ -86,7 +86,18 @@ const Teams = () => {
     <>
       <div className="pb-32 py-20 lg:py-32 widest ">
         <TitleRow title="Meet our team" />
-        <EmployeesDesktop employees={employees} />
+        <div className="mt-24 inside">
+          <Slider {...settings}>
+            {employees.map((employee, i) => (
+              <Employee
+                picture={"/employees-gallery/" + employee.image}
+                name={employee.name}
+                position={employee.position}
+                key={i}
+              />
+            ))}
+          </Slider>
+        </div>
       </div>
     </>
   );
@@ -94,32 +105,24 @@ const Teams = () => {
 
 export default Teams;
 
-function EmployeesDesktop({ employees }) {
+function Employee({ picture, name, position }) {
   return (
-    <div className="mt-24 inside hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-12">
-      {employees &&
-        employees.map((employee, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center justify-around p-4 border border-secondary/30 rounded-lg bg-secondary/10"
-          >
-            <div className="w-32 h-32 relative">
-              <Image
-                src={"/employees-gallery/" + employee.image}
-                alt={employee.name}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-full"
-              />
-            </div>
-            <p className="text-sm text-main-dark bg-white px-4 py-1 rounded-md mt-4 mb-1 whitespace-nowrap">
-              {employee.name}
-            </p>
-            <p className="text-xs text-gray-500 whitespace-nowrap">
-              {employee.position}
-            </p>
-          </div>
-        ))}
+    <div className="mx-2 lg:mx-6">
+      <div className="relative mb-4 rounded w-full">
+        {picture && (
+          <Image
+            src={picture}
+            alt={name}
+            width={400}
+            height={400}
+            className="absolute object-cover w-full h-full rounded-full"
+          />
+        )}
+      </div>
+      <div className="text-center">
+        <p className="font-Lora">{name}</p>
+        <p className="text-sm ">{position}</p>
+      </div>
     </div>
   );
 }

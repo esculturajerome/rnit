@@ -18,9 +18,9 @@ function Goals({ aboutUsData }) {
             )}`}
             aria-label={item.title}
           >
-            <div className="flex-1 flex-grow flex-shrink min-w-0 w-150px overflow-hidden transition duration-300 transform rounded shadow-sm hover:bg-white hover:scale-105 group hover:shadow-xl cursor-pointer">
+            <div className="flex-1 flex-grow flex-shrink min-w-0 w-180px overflow-hidden transition duration-300 transform rounded shadow-sm hover:bg-white hover:scale-105 group hover:shadow-xl cursor-pointer">
               <div className="relative p-5 lg:p-8 bg-white/90 rounded-sm group space-y-4">
-                <h3 className="font-semibold leading-5 text-2xl">
+                <h3 className="font-semibold leading-5 text-2xl whitespace-nowrap">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-900 line-clamp-2">
