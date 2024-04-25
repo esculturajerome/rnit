@@ -31,9 +31,7 @@ const Announcements = () => {
       <Nav />
       <Blogs data={ANNOUNCEMENTS_DATA} />
       <ProgramRow />
-      <ImageRow variant="bg-pattern-2">
-        <Goals />
-      </ImageRow>
+      <Goals />
       <Footer />
     </>
   );

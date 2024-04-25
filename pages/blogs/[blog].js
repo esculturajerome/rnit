@@ -11,15 +11,21 @@ import Goals from "../../components/Goals";
 
 import ReactImageGallery from "react-image-gallery";
 import DateFormatter from "../../utils/DateFormatter";
+import BlogsMultiple from "../../components/BlogsMultiple";
 
 const Blog = () => {
   const router = useRouter();
   const [blog, setBlog] = useState(null);
   const blogID = router.query.blog;
   const [images, setImages] = useState([]);
+  const [otherBlogs, setOtherBlogs] = useState([]);
 
   useEffect(() => {
     const foundBlog = allBlogs.find((blog) => blog.slugAsParams === blogID);
+    const otherBlogs = allBlogs
+      .filter((blog) => blog.slugAsParams !== blogID)
+      .slice(0, 3);
+    setOtherBlogs(otherBlogs);
     if (foundBlog) {
       setBlog(foundBlog);
       const fetchImages = async () => {
@@ -88,9 +94,8 @@ const Blog = () => {
           )}
         </article>
       )}
-      <ImageRow variant="bg-pattern-2">
-        <Goals />
-      </ImageRow>
+      <BlogsMultiple data={otherBlogs} title="Other Blogs" />
+      <Goals />
       <Footer />
     </>
   );

@@ -5,7 +5,7 @@ import Card from "./Card";
 import { convertToLink } from "./Functions";
 import TitleRow from "./TitleRow";
 
-function BlogsMultiple({ data }) {
+function BlogsMultiple({ data, title }) {
   const router = useRouter();
 
   const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -16,7 +16,7 @@ function BlogsMultiple({ data }) {
         trimBlogs.length < 1 && "hidden"
       } px-4 py-2 mx-auto lg:py-20 lg:px-32 mt-4 lg:mt-0 widest`}
     >
-      <TitleRow title="What's new?" />
+      {!title && <TitleRow title="What's new?" />}
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
         {trimBlogs?.map((item, i) => (
           <Card

@@ -47,10 +47,7 @@ function Programs() {
           UTPRASData={UTPRASData}
         />
       </div>
-
-      <ImageRow variant="bg-pattern-2">
-        <Goals />
-      </ImageRow>
+      <Goals />
       <Footer />
     </>
   );

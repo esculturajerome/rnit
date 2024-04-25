@@ -53,10 +53,25 @@ export default function Home() {
       <Header />
       <BlogsMultiple data={blogs} />
       <ProgramRow />
+      <Goals />
+      {/* <div className="widest">
+        <div className="bg-cover bg-center min-h-screen relative ">
+          <Image
+            src="/images/bg/pattern-2.png"
+            alt="Background Image"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+          <div className="py-6 md:py-0 inside">
+
+          </div>
+        </div>
+      </div> */}
       {/* <Teams /> */}
-      <ImageRow variant="bg-pattern-2">
+      {/* <ImageRow variant="bg-pattern-2">
         <Goals />
-      </ImageRow>
+      </ImageRow> */}
       <Footer />
     </>
   );

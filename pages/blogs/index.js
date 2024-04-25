@@ -26,9 +26,7 @@ const Blogs = () => {
       <Nav />
       <BlogsMultiple data={blogs} />
       <ProgramRow />
-      <ImageRow variant="bg-pattern-2">
-        <Goals />
-      </ImageRow>
+      <Goals />
       <Footer />
     </>
   );

@@ -48,12 +48,12 @@ function About() {
               objectFit="cover"
               blurDataURL={OrgChart.blurData}
               placeholder="blur"
+              priority
             />
           </a>
         </ImageRow>
       </div>
       <div id="assessmentCenter" className="max-w-[550px] mx-auto my-8">
-        {/* <ImageRow variant> */}
         <a
           href={AssessmentMission.src}
           target="_blank"
@@ -68,13 +68,11 @@ function About() {
             objectFit="cover"
             blurDataURL={AssessmentMission.blurData}
             placeholder="blur"
+            priority
           />
         </a>
-        {/* </ImageRow> */}
       </div>
-      <ImageRow variant="bg-pattern-2">
-        <Goals />
-      </ImageRow>
+      <Goals />
       <Footer />
     </>
   );

@@ -55,10 +55,10 @@ const Teams = () => {
   };
   return (
     <>
-      <div className="pb-32 py-20 lg:py-32 widest ">
+      <div className="pb-32 py-8 lg:py-12 widest ">
         <TitleRow title="Meet our team" />
         <EmployeesDesktop employees={employees} />
-        <div className="mt-24 inside md:hidden">
+        <div className="mt-8 inside md:hidden">
           <Slider {...settings}>
             {employees.map((employee, i) => (
               <EmployeeCard employee={employee} key={i} />
@@ -74,7 +74,7 @@ export default Teams;
 
 function EmployeesDesktop({ employees }) {
   return (
-    <div className="mt-24 inside hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <div className="mt-12 inside hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
       {employees &&
         employees.map((employee, i) => (
           <EmployeeCard key={i} employee={employee} />
@@ -96,7 +96,7 @@ function EmployeeCard({ employee }) {
           priority
         />
       </div>
-      <p className="text-sm text-main-dark bg-white px-4 py-1 rounded-md mt-4 mb-1 whitespace-nowrap">
+      <p className="text-sm text-main-dark bg-white px-4 py-1 rounded-md mt-4 mb-1 whitespace-nowrap font-Lora font-bold">
         {employee.name}
       </p>
       <p className="text-xs text-gray-500 whitespace-nowrap">

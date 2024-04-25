@@ -83,10 +83,13 @@ const Announcement = () => {
       <Nav />
       <div className="widest mt-8 lg:my-12">
         <div className="article">
-          <div
-            className=""
-          >
-            {item.images && <ImageGallery items={updatedImages} additionalClass="responsive-thumbnail-gallery"/>}
+          <div className="">
+            {item.images && (
+              <ImageGallery
+                items={updatedImages}
+                additionalClass="responsive-thumbnail-gallery"
+              />
+            )}
             {/* {item?.image && (
               <Image
                 src={item?.image}
@@ -127,9 +130,7 @@ const Announcement = () => {
           <h2 className="text-2xl lg:text-4xl text-secondary font-bold uppercase mb-4 mt-6 lg:mt-16 md:leading-loose">
             {item?.title}
           </h2>
-          <p className="text-black/50 italic">
-           {item?.date}
-          </p>
+          <p className="text-black/50 italic">{item?.date}</p>
           <div className="p-content mt-4 lg:mt-12">
             <PostContent content={item?.subText} />
           </div>
@@ -159,9 +160,7 @@ const Announcement = () => {
           </div>
         </div>
       )}
-      <ImageRow variant="bg-pattern-2">
-        <Goals />
-      </ImageRow>
+      <Goals />
       <Footer />
     </>
   );

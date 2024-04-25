@@ -30,35 +30,35 @@ function Footer() {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 ">
               {FooterLinks.map((item, i) => (
                 <div key={i}>
-                  <Link href={item.url}>
-                    <div>
-                      <div className="relative inline-block group cursor-pointer">
+                  <div>
+                    <div className="relative inline-block group cursor-pointer">
+                      <Link href={item.url}>
                         <h3 className="relative z-10 text-white transition-all duration-300 uppercase">
                           {item.title}
                         </h3>
-                        <span
-                          className={`absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
-                        ></span>
-                      </div>
+                      </Link>
+                      <span
+                        className={`absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
+                      ></span>
                     </div>
-                    {/*  <h3 className="uppercase text-white cursor-pointer hover:underline ">
+                  </div>
+                  {/*  <h3 className="uppercase text-white cursor-pointer hover:underline ">
                       {item.title}
                     </h3> */}
-                  </Link>
                   <div className="space-y-3 mt-4">
                     {item.lists.map((list, key) => (
-                      <Link href={list?.url} key={key}>
-                        <div>
-                          <div className="relative inline-block group cursor-pointer">
+                      <div key={key}>
+                        <div className="relative inline-block group cursor-pointer">
+                          <Link href={list?.url}>
                             <span className="relative z-10 text-white transition-all duration-300 normal-case font-light text-sm">
                               {list.name}
                             </span>
-                            <span
-                              className={`absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
-                            ></span>
-                          </div>
+                          </Link>
+                          <span
+                            className={`absolute left-0 bottom-[-5px] bg-secondary h-0.5 w-full transform origin-left transition-all duration-300 scale-x-0 group-hover:scale-x-100`}
+                          ></span>
                         </div>
-                      </Link>
+                      </div>
                     ))}
                   </div>
                 </div>

@@ -38,11 +38,12 @@ function Header() {
             <Image
               src={HeroImage}
               alt="Hero image"
-              width={1276}
-              height={1280}
+              width={1250}
+              height={1250}
               objectFit="cover"
               blurDataURL={HeroImage.blurData}
               placeholder="blur"
+              priority
             />
           )}
         </div>

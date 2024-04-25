@@ -42,9 +42,7 @@ const AboutDetails = () => {
           </div>
         </div>
       </ImageRow>
-      <ImageRow variant="bg-pattern-2">
-        <Goals aboutUsData={filterAbout} />
-      </ImageRow>
+      <Goals aboutUsData={filterAbout} />
       <Footer />
     </>
   );
