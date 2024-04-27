@@ -8,6 +8,7 @@ import ImageRow from "../../components/ImageRow";
 import Layout from "../../components/Layout";
 import Nav from "../../components/Nav";
 import ProgramRow from "../../components/ProgramRow";
+import Image from "next/image";
 
 const AboutDetails = () => {
   const router = useRouter();
@@ -34,14 +35,28 @@ const AboutDetails = () => {
         />
       </Head>
       <Nav />
-      <ImageRow variant="bg-pattern-3">
+      <div className="min-h-[50vh] widest relative grid items-center">
+        <Image
+          src="/images/bg/pattern-3.png"
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+        />
+        <div className="p-8 mx-auto max-w-lg space-y-6 z-10">
+          <h2 className="text-3xl text-main lg:text-5xl font-bold ">
+            {about?.title}
+          </h2>
+          <p className="lg:text-xl text-main">{about?.subText}</p>
+        </div>
+      </div>
+      {/* <ImageRow variant="bg-pattern-3">
         <div className="grid place-items-center h-[50vh]">
           <div className="max-w-xl text-main space-y-6">
             <h2 className="text-3xl lg:text-5xl font-bold ">{about?.title}</h2>
             <p className="lg:text-xl text-main/90 ">{about?.subText}</p>
           </div>
         </div>
-      </ImageRow>
+      </ImageRow> */}
       <Goals aboutUsData={filterAbout} />
       <Footer />
     </>

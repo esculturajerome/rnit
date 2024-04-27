@@ -12,8 +12,14 @@ function Footer() {
       <footer className="bg-main widest">
         <div className="lg:flex md:gap-4 md:justify-around inside py-6 md:py-12">
           <div className="">
-            <div className="w-16 lg:w-24">
-              <Image src={seal} objectFit="contain" alt="seal" />
+            <div className="w-16 h-16 lg:w-24 lg:h-24 relative">
+              <Image
+                src={seal}
+                objectFit="contain"
+                layout="fill"
+                alt="seal"
+                sizes="80px"
+              />
             </div>
 
             <p className="mt-4 max-w-lg text-sm text-white font-serif">

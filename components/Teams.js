@@ -1,24 +1,9 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import TitleRow from "./TitleRow";
 import Slider from "react-slick";
 
-const Teams = () => {
-  const [employees, setEmployees] = useState([]);
-
-  useEffect(() => {
-    const getEmployees = async () => {
-      try {
-        const response = await fetch("/api/employees");
-        const data = await response.json();
-        setEmployees(data);
-      } catch (error) {
-        console.error("Error fetching employees", error);
-      }
-    };
-    getEmployees();
-  }, []);
-
+const Teams = ({ employees }) => {
   var settings = {
     centerMode: true,
     infinite: false,
@@ -94,6 +79,7 @@ function EmployeeCard({ employee }) {
           objectFit="cover"
           className="rounded-full"
           priority
+          sizes="80px"
         />
       </div>
       <p className="text-sm text-main-dark bg-white px-4 py-1 rounded-md mt-4 mb-1 whitespace-nowrap font-Lora font-bold">

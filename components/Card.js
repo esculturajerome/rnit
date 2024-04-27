@@ -8,15 +8,16 @@ const Card = ({ title, date, description, image, url, readmore }) => {
   const PostContent = HTMLContent || Content;
 
   return (
-    <div className="overflow-hidden transition-shadow duration-300 bg-white rounded  border-gray-200">
+    <div className="overflow-hidden transition-shadow duration-300 bg-white rounded border-gray-200">
       {image && (
         <Image
           src={image}
           width={500}
           height={300}
-          className="h-52 object-cover w-full rounded"
+          className="object-cover w-full rounded"
           alt=""
           priority
+          sizes="200px"
         />
       )}
       <div className="mb-4 pb-6 space-y-3">

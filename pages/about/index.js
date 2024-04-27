@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import logo from "../../public/images/rnit-logo.svg";
 import Footer from "../../components/Footer";
 import ImageRow from "../../components/ImageRow";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import Goals from "../../components/Goals";
 import Teams from "../../components/Teams";
-import ProgramRow from "../../components/ProgramRow";
-
-import OrgChart from "../../public/images/org-chart.jpg";
-import AssessmentMission from "../../public/images/assessment-mission.jpg";
 import Nav from "../../components/Nav";
 
+import orgChart from "../../public/images/org-chart.jpg";
+import assessmentMission from "../../public/images/assessment-mission.jpg";
+
 function About() {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const getEmployees = async () => {
+      try {
+        const response = await fetch("/api/employees");
+        const data = await response.json();
+        setEmployees(data);
+      } catch (error) {
+        console.error("Error fetching employees", error);
+      }
+    };
+    getEmployees();
+  }, []);
+
   return (
     <>
       <Head>
@@ -28,50 +40,58 @@ function About() {
         />
       </Head>
       <Nav />
-      <div id="meetourteam">
-        <Teams />
-      </div>
+      {employees && (
+        <div id="meetourteam">
+          <Teams employees={employees} />
+        </div>
+      )}
 
-      <div id="orgchart">
-        <ImageRow variant>
+      {orgChart && (
+        <div id="orgchart">
+          <ImageRow variant>
+            <a
+              href={orgChart.src}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              aria-label="Org Chart"
+            >
+              <Image
+                src={orgChart}
+                width={orgChart.width}
+                height={orgChart.height}
+                alt="orgChart"
+                objectFit="cover"
+                blurDataURL={orgChart.blurData}
+                placeholder="blur"
+                priority
+                sizes="400px"
+              />
+            </a>
+          </ImageRow>
+        </div>
+      )}
+      {assessmentMission && (
+        <div id="assessmentCenter" className="max-w-[550px] mx-auto my-8">
           <a
-            href={OrgChart.src}
+            href={assessmentMission.src}
             target="_blank"
             rel="nofollow noopener noreferrer"
             aria-label="Org Chart"
           >
             <Image
-              src={OrgChart}
-              width={OrgChart.width}
-              height={OrgChart.height}
-              alt="OrgChart"
+              src={assessmentMission}
+              width={assessmentMission.width}
+              height={assessmentMission.height}
+              alt="assessmentCenter"
               objectFit="cover"
-              blurDataURL={OrgChart.blurData}
+              blurDataURL={assessmentMission.blurData}
               placeholder="blur"
               priority
+              sizes="400px"
             />
           </a>
-        </ImageRow>
-      </div>
-      <div id="assessmentCenter" className="max-w-[550px] mx-auto my-8">
-        <a
-          href={AssessmentMission.src}
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          aria-label="Org Chart"
-        >
-          <Image
-            src={AssessmentMission}
-            width={AssessmentMission.width}
-            height={AssessmentMission.height}
-            alt="assessmentCenter"
-            objectFit="cover"
-            blurDataURL={AssessmentMission.blurData}
-            placeholder="blur"
-            priority
-          />
-        </a>
-      </div>
+        </div>
+      )}
       <Goals />
       <Footer />
     </>

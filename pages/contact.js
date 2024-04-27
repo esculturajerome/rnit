@@ -9,6 +9,8 @@ import ContactForm from "../components/ContactForm";
 import Head from "next/head";
 import Nav from "../components/Nav";
 
+import building from "../public/images/building.png";
+
 function Contact() {
   return (
     <>
@@ -27,9 +29,11 @@ function Contact() {
       <div className="relative font-serif widest">
         <div className="absolute inset-0 object-cover w-full h-full">
           <Image
-            src="/images/building.png"
+            src={building}
             layout="fill"
             alt="RNIT Building"
+            blurDataURL={building.blurData}
+            placeholder="blur"
             priority
           />
         </div>

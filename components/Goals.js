@@ -9,15 +9,17 @@ function Goals({ aboutUsData }) {
   const aboutUs = aboutUsData || getAboutUs();
 
   return (
-    <div className="bg-cover bg-center min-h-[30vh] widest relative ">
+    <div className="bg-main min-h-[30vh] widest relative grid items-center">
       <Image
         src="/images/bg/pattern-2.png"
         alt="Background Image"
         layout="fill"
         objectFit="cover"
-        quality={100}
+        quality={80}
+        sizes="300px"
+        className="opacity-50"
       />
-      <div className="py-6 md:py-0 inside">
+      <div className="inside">
         <div className="py-6 lg:py-20">
           <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4">
             {aboutUs.map((item, i) => (
