@@ -228,7 +228,6 @@ const ProgramDetails = () => {
                     objectFit="cover"
                     alt=""
                     priority
-                    sizes="250px"
                   />
                 </div>
               )
@@ -247,7 +246,6 @@ const ProgramDetails = () => {
                       objectFit="cover"
                       alt=""
                       priority
-                      sizes="170px"
                     />
                   </div>
                 )}
@@ -262,7 +260,6 @@ const ProgramDetails = () => {
                       objectFit="cover"
                       priority
                       layout="fill"
-                      sizes="170px"
                     />
                   </div>
                 )}

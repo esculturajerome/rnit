@@ -79,7 +79,7 @@ function EmployeeCard({ employee }) {
           objectFit="cover"
           className="rounded-full"
           priority
-          sizes="80px"
+          sizes="150px"
         />
       </div>
       <p className="text-sm text-main-dark bg-white px-4 py-1 rounded-md mt-4 mb-1 whitespace-nowrap font-Lora font-bold">

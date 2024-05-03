@@ -16,7 +16,6 @@ function Goals({ aboutUsData }) {
         layout="fill"
         objectFit="cover"
         quality={80}
-        sizes="300px"
         className="opacity-50"
       />
       <div className="inside">

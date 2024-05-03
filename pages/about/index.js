@@ -64,7 +64,6 @@ function About() {
                 blurDataURL={orgChart.blurData}
                 placeholder="blur"
                 priority
-                sizes="400px"
               />
             </a>
           </ImageRow>

@@ -17,7 +17,7 @@ const Card = ({ title, date, description, image, url, readmore }) => {
           className="object-cover w-full rounded"
           alt=""
           priority
-          sizes="200px"
+          sizes="350px"
         />
       )}
       <div className="mb-4 pb-6 space-y-3">
