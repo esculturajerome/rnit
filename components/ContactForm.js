@@ -45,7 +45,7 @@ const ContactForm = () => {
         <input
           placeholder="09+++++++++"
           maxLength="11"
-          onKeyPress={(event) => {
+          onKeyDown ={(event) => {
             if (!/[0-9]/.test(event.key)) {
               event.preventDefault();
             }

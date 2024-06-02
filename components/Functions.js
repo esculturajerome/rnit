@@ -129,6 +129,17 @@ const PROGRAMS_DATA = [
     image2: "/images/programs/driving/driving2.jpg",
     image3: "/images/programs/driving/driving1.jpg",
   },
+  {
+    id: 8,
+    title: "Agricultural Crops Production NC II",
+    subText:
+      "To produce qualified farmers with highly employable skills through quality instruction and an extensive shop experience and make them highly competitive in a rapidly changing world of agriculture.",
+    desc1:
+      "Teach trainees the fundamental knowledge and skills required of a farm worker in the high-demand and high paying job in agriculture industry.",
+    desc2:
+      "Provide Learning environment of close, relevant hands-on experience and meaningful interaction between trainer and trainees instilling values like teamwork, professionalism, and work safety song others.",
+    image1: "/images/programs/agricultural/agricultural1.jpg",
+  },
 ];
 
 const ABOUT_US = [
