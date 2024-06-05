@@ -138,6 +138,8 @@ const PROGRAMS_DATA = [
       "Teach trainees the fundamental knowledge and skills required of a farm worker in the high-demand and high paying job in agriculture industry.",
     desc2:
       "Provide Learning environment of close, relevant hands-on experience and meaningful interaction between trainer and trainees instilling values like teamwork, professionalism, and work safety song others.",
+    desc3:
+      "Continually strive to provide high level of student satisfaction to produce a consistently high rate of graduates certification and placement through partnership with industries.",
     image1: "/images/programs/agricultural/agricultural1.jpg",
   },
 ];
