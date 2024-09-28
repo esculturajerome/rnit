@@ -9,6 +9,8 @@ import Nav from "../../components/Nav";
 
 import orgChart from "../../public/images/org-chart.jpg";
 import assessmentMission from "../../public/images/assessment-mission.jpg";
+import assessmentCenter from "../../public/images/assessment-center.jpg";
+import assessmentFee from "../../public/images/assessment-fee_2024.jpg";
 
 function About() {
   const [employees, setEmployees] = useState([]);
@@ -69,28 +71,41 @@ function About() {
           </ImageRow>
         </div>
       )}
-      {assessmentMission && (
-        <div id="assessmentCenter" className="max-w-[550px] mx-auto my-8">
-          <a
-            href={assessmentMission.src}
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-            aria-label="Org Chart"
-          >
-            <Image
-              src={assessmentMission}
-              width={assessmentMission.width}
-              height={assessmentMission.height}
-              alt="assessmentCenter"
-              objectFit="cover"
-              blurDataURL={assessmentMission.blurData}
-              placeholder="blur"
-              priority
-              sizes="400px"
-            />
-          </a>
-        </div>
-      )}
+      <div className="flex gap-2 justify-center w-full">
+        <a href="/images/assessment-fee_2024.jpg">
+          <Image
+            src="/images/assessment-fee_2024.jpg"
+            alt="assessment-fee-2024"
+            width={700}
+            height={950}
+            priority
+            objectFit="contain"
+            className="mx-auto w-full border-2"
+          />
+        </a>
+        <a href="/images/assessment-mission.jpg">
+          <Image
+            src="/images/assessment-mission.jpg"
+            alt="assessment-mission"
+            width={700}
+            height={950}
+            priority
+            objectFit="contain"
+            className="mx-auto w-full border-2"
+          />
+        </a>
+      </div>
+      <div className="flex gap-2 justify-center w-full">
+      <Image
+            src="/images/assessment-center.jpg"
+            alt="assessment-center"
+            width={900}
+            height={700}
+            priority
+            objectFit="contain"
+            className="mx-auto w-full border-2"
+          />
+           </div>
       <Goals />
       <Footer />
     </>
