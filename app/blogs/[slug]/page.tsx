@@ -19,6 +19,13 @@ interface PostFrontmatter {
     featuredImage?: string;
 }
 
+// Define the expected props structure for the page and metadata function
+interface PageProps {
+    params: { slug: string };
+    // searchParams?: { [key: string]: string | string[] | undefined }; // Optional: Add if you use searchParams
+}
+
+
 // Keep getPostBySlug as is
 async function getPostBySlug(slug: string) {
     const postsDirectory = path.join(process.cwd(), 'content/blogs');
@@ -51,11 +58,9 @@ async function getPostBySlug(slug: string) {
 
 
 export async function generateMetadata(
-    // Rename the prop to avoid shadowing
-    { params: paramsPromise }: { params: { slug: string } }
+    { params }: PageProps // Use the PageProps interface
 ): Promise<Metadata> {
-    // Explicitly await params as suggested by the error
-    const params = await paramsPromise;
+    // params is directly available, no need to await
     const post = await getPostBySlug(params.slug);
 
     if (!post) {
@@ -78,7 +83,11 @@ export async function generateMetadata(
             if (!baseUrl) {
                 console.warn("NEXT_PUBLIC_BASE_URL environment variable is not set. Open Graph/Twitter images might not work correctly.");
             }
-            const imageUrl = baseUrl ? new URL(post.frontmatter.featuredImage, baseUrl).toString() : post.frontmatter.featuredImage;
+            // Use URL constructor for robust joining, handle potential base URL issues
+            const imageUrl = baseUrl
+                ? new URL(post.frontmatter.featuredImage, baseUrl).toString()
+                : post.frontmatter.featuredImage;
+
 
             metadata.openGraph = {
                 title: post.frontmatter.title,
@@ -128,11 +137,9 @@ const mdxComponents = {
 };
 
 export default async function BlogPostPage(
-    // Rename the prop to avoid shadowing
-    { params: paramsPromise }: { params: { slug: string } }
+    { params }: PageProps // Use the PageProps interface
 ) {
-    // Explicitly await params as suggested by the error
-    const params = await paramsPromise;
+    // params is directly available, no need to await
     const post = await getPostBySlug(params.slug);
 
     if (!post) {
