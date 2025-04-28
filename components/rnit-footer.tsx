@@ -133,13 +133,16 @@ const Footer = ({
                                 {/* --- Dialog Implementation --- */}
                                 <Dialog>
                                     <DialogTrigger asChild>
-                                        {/* Removed href, button now triggers dialog */}
-                                        <Button variant="link" className="w-full sm:w-auto text-primary p-0 justify-start mt-auto"> {/* Added mt-auto */}
-                                            <div className="flex items-center">
-                                                Read more
-                                                <ArrowRight className="ml-2 size-4" />
-                                            </div>
-                                        </Button>
+                                        <div>
+                                            <Button variant="link" className="w-full sm:w-auto text-primary p-0">
+                                                <div className="flex items-center group">
+                                                    <span className="relative z-10 transition-all duration-300 group-hover:text-primary/80">
+                                                        Read more
+                                                    </span>
+                                                    <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                                </div>
+                                            </Button>
+                                        </div>
                                     </DialogTrigger>
                                     <DialogContent className="sm:max-w-[425px]">
                                         <DialogHeader>

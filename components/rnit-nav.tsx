@@ -54,10 +54,12 @@ export function RnitNav() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex gap-2 items-center"> {/* Reduced gap */}
+            <div className="hidden lg:flex gap-8"> {/* Reduced gap */}
                 {navLinks.map((link) => (
-                    <Button key={link.href} href={link.href} variant="link" className="font-medium text-white hover:text-gray-200 px-3"> {/* Use link variant */}
-                        {link.label}
+                    <Button key={link.href} href={link.href} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                        <div className="flex items-center">
+                            {link.label}
+                        </div>
                     </Button>
                 ))}
             </div>
