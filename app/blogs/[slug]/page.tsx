@@ -1,4 +1,3 @@
-// app/blogs/[slug]/page.tsx
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -19,88 +18,83 @@ interface PostFrontmatter {
     featuredImage?: string;
 }
 
-// Define the expected props structure for the page and metadata function
-interface PageProps {
-    params: { slug: string };
-    // searchParams?: { [key: string]: string | string[] | undefined }; // Optional: Add if you use searchParams
-}
-
-
 // Keep getPostBySlug as is
 async function getPostBySlug(slug: string) {
     const postsDirectory = path.join(process.cwd(), 'content/blogs');
-    const filePath = path.join(postsDirectory, `${slug}.mdx`);
+    // Ensure slug is treated as a string before joining path
+    const safeSlug = String(slug ?? '');
+    if (!safeSlug) {
+        console.warn("Attempted to get post with an empty or invalid slug.");
+        return null;
+    }
+    const filePath = path.join(postsDirectory, `${safeSlug}.mdx`);
 
     try {
         const fileContents = fs.readFileSync(filePath, 'utf8');
         const { data, content } = matter(fileContents);
 
         if (!data.title || !data.date) {
-            console.warn(`Post "${slug}" is missing title or date.`);
-            // Consider returning null or throwing an error if essential data is missing
+            console.warn(`Post "${safeSlug}" is missing title or date.`);
         }
 
         return {
             frontmatter: data as PostFrontmatter,
             content: content,
-            slug: slug,
+            slug: safeSlug, // Use the validated slug
         };
     } catch (error) {
-        // Check if the error is because the file doesn't exist
         if (error instanceof Error && (error as NodeJS.ErrnoException).code === 'ENOENT') {
-            console.warn(`Post file not found for slug: ${slug}`);
+            console.warn(`Post file not found for slug: ${safeSlug}`);
         } else {
-            console.error(`Error reading post "${slug}":`, error);
+            console.error(`Error reading post "${safeSlug}":`, error);
         }
-        return null; // Return null if file not found or error occurs
+        return null;
     }
 }
 
-
 export async function generateMetadata(
-    { params }: PageProps // Use the PageProps interface
+    // Use 'any' for params as a diagnostic step
+    { params }: { params: any }
 ): Promise<Metadata> {
-    // params is directly available, no need to await
-    const post = await getPostBySlug(params.slug);
+    // Add a check to ensure params.slug exists and is a string
+    const slug = typeof params?.slug === 'string' ? params.slug : '';
+    if (!slug) {
+        console.error("generateMetadata received invalid or missing slug in params:", params);
+        return {
+            title: 'Invalid Request',
+            description: 'Could not determine the post slug.',
+        };
+    }
+
+    const post = await getPostBySlug(slug);
 
     if (!post) {
         return {
             title: 'Post Not Found',
-            description: 'The requested blog post could not be found.', // Add description
+            description: 'The requested blog post could not be found.',
         };
     }
 
     const metadata: Metadata = {
         title: post.frontmatter.title,
-        description: post.frontmatter.summary || `Read the blog post: ${post.frontmatter.title}`, // More specific fallback
+        description: post.frontmatter.summary || `Read the blog post: ${post.frontmatter.title}`,
     };
 
-    // Construct absolute URL for images
     if (post.frontmatter.featuredImage) {
         try {
-            // Ensure NEXT_PUBLIC_BASE_URL is set in your environment variables
             const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
             if (!baseUrl) {
                 console.warn("NEXT_PUBLIC_BASE_URL environment variable is not set. Open Graph/Twitter images might not work correctly.");
             }
-            // Use URL constructor for robust joining, handle potential base URL issues
             const imageUrl = baseUrl
                 ? new URL(post.frontmatter.featuredImage, baseUrl).toString()
                 : post.frontmatter.featuredImage;
 
-
             metadata.openGraph = {
                 title: post.frontmatter.title,
                 description: post.frontmatter.summary || '',
-                images: [
-                    {
-                        url: imageUrl,
-                        // Optionally add width/height if known
-                        // width: 1200,
-                        // height: 630,
-                    },
-                ],
-                type: 'article', // Add OG type
+                images: [{ url: imageUrl }],
+                type: 'article',
             };
             metadata.twitter = {
                 card: "summary_large_image",
@@ -110,7 +104,6 @@ export async function generateMetadata(
             };
         } catch (e) {
             console.error("Error constructing image URL for metadata:", e);
-            // Handle cases where featuredImage might not be a valid path segment
         }
     }
 
@@ -118,32 +111,36 @@ export async function generateMetadata(
 }
 
 const mdxComponents = {
-    // Ensure Image component handles props correctly, especially src
     Image: (props: ImageProps) => (
         <Image
             {...props}
-            src={props.src} // Explicitly pass src
-            alt={props.alt || ''} // Provide default alt text
+            src={props.src}
+            alt={props.alt || ''}
             className={cn("my-6 rounded-md shadow-md", props.className)}
-        // Consider adding default width/height or sizes if not using fill
-        // width={props.width || 800} // Example default width
-        // height={props.height || 450} // Example default height
-        // sizes="(max-width: 768px) 100vw, 800px" // Example sizes
+        // Consider adding width/height/sizes if not using fill
+        // width={800} // Example
+        // height={450} // Example
+        // sizes="(max-width: 768px) 100vw, 800px" // Example
         />
     ),
     // Add other custom components or HTML tag overrides here if needed
-    // e.g., h2: (props) => <h2 className="text-2xl font-semibold mt-8 mb-4" {...props} />,
-    // a: (props) => <Link href={props.href || '#'} {...props} className="text-primary hover:underline" /> // Example Link override
 };
 
 export default async function BlogPostPage(
-    { params }: PageProps // Use the PageProps interface
+    // Use 'any' for params as a diagnostic step
+    { params }: { params: any }
 ) {
-    // params is directly available, no need to await
-    const post = await getPostBySlug(params.slug);
+    // Add a check to ensure params.slug exists and is a string
+    const slug = typeof params?.slug === 'string' ? params.slug : '';
+    if (!slug) {
+        console.error("BlogPostPage received invalid or missing slug in params:", params);
+        notFound(); // Trigger 404 if slug is invalid
+    }
+
+    const post = await getPostBySlug(slug);
 
     if (!post) {
-        notFound(); // Trigger 404 if post is null
+        notFound();
     }
 
     const { frontmatter, content } = post;
@@ -193,7 +190,7 @@ export default async function BlogPostPage(
                 )}
             </header>
 
-            {/* Apply prose styles for MDX content */}
+            {/* Consider adding error boundary around MDXRemote if content parsing might fail */}
             <div className="prose prose-stone dark:prose-invert max-w-none prose-img:rounded-md prose-a:text-primary hover:prose-a:text-primary/80">
                 <MDXRemote source={content} components={mdxComponents} />
             </div>
@@ -202,19 +199,24 @@ export default async function BlogPostPage(
 }
 
 // Keep generateStaticParams as is
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> { // Add return type
     const postsDirectory = path.join(process.cwd(), 'content/blogs');
     let filenames: string[] = [];
     try {
         filenames = fs.readdirSync(postsDirectory);
     } catch (error) {
         console.error("Could not read blog directory for static params:", error);
-        return []; // Return empty array on error
+        return [];
     }
 
-    return filenames
-        .filter(filename => filename.endsWith('.mdx') || filename.endsWith('.md'))
+    const slugs = filenames
+        .filter(filename => /\.(mdx|md)$/.test(filename)) // Use regex test
         .map((filename) => ({
             slug: filename.replace(/\.(mdx|md)$/, ''),
         }));
+
+    // Add logging to see what slugs are generated
+    // console.log("Generated static params:", slugs);
+    return slugs;
 }
+
