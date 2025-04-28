@@ -35,7 +35,7 @@ const ContactForm: React.FC = () => {
             }
 
             // If submission is successful, redirect
-            router.push('/success') // Or your success page path
+            router.push('/') // Or your success page path
 
         } catch (error) {
             console.error('Form submission error:', error)
