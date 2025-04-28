@@ -10,7 +10,6 @@ export default function BlogsPage() {
                 maxPosts={9}
                 showTitleRow={true}
             />
-
             <FacebookPostSection />
         </div>
     );

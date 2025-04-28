@@ -53,11 +53,6 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
   },
-  icons: {
-    icon: '/public/images/favicon.ico',
-    shortcut: '/public/images/favicon-16x16.png',
-    apple: '/public/images/apple-touch-icon.png',
-  },
   robots: {
     index: true,
     follow: true,

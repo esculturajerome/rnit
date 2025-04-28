@@ -2,10 +2,10 @@
 'use client'; // This component handles client-side state and interactions
 
 import React, { useState } from 'react';
-import { FacebookEmbed } from "@/components/facebook-embed";
+// Removed import for FacebookEmbed as we'll use iframes directly
 import TitleRow from "@/components/title-row";
 import { Button } from '@/components/ui/button';
-import { facebookPostUrls } from "@/data/facebook-posts"; // Import the URLs directly here
+import { facebookPostUrls } from "@/data/facebook-posts"; // Import the URLs
 
 const POSTS_PER_PAGE = 6; // Initial number of posts
 const POSTS_PER_LOAD = 3; // Number of posts to load per click (one row)
@@ -35,14 +35,30 @@ export const FacebookPostSection: React.FC = () => {
             {/* Grid layout for the embeds */}
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Map over the *visible* posts */}
-                {visiblePosts.map((url) => (
-                    <div key={url} className="flex justify-center">
-                        <div className="w-full max-w-lg">
-                            {/* Pass the postUrl to the embed component */}
-                            <FacebookEmbed postUrl={url} />
+                {visiblePosts.map((postUrl) => {
+                    // Encode the post URL for use in the iframe src
+                    const encodedUrl = encodeURIComponent(postUrl);
+                    // Construct the iframe source URL
+                    const iframeSrc = `https://www.facebook.com/plugins/post.php?href=${encodedUrl}&show_text=true&width=500`;
+
+                    return (
+                        <div key={postUrl} className="flex justify-center">
+                            {/* Use iframe directly */}
+                            <iframe
+                                src={iframeSrc}
+                                width="500" // You might want to make this responsive later
+                                height="600" // Adjust height as needed, or make it dynamic
+                                style={{ border: 'none', overflow: 'hidden' }}
+                                scrolling="no"
+                                frameBorder="0"
+                                allowFullScreen={true}
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                title={`Facebook Post Embed - ${postUrl.substring(0, 50)}`} // Add a descriptive title
+                                loading="lazy" // Add lazy loading for performance
+                            ></iframe>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
             {/* Load More Button */}
