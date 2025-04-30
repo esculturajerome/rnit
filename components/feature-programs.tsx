@@ -1,4 +1,3 @@
-// components/feature-programs.tsx
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
@@ -7,6 +6,8 @@ import { PROGRAMS_DATA, Program } from "@/data/programs";
 import TitleRow from "./title-row";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+
+import bg_pattern from "@/public/images/bg_pattern.png";
 
 const createSlug = (title: string): string => {
     return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -46,10 +47,20 @@ export const FeaturePrograms = ({
     const regularPrograms = featuredPrograms.length > 1 ? featuredPrograms.slice(1) : [];
 
     return (
-        <div className="w-full py-10 lg:py-20 bg-muted/40">
-            <div className="wrapper mx-auto">
+        <div className="relative w-full py-10 lg:py-20 bg-muted/40">
+            {/* Background Pattern Div */}
+            <div className="absolute inset-0 z-[-1]">
+                <Image
+                    src={bg_pattern}
+                    alt="Background Pattern"
+                    fill
+                    className="object-cover object-center opacity-10" // Adjust opacity as needed
+                    priority // Consider if this section is high priority for LCP
+                />
+            </div>
+            {/* Content Wrapper - Add relative positioning and z-index */}
+            <div className="relative z-10 wrapper mx-auto">
                 {showTitleRow && <TitleRow badge={badgeText} title={title} subText={subText} />}
-
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {/* Featured Program */}
                     {featuredProgram && regularPrograms.length > 0 && (
@@ -78,7 +89,6 @@ export const FeaturePrograms = ({
                                         {featuredProgram.subText}
                                     </p>
                                     <div className="mt-4">
-                                        {/* Use Link as the child */}
                                         <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
                                             <Link href={`/programs#${createSlug(featuredProgram.title)}`} className="flex items-center">
                                                 Learn more
@@ -90,7 +100,6 @@ export const FeaturePrograms = ({
                             </div>
                         </div>
                     )}
-
                     {/* Render the first program as a regular card if it's the only one */}
                     {featuredProgram && regularPrograms.length === 0 && (
                         <div key={featuredProgram.id} className="relative h-full rounded-md aspect-square overflow-hidden group sm:col-span-2 lg:col-span-2 xl:col-span-2">
@@ -117,7 +126,6 @@ export const FeaturePrograms = ({
                                         {featuredProgram.subText}
                                     </p>
                                     <div className="mt-3">
-                                        {/* Use Link as the child */}
                                         <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
                                             <Link href={`/programs#${createSlug(featuredProgram.title)}`} className="flex items-center">
                                                 Learn more
@@ -129,7 +137,6 @@ export const FeaturePrograms = ({
                             </div>
                         </div>
                     )}
-
                     {/* Regular Programs */}
                     {regularPrograms.map((program) => (
                         <div key={program.id} className="relative h-full rounded-md aspect-square overflow-hidden group">
@@ -156,7 +163,6 @@ export const FeaturePrograms = ({
                                         {program.subText}
                                     </p>
                                     <div className="mt-3">
-                                        {/* Use Link as the child */}
                                         <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
                                             <Link href={`/programs#${createSlug(program.title)}`} className="flex items-center">
                                                 Learn more
@@ -169,7 +175,6 @@ export const FeaturePrograms = ({
                         </div>
                     ))}
                 </div>
-
                 {showViewAllButton && (
                     <div className="mt-12 text-center">
                         <Button variant="outline" size="lg" asChild>
@@ -184,4 +189,3 @@ export const FeaturePrograms = ({
         </div>
     );
 };
-

@@ -9,13 +9,11 @@ import HeroImage from "@/public/images/hero-transparent.png";
 
 const Hero = ({ }) => {
     return (
-        // Added min-h-screen to ensure the container takes at least the full viewport height
-        // Added lg:h-screen to explicitly set height on large screens
-        <div className="relative flex flex-col px-0 pb-16 lg:flex-row lg:pb-0 wrapper__wide lg:h-[70vh]">
+        <div className="relative flex flex-col lg:flex-row lg:pb-0 lg:h-[70vh] overflow-hidden">
             {/* Content Section */}
             <div className="flex flex-col items-center z-10 w-full px-4 lg:px-8 order-2 lg:order-1 lg:w-1/2 lg:items-start lg:justify-center">
                 {/* Adjusted padding/margins for better alignment */}
-                <div className="mb-0 lg:max-w-lg bg-white py-12 lg:px-8 lg:border-b-8 border-secondary space-y-4 lg:space-y-8 lg:ml-0 lg:mt-0">
+                <div className="mb-0 lg:max-w-lg bg-white py-12 lg:px-8 lg:border-b-4 border-secondary space-y-4 lg:space-y-8 lg:ml-0 lg:mt-0">
                     <h2 className="max-w-lg text-3xl font-bold tracking-tight text-primary sm:text-4xl sm:leading-none">
                         Undertake direct training activities for TESDA
                     </h2>

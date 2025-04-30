@@ -147,7 +147,7 @@ const About = () => {
                                 className="flex flex-col bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden border border-border/40 h-full"
                             >
                                 <CardHeader>
-                                    <CardTitle className="text-xl font-semibold text-primary dark:text-primary-foreground">
+                                    <CardTitle className="text-3xl font-bold tracking-tight text-primary md:text-4xl lg:leading-none">
                                         {card.title}
                                     </CardTitle>
                                 </CardHeader>

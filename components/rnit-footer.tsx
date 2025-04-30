@@ -1,11 +1,11 @@
-// components/rnit-footer.tsx
+
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
-// Removed Accordion imports as they are no longer used here
+
 
 import SealImage from "@/public/images/transparency_seal.webp"
-// Removed bg_pattern import as it's no longer used here
+
 
 interface MenuItem {
     title: string;
@@ -14,11 +14,11 @@ interface MenuItem {
         url: string;
     }[];
 }
-// Removed footerCards interface
+
 
 interface FooterProps {
     tagline?: string;
-    // Removed footerCards prop
+
     menuItems?: MenuItem[];
     copyright?: string;
     bottomLinks?: {
@@ -30,7 +30,7 @@ interface FooterProps {
 const Footer = ({
     tagline = "A Transparency Seal, prominently displayed on the main page of the website of a particular government agency, is a certificate that it has complied with the requirements of Section 93. This Seal links to a page within the agency’s website which contains an index of downloadable items of each of the above-mentioned documents.",
     menuItems = [
-        // Keep menuItems as they are...
+
         {
             title: "Programs",
             links: [
@@ -50,7 +50,7 @@ const Footer = ({
                 { text: "Meet our team", url: "/about#meetourteam" },
                 { text: "Organizational Chart", url: "/about#orgchart" },
                 { text: "Assessment Center", url: "/about#assessmentCenter" },
-                { text: "Citizen's Charter", url: "/about/#citizen-charter" }, // Keep this link
+                { text: "Citizen's Charter", url: "/about/#citizen-charter" },
             ],
         },
         {
@@ -71,13 +71,10 @@ const Footer = ({
     ],
 }: FooterProps) => {
     return (
-        // Removed the top section containing the Accordion
-        // --- Bottom Footer Section ---
-        <section className="wrapper__wide"> {/* Keep the wrapper if needed, or remove if only footer content remains */}
-            <div className="py-6 lg:pt-16 lg:pb-12 bg-primary text-white"> {/* Adjusted top padding */}
+        <section className="wrapper__wide">
+            <div className="py-6 lg:pt-16 lg:pb-12 bg-primary text-white">
                 <footer className="wrapper">
                     <div className="grid grid-cols-2 gap-14 lg:grid-cols-5">
-                        {/* Seal Image */}
                         <div className="col-span-2 mb-8 lg:mb-0">
                             <div className="flex items-center gap-2 lg:justify-start">
                                 <div className="w-16 h-16 lg:w-24 lg:h-24 relative">
@@ -92,7 +89,6 @@ const Footer = ({
                             </div>
                             <p className="mt-4 md:w-10/12">{tagline}</p>
                         </div>
-                        {/* Menu Items */}
                         {menuItems.map((section, sectionIdx) => (
                             <div key={sectionIdx}>
                                 <h3 className="mb-6 font-semibold text-xl">{section.title}</h3>
@@ -110,7 +106,6 @@ const Footer = ({
                             </div>
                         ))}
                     </div>
-                    {/* Copyright and Bottom Links */}
                     <div className="mt-12 lg:mt-24 flex flex-col justify-between gap-4 pt-8 text-sm font-medium text-muted-foreground border-t border-gray-200 md:flex-row md:items-center">
                         <p className="text-gray-200">{copyright}</p>
                         <ul className="flex gap-4">
