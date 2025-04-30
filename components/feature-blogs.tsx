@@ -1,38 +1,33 @@
 // components/feature-blogs.tsx
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "./ui/button"; // Corrected import path
+import { Button } from "./ui/button";
 import Link from "next/link";
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import TitleRow from "./title-row";
 import Image from "next/image";
-import { cn } from "@/lib/utils"; // Import cn utility
+import { cn } from "@/lib/utils";
 
-// Define the structure of your blog post frontmatter
 interface BlogPost {
     slug: string;
     title: string;
     date: string;
     summary: string;
-    featuredImage?: string; // Add optional featuredImage field
+    featuredImage?: string;
 }
 
-// Define props for the component
 interface FeatureBlogsProps {
     maxPosts?: number;
     showTitleRow?: boolean;
-    showViewAllButton?: boolean; // Prop to control button visibility
-    // Props for TitleRow content (optional overrides)
+    showViewAllButton?: boolean;
     title?: string;
     subText?: string;
     badgeText?: string;
 }
 
-// Helper function to generate a preview from MDX content
 const generatePreview = (content: string, maxLength = 150): string => {
-    // (Keep the existing generatePreview function as is)
     let text = content.replace(/---[\s\S]*?---/, '').trim();
     text = text.replace(/^#+\s+/gm, '');
     text = text.replace(/^[\*\-\+]\s+/gm, '');
@@ -48,7 +43,6 @@ const generatePreview = (content: string, maxLength = 150): string => {
     return truncated + '...';
 };
 
-// Function to get and sort blog posts
 const getBlogPosts = (): BlogPost[] => {
     const postsDirectory = path.join(process.cwd(), 'content/blogs');
     let filenames: string[] = [];
@@ -78,7 +72,7 @@ const getBlogPosts = (): BlogPost[] => {
                 title: data.title,
                 date: data.date,
                 summary: summary,
-                featuredImage: data.featuredImage || '/images/placeholder-blog.jpg', // Get image or use placeholder
+                featuredImage: data.featuredImage || '/images/placeholder-blog.jpg',
             } as BlogPost;
         })
         .filter((post): post is BlogPost => post !== null);
@@ -88,26 +82,21 @@ const getBlogPosts = (): BlogPost[] => {
     return posts;
 };
 
-
-// Update the component to accept props
 export const FeatureBlogs = async ({
     maxPosts = 5,
     showTitleRow = true,
-    showViewAllButton = false, // Default to FALSE - only show if explicitly set
-    // Default values for TitleRow props
+    showViewAllButton = false,
     title = "Insights & Updates",
     subText = "Stay Ahead with Our Latest Blogs",
     badgeText = "Blogs"
 }: FeatureBlogsProps) => {
     const allPosts = getBlogPosts();
-    // Use maxPosts prop to slice the array
     const latestPosts = allPosts.slice(0, maxPosts);
 
     if (latestPosts.length === 0) {
         return (
             <div className="w-full py-10 lg:py-20">
                 <div className="wrapper mx-auto">
-                    {/* Conditionally render TitleRow */}
                     {showTitleRow && <TitleRow badge={badgeText} title={title} subText={subText} />}
                     <p className="text-muted-foreground text-center mt-10">No blog posts found yet.</p>
                 </div>
@@ -115,24 +104,18 @@ export const FeatureBlogs = async ({
         );
     }
 
-    // Determine featured post only if there are posts
     const featuredPost = latestPosts.length > 0 ? latestPosts[0] : null;
-    // Determine regular posts based on whether a featured post exists
     const regularPosts = latestPosts.length > 1 ? latestPosts.slice(1) : [];
 
-    // Helper function to format date
     const formatDate = (dateString: string) => {
         return new Date(dateString).toLocaleDateString('en-US', {
             year: 'numeric', month: 'long', day: 'numeric'
         });
     };
 
-    // --- Removed button element creation from here ---
-
     return (
         <div className="w-full py-10 lg:py-20">
             <div className="wrapper mx-auto">
-                {/* Conditionally render TitleRow - Removed actionElement */}
                 {showTitleRow && (
                     <TitleRow
                         badge={badgeText}
@@ -141,27 +124,22 @@ export const FeatureBlogs = async ({
                     />
                 )}
 
-                {/* Adjust grid layout slightly for better flexibility */}
-                <div className={cn("gap-8", showTitleRow && "mt-10", "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4")}> {/* Conditionally add margin */}
+                <div className={cn("gap-8", showTitleRow && "mt-10", "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4")}>
                     {/* Featured Post */}
                     {featuredPost && regularPosts.length > 0 && (
                         <div className="relative h-full w-full rounded-md aspect-square overflow-hidden sm:col-span-2 lg:col-span-2 lg:row-span-2 group">
-                            {/* Background Image */}
                             {featuredPost.featuredImage && (
                                 <Image
                                     src={featuredPost.featuredImage}
                                     alt={featuredPost.title}
                                     fill
-                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw" // Adjusted sizes
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
                                     style={{ objectFit: "cover" }}
                                     className="z-0 transition-transform duration-300 group-hover:scale-105"
-                                    priority // Add priority for the largest image above the fold
+                                    priority
                                 />
                             )}
-                            {/* Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"></div>
-
-                            {/* Content */}
                             <div className="relative z-20 p-6 flex justify-between flex-col h-full text-white">
                                 <CalendarDays className="w-8 h-8 stroke-1 text-gray-300" />
                                 <div className="flex flex-col">
@@ -175,11 +153,12 @@ export const FeatureBlogs = async ({
                                     </p>
                                     <p className="text-xs text-gray-400 mt-2">{formatDate(featuredPost.date)}</p>
                                     <div className="mt-4">
-                                        <Button href={`/blogs/${featuredPost.slug}`} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
-                                            <div className="flex items-center">
+                                        {/* Use Link as the child */}
+                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                            <Link href={`/blogs/${featuredPost.slug}`} className="flex items-center">
                                                 Read more
                                                 <ArrowRight className="ml-2 size-4" />
-                                            </div>
+                                            </Link>
                                         </Button>
                                     </div>
                                 </div>
@@ -188,9 +167,8 @@ export const FeatureBlogs = async ({
                     )}
 
                     {/* Regular Posts */}
-                    {/* Render the first post as regular if it's the only one */}
                     {featuredPost && regularPosts.length === 0 && (
-                        <div key={featuredPost.slug} className="relative h-full rounded-md aspect-square overflow-hidden group sm:col-span-2 lg:col-span-2 xl:col-span-2"> {/* Adjust span */}
+                        <div key={featuredPost.slug} className="relative h-full rounded-md aspect-square overflow-hidden group sm:col-span-2 lg:col-span-2 xl:col-span-2">
                             {featuredPost.featuredImage && (
                                 <Image
                                     src={featuredPost.featuredImage}
@@ -215,11 +193,12 @@ export const FeatureBlogs = async ({
                                     </p>
                                     <p className="text-xs text-gray-400 mt-2">{formatDate(featuredPost.date)}</p>
                                     <div className="mt-3">
-                                        <Button href={`/blogs/${featuredPost.slug}`} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
-                                            <div className="flex items-center">
+                                        {/* Use Link as the child */}
+                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                            <Link href={`/blogs/${featuredPost.slug}`} className="flex items-center">
                                                 Read more
                                                 <ArrowRight className="ml-2 size-4" />
-                                            </div>
+                                            </Link>
                                         </Button>
                                     </div>
                                 </div>
@@ -227,10 +206,8 @@ export const FeatureBlogs = async ({
                         </div>
                     )}
 
-                    {/* Map over remaining regular posts */}
                     {regularPosts.map((post) => (
                         <div key={post.slug} className="relative h-full rounded-md aspect-square overflow-hidden group">
-                            {/* Background Image */}
                             {post.featuredImage && (
                                 <Image
                                     src={post.featuredImage}
@@ -241,10 +218,7 @@ export const FeatureBlogs = async ({
                                     className="z-0 transition-transform duration-300 group-hover:scale-105"
                                 />
                             )}
-                            {/* Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"></div>
-
-                            {/* Content */}
                             <div className="relative z-20 p-6 flex justify-between flex-col h-full text-white">
                                 <CalendarDays className="w-8 h-8 stroke-1 text-gray-300" />
                                 <div className="flex flex-col">
@@ -258,11 +232,12 @@ export const FeatureBlogs = async ({
                                     </p>
                                     <p className="text-xs text-gray-400 mt-2">{formatDate(post.date)}</p>
                                     <div className="mt-3">
-                                        <Button href={`/blogs/${post.slug}`} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
-                                            <div className="flex items-center">
+                                        {/* Use Link as the child */}
+                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                            <Link href={`/blogs/${post.slug}`} className="flex items-center">
                                                 Read more
                                                 <ArrowRight className="ml-2 size-4" />
-                                            </div>
+                                            </Link>
                                         </Button>
                                     </div>
                                 </div>
@@ -271,7 +246,6 @@ export const FeatureBlogs = async ({
                     ))}
                 </div>
 
-                {/* --- View All Blogs Button (Moved Here) --- */}
                 {showViewAllButton && (
                     <div className="mt-12 text-center">
                         <Button variant="outline" size="lg" asChild>
@@ -282,8 +256,6 @@ export const FeatureBlogs = async ({
                         </Button>
                     </div>
                 )}
-                {/* --- End Button --- */}
-
             </div>
         </div>
     );

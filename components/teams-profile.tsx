@@ -37,23 +37,21 @@ export const TeamsProfile = ({ employees }: TeamsProfileProps) => {
             api.scrollTo(nextIndex)
         }, 1500)
 
-        return () => clearInterval(interval) // Cleanup interval on unmount
+        return () => clearInterval(interval)
     }, [api, current])
 
     return (
         <div className="w-full py-20 lg:py-40 relative wrapper__wide" id="meetourteam">
-            {/* Removed intermediate div, applied relative directly */}
             <div className="absolute inset-0 z-[-1]">
                 <Image
                     src={bg_pattern}
                     alt="Background"
-                    fill // Use fill prop
-                    // Removed layout, objectFit, objectPosition props
-                    className="object-cover object-center opacity-20" // Use Tailwind classes
-                    priority // Keep priority if needed
+                    fill
+                    className="object-cover object-center opacity-10"
+                    priority
                 />
             </div>
-            <div className="wrapper mx-auto relative z-10"> {/* Ensure content is above background */}
+            <div className="wrapper mx-auto relative z-10">
                 <div className="flex flex-col gap-10">
                     <TitleRow title="Meet Our Team" subText="A glimpse of the passionate individuals behind our success." />
                     <Carousel setApi={setApi} className="w-full">
@@ -67,7 +65,7 @@ export const TeamsProfile = ({ employees }: TeamsProfileProps) => {
                                         <Image
                                             src={employee.image}
                                             alt={employee.name}
-                                            width={200} // Adjust as needed
+                                            width={200}
                                             height={200}
                                             className="mx-auto object-contain aspect-square overflow-hidden"
                                         />

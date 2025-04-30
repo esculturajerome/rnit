@@ -4,28 +4,24 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu } from "lucide-react" // Import Menu icon
+import { Menu } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
     NavigationMenu,
-    // Removed unused imports like NavigationMenuContent, etc.
-    // Keep NavigationMenuLink if ListItem is used, otherwise remove
 } from "@/components/ui/navigation-menu"
 import { Button } from "./ui/button"
 import {
     Sheet,
     SheetContent,
-    SheetClose, // Import SheetClose
+    SheetClose,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
     SheetFooter,
-} from "@/components/ui/sheet" // Import Sheet components
+} from "@/components/ui/sheet"
 
 import RNITLogo from "@/public/RNIT-logo.webp";
-
-// Removed unused 'components' array and 'ListItem' component
 
 export function RnitNav() {
     const navLinks = [
@@ -36,15 +32,13 @@ export function RnitNav() {
     ];
 
     return (
-        // Use NavigationMenu primarily as a container for layout consistency
         <NavigationMenu className="wrapper__wide bg-primary p-3 lg:px-8 flex justify-between items-center">
-            {/* Logo and Title */}
-            <Link href="/" className="inline-flex items-center cursor-pointer shrink-0 mr-4"> {/* Added shrink-0 and mr-4 */}
+            <Link href="/" className="inline-flex items-center cursor-pointer shrink-0 mr-4">
                 <Image
                     src={RNITLogo}
                     width={50}
                     height={50}
-                    style={{ objectFit: "contain" }} // Use style for objectFit
+                    style={{ objectFit: "contain" }}
                     alt="logo"
                 />
                 <h2 className="ml-3 uppercase text-xs font-medium md:text-sm text-white tracking-wider">
@@ -54,12 +48,13 @@ export function RnitNav() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex gap-8"> {/* Reduced gap */}
+            <div className="hidden lg:flex gap-8">
                 {navLinks.map((link) => (
-                    <Button key={link.href} href={link.href} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
-                        <div className="flex items-center">
+                    // Use Link as the child of Button when asChild is true
+                    <Button key={link.href} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                        <Link href={link.href}>
                             {link.label}
-                        </div>
+                        </Link>
                     </Button>
                 ))}
             </div>
@@ -76,7 +71,6 @@ export function RnitNav() {
                     <SheetContent side="right" className="w-[280px] bg-white text-primary border-l-gray-700 pt-10">
                         <SheetHeader className="text-left mb-6">
                             <SheetTitle className="text-white hidden">Menu</SheetTitle>
-                            {/* Optional: <SheetDescription>Navigate the site</SheetDescription> */}
                         </SheetHeader>
                         <nav className="flex flex-col space-y-2">
                             {navLinks.map((link) => (
