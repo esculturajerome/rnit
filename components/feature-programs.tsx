@@ -47,7 +47,7 @@ export const FeaturePrograms = ({
     const regularPrograms = featuredPrograms.length > 1 ? featuredPrograms.slice(1) : [];
 
     return (
-        <div className="relative w-full py-10 lg:py-20 bg-muted/40">
+        <div className="wrapper__wide relative w-full py-10 lg:py-20 bg-muted/40">
             {/* Background Pattern Div */}
             <div className="absolute inset-0 z-[-1]">
                 <Image

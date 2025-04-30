@@ -9,7 +9,7 @@ import HeroImage from "@/public/images/hero-transparent.png";
 
 const Hero = ({ }) => {
     return (
-        <div className="relative flex flex-col lg:flex-row lg:pb-0 lg:h-[70vh] overflow-hidden">
+        <div className="relative wrapper__wide flex flex-col lg:flex-row lg:pb-0 lg:h-[70vh] overflow-hidden">
             {/* Content Section */}
             <div className="flex flex-col items-center z-10 w-full px-4 lg:px-8 order-2 lg:order-1 lg:w-1/2 lg:items-start lg:justify-center">
                 {/* Adjusted padding/margins for better alignment */}

@@ -36,7 +36,7 @@ export function RnitNav() {
 
     return (
         // Keep existing wrapper and background for the main nav bar
-        <NavigationMenu className="wrapper__wide bg-primary p-3 lg:px-8 flex justify-between items-center sticky top-0 z-50 shadow-md"> {/* Added sticky, top-0, z-50, shadow */}
+        <NavigationMenu className="wrapper__wide bg-primary p-3 lg:px-8 flex justify-between items-center sticky top-0 z-50"> {/* Added sticky, top-0, z-50, shadow */}
             <Link href="/" className="inline-flex items-center cursor-pointer shrink-0 mr-4">
                 <Image
                     src={RNITLogo}
