@@ -36,7 +36,7 @@ export function RnitNav() {
 
     return (
         // Keep existing wrapper and background for the main nav bar
-        <NavigationMenu className="wrapper__wide bg-primary !px-0 py-3 sticky top-0 z-50"> {/* Added sticky, top-0, z-50, shadow */}
+        <NavigationMenu className="wrapper__wide flex justify-between px-4 lg:px-0 bg-primary py-3 sticky top-0 z-50"> {/* Added sticky, top-0, z-50, shadow */}
             <div className="wrapper flex justify-between items-center ">
                 <Link href="/" className="inline-flex items-center cursor-pointer shrink-0 mr-4">
                     <Image
@@ -62,11 +62,7 @@ export function RnitNav() {
                                 {link.label}
                             </Link>
                         </Button>
-                        //     <Button key={link.href} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded" asChild>
-                        //     <Link href={link.href}>
-                        //         {link.label}
-                        //     </Link>
-                        // </Button>
+
                     ))}
                 </div>
 
