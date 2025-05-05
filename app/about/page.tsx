@@ -14,7 +14,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 
-import orgChart from "@/public/images/org-chart.jpg";
+import orgChart from "@/public/images/2025-org-chart.jpg";
 import assessmentFee from "@/public/images/assessment-fee_2024.jpg";
 import assessmentMission from "@/public/images/assessment-mission.jpg";
 import CharterImage from "@/public/images/charter.png";

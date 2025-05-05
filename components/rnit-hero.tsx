@@ -11,7 +11,7 @@ const Hero = ({ }) => {
     return (
         <div className="relative wrapper__wide flex flex-col lg:flex-row lg:pb-0 lg:h-[70vh] overflow-hidden">
             {/* Content Section */}
-            <div className="flex flex-col items-center z-10 w-full px-4 lg:px-8 order-2 lg:order-1 lg:w-1/2 lg:items-start lg:justify-center">
+            <div className="flex flex-col items-center z-10 w-full px-4 lg:px-8 order-2 lg:order-1 lg:w-1/2 lg:items-end lg:justify-center">
                 {/* Adjusted padding/margins for better alignment */}
                 <div className="mb-0 lg:max-w-lg bg-white py-12 lg:px-8 lg:border-b-4 border-secondary space-y-4 lg:space-y-8 lg:ml-0 lg:mt-0">
                     <h2 className="max-w-lg text-3xl font-bold tracking-tight text-primary sm:text-4xl sm:leading-none">

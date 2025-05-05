@@ -25,7 +25,7 @@ const createSlug = (title: string): string => {
 
 export default function ProgramsPage() {
     return (
-        <div className="container mx-auto py-10 lg:py-16 px-4">
+        <div className="wrapper mx-auto py-10 lg:py-16 px-4">
             <TitleRow
                 title="Our Programs"
                 subText="Explore the diverse range of technical and vocational programs offered at RNIT."

@@ -36,33 +36,42 @@ export function RnitNav() {
 
     return (
         // Keep existing wrapper and background for the main nav bar
-        <NavigationMenu className="wrapper__wide bg-primary p-3 lg:px-8 flex justify-between items-center sticky top-0 z-50"> {/* Added sticky, top-0, z-50, shadow */}
-            <Link href="/" className="inline-flex items-center cursor-pointer shrink-0 mr-4">
-                <Image
-                    src={RNITLogo}
-                    width={50}
-                    height={50}
-                    style={{ objectFit: "contain" }}
-                    alt="logo"
-                    priority // Prioritize logo loading
-                />
-                <h2 className="ml-3 uppercase text-xs font-medium md:text-sm text-white tracking-wider">
-                    Romblon National <br />
-                    Institute of Technology
-                </h2>
-            </Link>
+        <NavigationMenu className="wrapper__wide bg-primary !px-0 py-3 sticky top-0 z-50"> {/* Added sticky, top-0, z-50, shadow */}
+            <div className="wrapper flex justify-between items-center ">
+                <Link href="/" className="inline-flex items-center cursor-pointer shrink-0 mr-4">
+                    <Image
+                        src={RNITLogo}
+                        width={50}
+                        height={50}
+                        style={{ objectFit: "contain" }}
+                        alt="logo"
+                        priority // Prioritize logo loading
+                    />
+                    <h2 className="ml-3 uppercase text-xs font-medium md:text-sm text-white tracking-wider">
+                        Romblon National <br />
+                        Institute of Technology
+                    </h2>
+                </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex gap-8">
-                {/* Filter out the enrolment/assessment links for desktop view */}
-                {navLinks.filter(link => !["/enrolment", "/assessment"].includes(link.href)).map((link) => (
-                    <Button key={link.href} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded" asChild>
-                        <Link href={link.href}>
-                            {link.label}
-                        </Link>
-                    </Button>
-                ))}
+                {/* Desktop Navigation */}
+                <div className="hidden lg:flex gap-2">
+                    {/* Filter out the enrolment/assessment links for desktop view */}
+                    {navLinks.filter(link => !["/enrolment", "/assessment"].includes(link.href)).map((link) => (
+                        <Button variant='ghost' key={link.href} asChild>
+                            <Link href={link.href}>
+                                {link.label}
+                            </Link>
+                        </Button>
+                        //     <Button key={link.href} variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded" asChild>
+                        //     <Link href={link.href}>
+                        //         {link.label}
+                        //     </Link>
+                        // </Button>
+                    ))}
+                </div>
+
             </div>
+
 
             {/* Mobile Navigation Trigger */}
             <div className="lg:hidden">

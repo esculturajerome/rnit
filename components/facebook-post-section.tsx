@@ -64,7 +64,7 @@ export const FacebookPostSection: React.FC = () => {
             {/* Load More Button */}
             {hasMorePosts && (
                 <div className="mt-12 text-center">
-                    <Button onClick={loadMorePosts} size="lg">
+                    <Button variant='secondary' onClick={loadMorePosts} size="lg">
                         Load More Posts
                     </Button>
                 </div>

@@ -80,27 +80,28 @@ export default function RootLayout({
           poppins.variable
         )}
       >
-        <header className="bg-primary/90 flex justify-end gap-1 sm:gap-2 pr-3 lg:pr-8 py-1 wrapper__wide">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-white hover:bg-white/10 hover:text-white px-2 sm:px-3"
-            asChild
-          >
-            <Link href="/enrolment">
-              Online Enrolment
-            </Link>
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-white hover:bg-white/10 hover:text-white px-2 sm:px-3"
-            asChild
-          >
-            <Link href="/assessment">
-              Online Assessment
-            </Link>
-          </Button>
+        <header className="bg-primary/90 py-1 wrapper__wide">
+          <div className="wrapper flex justify-end gap-1 sm:gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              asChild
+            >
+              <Link href="/enrolment">
+                Online Enrolment
+              </Link>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              asChild
+            >
+              <Link href="/assessment">
+                Online Assessment
+              </Link>
+            </Button>
+          </div>
+
         </header>
         <RnitNav />
         <main className="flex-grow">{children}</main>

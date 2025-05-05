@@ -1,11 +1,15 @@
+// components/teams-profile.tsx
 "use client"
 
-import { useEffect, useState } from "react"
+import React, { useRef } from "react" // Needed for useRef
+import Autoplay from "embla-carousel-autoplay" // Carousel Autoplay plugin
 import {
     Carousel,
-    CarouselApi,
+    // CarouselApi, // Removed unused import
     CarouselContent,
     CarouselItem,
+    CarouselNext,     // Navigation button
+    CarouselPrevious, // Navigation button
 } from "@/components/ui/carousel"
 import Image from "next/image"
 import TitleRow from "./title-row"
@@ -24,24 +28,15 @@ interface TeamsProfileProps {
 }
 
 export const TeamsProfile = ({ employees }: TeamsProfileProps) => {
-    const [api, setApi] = useState<CarouselApi>()
-    const [current, setCurrent] = useState(0)
-
-    useEffect(() => {
-        if (!api) return
-
-        const interval = setInterval(() => {
-            const nextIndex =
-                api.selectedScrollSnap() + 1 === api.scrollSnapList().length ? 0 : current + 1
-            setCurrent(nextIndex)
-            api.scrollTo(nextIndex)
-        }, 1500)
-
-        return () => clearInterval(interval)
-    }, [api, current])
+    // useRef to keep the plugin instance stable across renders
+    const plugin = useRef(
+        // Configure Autoplay: 2s delay, stop on interaction/hover
+        Autoplay({ delay: 2000, stopOnInteraction: true, stopOnMouseEnter: true })
+    )
 
     return (
         <div className="w-full py-20 lg:py-40 relative wrapper__wide" id="meetourteam">
+            {/* Background Pattern */}
             <div className="absolute inset-0 z-[-1]">
                 <Image
                     src={bg_pattern}
@@ -54,27 +49,40 @@ export const TeamsProfile = ({ employees }: TeamsProfileProps) => {
             <div className="wrapper mx-auto relative z-10">
                 <div className="flex flex-col gap-10">
                     <TitleRow title="Meet Our Team" subText="A glimpse of the passionate individuals behind our success." />
-                    <Carousel setApi={setApi} className="w-full">
+                    <Carousel
+                        plugins={[plugin.current]} // Pass the autoplay plugin instance
+                        className="w-full"
+                        opts={{
+                            align: "start", // Ensure items align to the start
+                            loop: true,     // Enable looping
+                        }}
+                    >
                         <CarouselContent>
-                            {employees.map((employee, index) => (
+                            {employees.map((employee) => (
                                 <CarouselItem
-                                    className="basis-1/4 lg:basis-1/6"
-                                    key={index}
+                                    // Adjust item width based on screen size
+                                    className="basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6" // Shows ~3 up to 8 items
+                                    key={employee.id} // Use unique ID for key
                                 >
-                                    <div className="flex rounded-md aspect-square items-center justify-center p-2 ">
+                                    {/* Increased padding slightly for larger images */}
+                                    <div className="flex rounded-md aspect-square items-center justify-center p-2 sm:p-3">
                                         <Image
                                             src={employee.image}
                                             alt={employee.name}
-                                            width={200}
-                                            height={200}
-                                            className="mx-auto object-contain aspect-square overflow-hidden"
+                                            width={150} // Base size for mobile/smaller screens
+                                            height={150}
+                                            className="mx-auto object-cover aspect-square shadow rounded-md lg:w-[180px] lg:h-[180px]"
+                                        // --- End Size Adjustment ---
                                         />
                                     </div>
-                                    <p className="text-sm text-center mt-2">{employee.name}</p>
-                                    <p className="text-xs text-center text-gray-500">{employee.position}</p>
+                                    <p className="text-sm font-medium text-center mt-2 truncate px-1">{employee.name}</p>
+                                    <p className="text-xs text-center text-gray-500 truncate px-1">{employee.position}</p>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
+                        {/* Carousel Navigation Buttons */}
+                        <CarouselPrevious className="absolute left-[-10px] sm:left-[-20px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white border-primary text-primary" />
+                        <CarouselNext className="absolute right-[-10px] sm:right-[-20px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white border-primary text-primary" />
                     </Carousel>
                 </div>
             </div>

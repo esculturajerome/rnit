@@ -135,7 +135,7 @@ const ContactForm: React.FC = () => {
                 <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
             )}
 
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" variant='secondary' className="" disabled={isLoading}>
                 {isLoading && (
                     <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                 )}

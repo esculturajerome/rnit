@@ -1,8 +1,9 @@
+// components/feature-programs.tsx
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 
-import { PROGRAMS_DATA, Program } from "@/data/programs";
+import { PROGRAMS_DATA, Program } from "@/data/programs"; // Assuming Program type is exported from here
 import TitleRow from "./title-row";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
@@ -89,10 +90,12 @@ export const FeaturePrograms = ({
                                         {featuredProgram.subText}
                                     </p>
                                     <div className="mt-4">
-                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
-                                            <Link href={`/programs#${createSlug(featuredProgram.title)}`} className="flex items-center">
+                                        {/* Added group class to Link */}
+                                        <Button variant="link" className="p-0 !pl-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                            <Link href={`/programs#${createSlug(featuredProgram.title)}`} className="flex items-center group">
                                                 Learn more
-                                                <ArrowRight className="ml-2 size-4" />
+                                                {/* Added animation classes to ArrowRight */}
+                                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                                             </Link>
                                         </Button>
                                     </div>
@@ -126,10 +129,12 @@ export const FeaturePrograms = ({
                                         {featuredProgram.subText}
                                     </p>
                                     <div className="mt-3">
-                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
-                                            <Link href={`/programs#${createSlug(featuredProgram.title)}`} className="flex items-center">
+                                        {/* Added group class to Link */}
+                                        <Button variant="link" className="!p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                            <Link href={`/programs#${createSlug(featuredProgram.title)}`} className="flex items-center group">
                                                 Learn more
-                                                <ArrowRight className="ml-2 size-4" />
+                                                {/* Added animation classes to ArrowRight */}
+                                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                                             </Link>
                                         </Button>
                                     </div>
@@ -163,10 +168,12 @@ export const FeaturePrograms = ({
                                         {program.subText}
                                     </p>
                                     <div className="mt-3">
-                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
-                                            <Link href={`/programs#${createSlug(program.title)}`} className="flex items-center">
+                                        {/* Added group class to Link */}
+                                        <Button variant="link" className="!p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                            <Link href={`/programs#${createSlug(program.title)}`} className="flex items-center group">
                                                 Learn more
-                                                <ArrowRight className="ml-2 size-4" />
+                                                {/* Added animation classes to ArrowRight */}
+                                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                                             </Link>
                                         </Button>
                                     </div>
@@ -177,7 +184,7 @@ export const FeaturePrograms = ({
                 </div>
                 {showViewAllButton && (
                     <div className="mt-12 text-center">
-                        <Button variant="outline" size="lg" asChild>
+                        <Button variant="secondary" size="lg" asChild>
                             <Link href="/programs" className="flex items-center group">
                                 View All Programs
                                 <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />

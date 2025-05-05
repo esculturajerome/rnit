@@ -154,10 +154,10 @@ export const FeatureBlogs = async ({
                                     <p className="text-xs text-gray-400 mt-2">{formatDate(featuredPost.date)}</p>
                                     <div className="mt-4">
                                         {/* Use Link as the child */}
-                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                        <Button variant="link" className="!p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
                                             <Link href={`/blogs/${featuredPost.slug}`} className="flex items-center">
                                                 Read more
-                                                <ArrowRight className="ml-2 size-4" />
+                                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                                             </Link>
                                         </Button>
                                     </div>
@@ -194,10 +194,10 @@ export const FeatureBlogs = async ({
                                     <p className="text-xs text-gray-400 mt-2">{formatDate(featuredPost.date)}</p>
                                     <div className="mt-3">
                                         {/* Use Link as the child */}
-                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                        <Button variant="link" className="!p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
                                             <Link href={`/blogs/${featuredPost.slug}`} className="flex items-center">
                                                 Read more
-                                                <ArrowRight className="ml-2 size-4" />
+                                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                                             </Link>
                                         </Button>
                                     </div>
@@ -233,10 +233,10 @@ export const FeatureBlogs = async ({
                                     <p className="text-xs text-gray-400 mt-2">{formatDate(post.date)}</p>
                                     <div className="mt-3">
                                         {/* Use Link as the child */}
-                                        <Button variant="link" className="p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
+                                        <Button variant="link" className="!p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded" asChild>
                                             <Link href={`/blogs/${post.slug}`} className="flex items-center">
                                                 Read more
-                                                <ArrowRight className="ml-2 size-4" />
+                                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                                             </Link>
                                         </Button>
                                     </div>
@@ -248,7 +248,7 @@ export const FeatureBlogs = async ({
 
                 {showViewAllButton && (
                     <div className="mt-12 text-center">
-                        <Button variant="outline" size="lg" asChild>
+                        <Button variant="secondary" size="lg" asChild>
                             <Link href="/blogs" className="flex items-center group">
                                 View All Blogs
                                 <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
