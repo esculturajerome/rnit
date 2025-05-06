@@ -1,6 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from "next/font/google";
+import { Playfair_Display, Roboto } from "next/font/google";
 import "./globals.css";
 import { RnitNav } from "@/components/rnit-nav";
 import Link from "next/link";
@@ -13,16 +13,16 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ['400', '500', '600', '700']
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Add weights you need
+  variable: '--font-roboto', // Crucial part
 });
 
 // --- Metadata Update ---
 const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Define your base URL
 const siteTitle = "Romblon National Institute of Technology";
-const siteDescription = "Skilling Romblon thru quality TVET Delivery for Peoples Prosperity";
+const siteDescription = "Skilling Romblon thru quality TVET Delivery for People's Prosperity"; // Corrected typo
 const socialBanner = "/public/images/charter.jpg";
 
 export const metadata: Metadata = {
@@ -72,12 +72,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(playfairDisplay.variable, roboto.variable)} // Apply font variables here
+    >
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          playfairDisplay.variable,
-          poppins.variable
+          "min-h-screen bg-background font-sans antialiased" // Base body styles
+          // Font variables removed from here
         )}
       >
         <header className="bg-primary/90 py-1 wrapper__wide">

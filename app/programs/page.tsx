@@ -25,7 +25,7 @@ const createSlug = (title: string): string => {
 
 export default function ProgramsPage() {
     return (
-        <div className="wrapper mx-auto py-10 lg:py-16 px-4">
+        <div className="wrapper mx-auto py-10 lg:py-16">
             <TitleRow
                 title="Our Programs"
                 subText="Explore the diverse range of technical and vocational programs offered at RNIT."
@@ -82,10 +82,10 @@ export default function ProgramsPage() {
                                     <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3 text-primary">
                                         {program.title}
                                     </h2>
-                                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                                    <p className=" mb-6 leading-relaxed">
                                         {program.subText}
                                     </p>
-                                    <ul className="space-y-3 list-disc list-inside text-muted-foreground">
+                                    <ul className="space-y-3 list-disc list-inside ">
                                         {program.desc1 && <li>{program.desc1}</li>}
                                         {program.desc2 && <li>{program.desc2}</li>}
                                         {program.desc3 && <li>{program.desc3}</li>}
@@ -135,7 +135,7 @@ export default function ProgramsPage() {
                                                                 )}
                                                             </Carousel>
                                                         ) : (
-                                                            <div className="aspect-video w-full bg-muted rounded-md flex items-center justify-center text-muted-foreground">
+                                                            <div className="aspect-video w-full bg-muted rounded-md flex items-center justify-center ">
                                                                 No images available
                                                             </div>
                                                         )}
@@ -144,8 +144,8 @@ export default function ProgramsPage() {
                                                     {/* Qualification Text (Bottom) */}
                                                     <div>
                                                         <h4 className="text-lg font-medium mb-1">{qual.qualification}</h4>
-                                                        <p className="text-sm text-muted-foreground"><strong>Venue:</strong> {qual.venue}</p>
-                                                        <p className="text-sm text-muted-foreground"><strong>Date:</strong> {qual.date}</p>
+                                                        <p className="text-sm "><strong>Venue:</strong> {qual.venue}</p>
+                                                        <p className="text-sm "><strong>Date:</strong> {qual.date}</p>
                                                     </div>
                                                 </div>
                                             );
