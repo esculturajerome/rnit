@@ -35,7 +35,7 @@ const ContactForm: React.FC = () => {
             }
 
             // If submission is successful, redirect
-            router.push('/') // Or your success page path
+            router.push('/contact/success')
 
         } catch (error) {
             console.error('Form submission error:', error)
@@ -65,10 +65,10 @@ const ContactForm: React.FC = () => {
     return (
         // Ensure Netlify can find the form name correctly
         <form
-            name="RNITContact" // This name must match the hidden input value
+            name="RNITContactForm" // This name must match the hidden input value
             method="post"
-            // data-netlify="true"
-            // data-netlify-honeypot="bot-field" // Optional: Add honeypot for spam
+            data-netlify="true"
+            data-netlify-honeypot="bot-field" // Optional: Add honeypot for spam
             onSubmit={handleSubmit}
             className="space-y-4"
         >
@@ -108,12 +108,13 @@ const ContactForm: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-                <Label htmlFor="email">E-mail</Label>
+                <Label htmlFor="email">E-mail*</Label>
                 <Input
                     id="email"
                     type="email"
                     name="Email" // Ensure 'name' attribute is present
                     placeholder="juan.delacruz@example.com"
+                    required
                     disabled={isLoading} // Disable when loading
                 />
             </div>
@@ -135,7 +136,7 @@ const ContactForm: React.FC = () => {
                 <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
             )}
 
-            <Button type="submit" variant='secondary' className="" disabled={isLoading}>
+            <Button type="submit" disabled={isLoading}>
                 {isLoading && (
                     <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
                 )}

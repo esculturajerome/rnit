@@ -94,7 +94,7 @@ export default function ProgramsPage() {
                                         {program.desc4 && <li>{program.desc4}</li>}
                                     </ul>
                                     <ul className="mt-8">
-                                        <Link href="/enrolment"><Button variant="secondary" size="lg">Enrol Now</Button></Link>
+                                        <Link href="/enrolment"><Button size="lg">Enrol Now</Button></Link>
                                     </ul>
                                 </div>
 

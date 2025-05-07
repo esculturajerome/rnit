@@ -22,7 +22,7 @@ const Hero = ({ }) => {
                     </p>
                     <div className="flex items-center gap-4">
                         <div>
-                            <Button variant="secondary" size='lg' asChild className="w-full sm:w-auto">
+                            <Button size='lg' asChild className="w-full sm:w-auto">
                                 <a href="/enrolment">Enrol now</a>
                             </Button>
                         </div>

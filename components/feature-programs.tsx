@@ -184,7 +184,7 @@ export const FeaturePrograms = ({
                 </div>
                 {showViewAllButton && (
                     <div className="mt-12 text-center">
-                        <Button variant="secondary" size="lg" asChild>
+                        <Button size="lg" asChild>
                             <Link href="/programs" className="flex items-center group">
                                 View All Programs
                                 <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />

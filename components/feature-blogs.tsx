@@ -248,7 +248,7 @@ export const FeatureBlogs = async ({
 
                 {showViewAllButton && (
                     <div className="mt-12 text-center">
-                        <Button variant="secondary" size="lg" asChild>
+                        <Button size="lg" asChild>
                             <Link href="/blogs" className="flex items-center group">
                                 View All Blogs
                                 <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />

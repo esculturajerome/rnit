@@ -121,7 +121,7 @@ const About = () => {
                                 agencies use to communicate their service standards on the delivery
                                 of government services to their citizens or clients.
                             </p>
-                            <Button variant="secondary" asChild className="w-auto mt-6">
+                            <Button asChild className="w-auto mt-6">
                                 <a href="/documents/citizens-charter.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
                             </Button>
                         </div>
