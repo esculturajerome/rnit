@@ -87,7 +87,7 @@ const ContactForm: React.FC = () => {
                 <Label htmlFor="username">Name*</Label>
                 <Input
                     id="username"
-                    name="Name" for form data
+                    name="Name" // Ensure 'name' attribute is present for form data
                     placeholder="Juan Dela Cruz"
                     required
                     disabled={isLoading} // Disable when loading
@@ -98,7 +98,7 @@ const ContactForm: React.FC = () => {
                 <Label htmlFor="number">Phone Number</Label>
                 <Input
                     id="number"
-                    name="Number"
+                    name="Number" // Ensure 'name' attribute is present
                     type="tel" // Use type="tel" for semantic meaning
                     placeholder="09+++++++++"
                     maxLength={11}
@@ -112,7 +112,7 @@ const ContactForm: React.FC = () => {
                 <Input
                     id="email"
                     type="email"
-                    name="Email"
+                    name="Email" // Ensure 'name' attribute is present
                     placeholder="juan.delacruz@example.com"
                     required
                     disabled={isLoading} // Disable when loading
@@ -123,7 +123,7 @@ const ContactForm: React.FC = () => {
                 <Label htmlFor="message">Message*</Label>
                 <Textarea
                     id="message"
-                    name="Message"
+                    name="Message" // Ensure 'name' attribute is present
                     placeholder="Send us a message"
                     required
                     className="h-32"
