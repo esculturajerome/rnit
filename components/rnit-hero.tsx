@@ -22,12 +22,12 @@ const Hero = ({ }) => {
                     </p>
                     <div className="flex items-center gap-4">
                         <div>
-                            <Button variant="secondary" asChild className="w-full sm:w-auto">
+                            <Button variant="secondary" size='lg' asChild className="w-full sm:w-auto">
                                 <a href="/enrolment">Enrol now</a>
                             </Button>
                         </div>
                         {/* Changed Button to use Link component for internal navigation */}
-                        <Button variant="link" asChild className="w-full sm:w-auto text-primary p-0">
+                        <Button variant="link" asChild className="w-auto text-primary p-0">
                             <Link href="/programs" className="flex items-center group">
                                 <span className="relative z-10 transition-all duration-300 group-hover:text-primary/80">
                                     Learn more

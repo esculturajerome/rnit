@@ -1,5 +1,7 @@
 // app/programs/page.tsx
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import TitleRow from "@/components/title-row";
 import { cn } from "@/lib/utils";
 import { PROGRAMS_DATA } from "@/data/programs";
@@ -90,6 +92,9 @@ export default function ProgramsPage() {
                                         {program.desc2 && <li>{program.desc2}</li>}
                                         {program.desc3 && <li>{program.desc3}</li>}
                                         {program.desc4 && <li>{program.desc4}</li>}
+                                    </ul>
+                                    <ul className="mt-8">
+                                        <Link href="/enrolment"><Button variant="secondary" size="lg">Enrol Now</Button></Link>
                                     </ul>
                                 </div>
 
