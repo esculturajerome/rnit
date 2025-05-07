@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Definitions</title>
+</head>
+
+<body>
+    <form name="RNITContactForm" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="RNITContactForm" />
+        <input type="text" name="Name" />
+        <input type="tel" name="Number" />
+        <input type="email" name="Email" />
+        <textarea name="Message"></textarea>
+        <input type="text" name="bot-field" /> <!-- Honeypot field -->
+        <input type="hidden" name="subject" value="RNIT Website Inquiry: %{formName}" />
+    </form>
+</body>
+
+</html>

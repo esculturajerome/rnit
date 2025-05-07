@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
         const formData = new FormData(myForm)
 
         try {
-            const response = await fetch('/', {
+            const response = await fetch('/__forms.html', { // Submit to the static HTML file
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 // URLSearchParams constructor can handle FormData directly
@@ -67,13 +67,13 @@ const ContactForm: React.FC = () => {
         <form
             name="RNITContactForm" // This name must match the hidden input value
             method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field" // Optional: Add honeypot for spam
+            // data-netlify="true"
+            // data-netlify-honeypot="bot-field" // Optional: Add honeypot for spam
             onSubmit={handleSubmit}
             className="space-y-4"
         >
             {/* Hidden input for Netlify */}
-            <input type="hidden" name="form-name" value="RNITContact" />
+            <input type="hidden" name="form-name" value="RNITContactForm" />
             {/* Optional: Honeypot field */}
             <p className="hidden">
                 <label>
@@ -87,7 +87,7 @@ const ContactForm: React.FC = () => {
                 <Label htmlFor="username">Name*</Label>
                 <Input
                     id="username"
-                    name="Name" // Ensure 'name' attribute is present for form data
+                    name="Name" for form data
                     placeholder="Juan Dela Cruz"
                     required
                     disabled={isLoading} // Disable when loading
@@ -98,7 +98,7 @@ const ContactForm: React.FC = () => {
                 <Label htmlFor="number">Phone Number</Label>
                 <Input
                     id="number"
-                    name="Number" // Ensure 'name' attribute is present
+                    name="Number"
                     type="tel" // Use type="tel" for semantic meaning
                     placeholder="09+++++++++"
                     maxLength={11}
@@ -112,7 +112,7 @@ const ContactForm: React.FC = () => {
                 <Input
                     id="email"
                     type="email"
-                    name="Email" // Ensure 'name' attribute is present
+                    name="Email"
                     placeholder="juan.delacruz@example.com"
                     required
                     disabled={isLoading} // Disable when loading
@@ -123,7 +123,7 @@ const ContactForm: React.FC = () => {
                 <Label htmlFor="message">Message*</Label>
                 <Textarea
                     id="message"
-                    name="Message" // Ensure 'name' attribute is present
+                    name="Message"
                     placeholder="Send us a message"
                     required
                     className="h-32"

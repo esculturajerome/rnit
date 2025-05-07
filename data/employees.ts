@@ -9,7 +9,7 @@ export const Employees: EmployeeProps[] = [
   {
     id: "83292",
     name: "Anna Christina C. Martinez",
-    position: "Officer-in-Charge",
+    position: "Vocational School Administrator II",
     image: "/images/employees-gallery/anna-martinez.jpg",
   },
   {
@@ -34,7 +34,7 @@ export const Employees: EmployeeProps[] = [
   {
     id: "75923",
     name: "Prenz Jumer B. Lota",
-    position: "Assistant Professor I",
+    position: "Vocational Instruction Supervisor I",
     image: "/images/employees-gallery/prenz-lota.jpg",
   },
   {
