@@ -6,7 +6,7 @@ import { UTPRASData, assessmentData, programsData } from '@/data/tables-data';
 
 export default function ProgramsPage() {
     return (
-        <div className="wrapper_wide">
+        <>
             <FeaturePrograms
                 maxPrograms={PROGRAMS_DATA.length} // Display all programs
                 showTitleRow={true} // Let FeaturePrograms handle its title section
@@ -21,6 +21,6 @@ export default function ProgramsPage() {
                 assessmentData={assessmentData}
                 programsData={programsData}
             />
-        </div>
+        </>
     );
 }

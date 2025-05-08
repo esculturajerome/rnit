@@ -114,7 +114,7 @@ export const FeatureBlogs = async ({
     };
 
     return (
-        <div className="w-full py-10 lg:py-20">
+        <div className="wrapper py-10 lg:py-20">
             <div className="wrapper mx-auto">
                 {showTitleRow && (
                     <TitleRow

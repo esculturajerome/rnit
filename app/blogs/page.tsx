@@ -5,7 +5,7 @@ import { FeatureBlogs } from "@/components/feature-blogs";
 
 export default function BlogsPage() {
     return (
-        <div className="wrapper mx-auto">
+        <div className="">
             <FeatureBlogs
                 maxPosts={9}
                 showTitleRow={true}

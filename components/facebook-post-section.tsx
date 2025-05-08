@@ -26,49 +26,50 @@ export const FacebookPostSection: React.FC = () => {
     const hasMorePosts = visiblePostsCount < facebookPostUrls.length;
 
     return (
-        <div className="wrapper mx-auto py-10 lg:py-16">
-            <TitleRow
-                title="RNIT on Facebook"
-                subText="See our latest posts directly from Facebook."
-            />
+        <div className="wrapper py-10">
+            <div className='wrapper mx-auto'>
+                <TitleRow
+                    title="RNIT on Facebook"
+                    subText="See our latest posts directly from Facebook."
+                />
 
-            {/* Grid layout for the embeds */}
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* Map over the *visible* posts */}
-                {visiblePosts.map((postUrl) => {
-                    // Encode the post URL for use in the iframe src
-                    const encodedUrl = encodeURIComponent(postUrl);
-                    // Construct the iframe source URL
-                    const iframeSrc = `https://www.facebook.com/plugins/post.php?href=${encodedUrl}&show_text=true&width=500`;
+                {/* Grid layout for the embeds */}
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Map over the *visible* posts */}
+                    {visiblePosts.map((postUrl) => {
+                        // Encode the post URL for use in the iframe src
+                        const encodedUrl = encodeURIComponent(postUrl);
+                        // Construct the iframe source URL
+                        const iframeSrc = `https://www.facebook.com/plugins/post.php?href=${encodedUrl}&show_text=true&width=500`;
 
-                    return (
-                        <div key={postUrl} className="flex justify-center">
-                            {/* Use iframe directly */}
-                            <iframe
-                                src={iframeSrc}
-                                width="500" // You might want to make this responsive later
-                                height="600" // Adjust height as needed, or make it dynamic
-                                style={{ border: 'none', overflow: 'hidden' }}
-                                scrolling="no"
-                                frameBorder="0"
-                                allowFullScreen={true}
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                                title={`Facebook Post Embed - ${postUrl.substring(0, 50)}`} // Add a descriptive title
-                                loading="lazy" // Add lazy loading for performance
-                            ></iframe>
-                        </div>
-                    );
-                })}
-            </div>
-
-            {/* Load More Button */}
-            {hasMorePosts && (
-                <div className="mt-12 text-center">
-                    <Button onClick={loadMorePosts} size="lg">
-                        Load More Posts
-                    </Button>
+                        return (
+                            <div key={postUrl} className="flex justify-center">
+                                {/* Use iframe directly */}
+                                <iframe
+                                    src={iframeSrc}
+                                    width="500" // You might want to make this responsive later
+                                    height="600" // Adjust height as needed, or make it dynamic
+                                    style={{ border: 'none', overflow: 'hidden' }}
+                                    scrolling="no"
+                                    frameBorder="0"
+                                    allowFullScreen={true}
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                    title={`Facebook Post Embed - ${postUrl.substring(0, 50)}`} // Add a descriptive title
+                                    loading="lazy" // Add lazy loading for performance
+                                ></iframe>
+                            </div>
+                        );
+                    })}
                 </div>
-            )}
-        </div>
+
+                {/* Load More Button */}
+                {hasMorePosts && (
+                    <div className="mt-12 text-center">
+                        <Button onClick={loadMorePosts} size="lg">
+                            Load More Posts
+                        </Button>
+                    </div>
+                )}
+            </div></div>
     );
 };
