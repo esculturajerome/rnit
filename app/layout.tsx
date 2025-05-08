@@ -107,7 +107,7 @@ export default function RootLayout({
 
         </header>
         <RnitNav />
-        <main className="flex-grow">{children}</main>
+        <main className="wrapper_wide">{children}</main>
         <Footer />
       </body>
     </html>

@@ -23,9 +23,8 @@ export default function AuthenticationPage() {
             <Image
               src={Building}
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
+              fill
+              className="object-cover object-center"
             />
           </div>
         </div>

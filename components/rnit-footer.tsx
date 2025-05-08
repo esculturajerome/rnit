@@ -34,14 +34,15 @@ const Footer = ({
         {
             title: "Programs",
             links: [
-                { text: "Automotive Servicing", url: "/programs#automotive-servicing-nc-ii" },
-                { text: "Dressmaking", url: "/programs#dressmaking-nc-ii" },
-                { text: "RAC Servicing", url: "/programs#rac-servicing-nc-ii" },
-                { text: "Metal Arc Welding", url: "/programs#shielded-metal-arc-welding-nc-ii" },
-                { text: "Food and Beverage Services", url: "/programs#food-and-beverage-services-nc-ii" },
-                { text: "Bread and Pastry Production", url: "/programs#bread-and-pastry-production-nc-ii" },
-                { text: "Driving", url: "/programs#driving-nc-ii" },
-                { text: "Agricultural Crops Production", url: "/programs#agricultural-crops-production-nc-ii" },
+                { text: "Automotive Servicing", url: "/programs/automotive-servicing-nc-ii" },
+                { text: "Dressmaking", url: "/programs/dressmaking-nc-ii" },
+                { text: "RAC Servicing", url: "/programs/rac-servicing-nc-ii" },
+                { text: "Metal Arc Welding", url: "/programs/shielded-metal-arc-welding-nc-ii" },
+                { text: "Food and Beverage Services", url: "/programs/food-and-beverage-services-nc-ii" },
+                { text: "Bread and Pastry Production", url: "/programs/bread-and-pastry-production-nc-ii" },
+                { text: "Driving", url: "/programs/driving-nc-ii" },
+                { text: "Agricultural Crops Production", url: "/programs/agricultural-crops-production-nc-ii" },
+                { text: "Accredited Programs", url: "/programs#accredited-programs" },
             ],
         },
         {

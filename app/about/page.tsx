@@ -44,7 +44,7 @@ const About = () => {
         },
     ];
     return (
-        <div>
+        <div className='wrapper'>
             <TeamsProfile employees={Employees} />
 
             <div className='lg:block'>
