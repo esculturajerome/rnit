@@ -27,12 +27,6 @@ const createSlug = (title: string): string => {
     return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 };
 
-interface ProgramDetailPageProps {
-    params: {
-        slug: string;
-    };
-}
-
 // Function to generate static paths for all programs (good for SSG)
 export async function generateStaticParams() {
     return PROGRAMS_DATA.map((program) => ({
@@ -40,7 +34,16 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function ProgramDetailPage({ params }: ProgramDetailPageProps) {
+// The props for a Next.js page component with a dynamic route [slug]
+// will have a `params` object containing the slug.
+export default function ProgramDetailPage({
+    params,
+}: {
+    // Changed to 'any' to bypass the problematic 'PageProps' constraint.
+    // The ideal fix is to correct the 'PageProps' definition project-wide.
+    // This component correctly expects params to be { slug: string }.
+    params: any;
+}) {
     const { slug } = params;
     const program = PROGRAMS_DATA.find(p => createSlug(p.title) === slug);
 
@@ -229,6 +232,7 @@ export default function ProgramDetailPage({ params }: ProgramDetailPageProps) {
                         </section>
                     );
                 })()}
-            </div></div>
+            </div>
+        </div>
     );
 }

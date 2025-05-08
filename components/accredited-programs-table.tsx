@@ -16,7 +16,6 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"; // Assuming shadcn/ui components are in @/components/ui
-import { useSearchParams } from 'next/navigation'; // Import useSearchParams
 
 // --- Type Definitions ---
 
@@ -131,20 +130,16 @@ export const AccreditedProgramsTable: React.FC<AccreditedProgramsTableProps> = (
     programsData,
     // title prop was removed in a previous version, ensure it's not expected by ProgramsPage
 }) => {
-    const searchParams = useSearchParams();
-    const tabQueryParam = searchParams.get('tab');
 
     // Basic check to ensure all required datasets are provided.
     if (!utprasData || !assessmentData || !programsData) {
         return <p className="py-8 text-center text-muted-foreground">One or more required data sets are missing.</p>;
     }
 
-    const validTabs = ["programs", "utpras", "assessment"];
-    const initialTab = tabQueryParam && validTabs.includes(tabQueryParam) ? tabQueryParam : "programs";
 
     return (
         <div className="wrapper_wide flex flex-col items-center py-8"> {/* Centering the Tabs component */}
-            <Tabs defaultValue={initialTab} className="w-full max-w-4xl"> {/* Control max-width of Tabs */}
+            <Tabs defaultValue='programs' className="w-full max-w-4xl"> {/* Control max-width of Tabs */}
                 <TabsList className="grid w-lg grid-cols-3">
                     <TabsTrigger value="programs">Accredited Programs</TabsTrigger>
                     <TabsTrigger value="utpras">UTPRAS Registered</TabsTrigger>
