@@ -66,7 +66,7 @@ const Footer = ({
         },
     ],
 
-    copyright = "© 2025 rnit-test.org. All rights reserved.",
+    copyright = "© 2025 rnit-tesda.org. All rights reserved.",
     bottomLinks = [
         { text: "Developed by: Escultura", url: "https://jescultura.com/" },
     ],
