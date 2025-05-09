@@ -60,7 +60,6 @@ export default function ProgramDetailPage({
                         {/* Image Section with Title Overlay */}
                         <div className={cn(
                             "relative w-full aspect-[4/3] lg:min-h-[500px] rounded-lg overflow-hidden group shadow-xl",
-                            "lg:top-24" // Sticky behavior for the image column
                         )}>
                             {program.image1 && (
                                 <Image

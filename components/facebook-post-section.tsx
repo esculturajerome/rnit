@@ -26,7 +26,7 @@ export const FacebookPostSection: React.FC = () => {
     const hasMorePosts = visiblePostsCount < facebookPostUrls.length;
 
     return (
-        <div className="wrapper py-10">
+        <div className="wrapper__wide py-10">
             <div className='wrapper mx-auto'>
                 <TitleRow
                     title="RNIT on Facebook"

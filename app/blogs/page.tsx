@@ -5,7 +5,7 @@ import { FeatureBlogs } from "@/components/feature-blogs";
 
 export default function BlogsPage() {
     return (
-        <div className="">
+        <div>
             <FeatureBlogs
                 maxPosts={9}
                 showTitleRow={true}

@@ -44,9 +44,8 @@ const About = () => {
         },
     ];
     return (
-        <div className='wrapper'>
+        <div className='wrapper__wide'>
             <TeamsProfile employees={Employees} />
-
             <div className='lg:block'>
                 <div className="w-full py-20" id="orgchart">
                     <div className="wrapper mx-auto">

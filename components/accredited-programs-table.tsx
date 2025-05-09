@@ -136,16 +136,14 @@ export const AccreditedProgramsTable: React.FC<AccreditedProgramsTableProps> = (
         return <p className="py-8 text-center text-muted-foreground">One or more required data sets are missing.</p>;
     }
 
-
     return (
         <div className="wrapper_wide flex flex-col items-center py-8"> {/* Centering the Tabs component */}
-            <Tabs defaultValue='programs' className="w-full max-w-4xl"> {/* Control max-width of Tabs */}
-                <TabsList className="grid w-lg grid-cols-3">
+            <Tabs defaultValue='programs' className="max-w-4xl wrapper"> {/* Control max-width of Tabs */}
+                <TabsList className="grid grid-cols-3 overflow-x-scroll">
                     <TabsTrigger value="programs">Accredited Programs</TabsTrigger>
                     <TabsTrigger value="utpras">UTPRAS Registered</TabsTrigger>
                     <TabsTrigger value="assessment">Assessment Info</TabsTrigger>
                 </TabsList>
-
                 <TabsContent value="programs">
                     <SingleTableDisplay dataset={programsData} caption="List of Accredited Programs" />
                 </TabsContent>

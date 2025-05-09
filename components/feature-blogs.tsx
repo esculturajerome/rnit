@@ -95,11 +95,9 @@ export const FeatureBlogs = async ({
 
     if (latestPosts.length === 0) {
         return (
-            <div className="w-full py-10 lg:py-20">
-                <div className="wrapper mx-auto">
-                    {showTitleRow && <TitleRow badge={badgeText} title={title} subText={subText} />}
-                    <p className="text-muted-foreground text-center mt-10">No blog posts found yet.</p>
-                </div>
+            <div className="py-10 lg:py-20">
+                {showTitleRow && <TitleRow badge={badgeText} title={title} subText={subText} />}
+                <p className="text-muted-foreground text-center mt-10">No blog posts found yet.</p>
             </div>
         );
     }
@@ -114,8 +112,8 @@ export const FeatureBlogs = async ({
     };
 
     return (
-        <div className="wrapper py-10 lg:py-20">
-            <div className="wrapper mx-auto">
+        <div className="wrapper__wide">
+            <div className="wrapper py-10 lg:py-20">
                 {showTitleRow && (
                     <TitleRow
                         badge={badgeText}
@@ -256,7 +254,6 @@ export const FeatureBlogs = async ({
                         </Button>
                     </div>
                 )}
-            </div>
-        </div>
+            </div></div>
     );
 };
