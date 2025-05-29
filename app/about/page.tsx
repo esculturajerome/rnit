@@ -25,22 +25,27 @@ const About = () => {
         {
             title: "Vision",
             subText:
-                "Skilling Romblon thru quality TVET Delivery for Peoples Prosperity.",
+                "By 2028, RNIT will become a Polytechnic Institute providing professional education, skills training and lifelong learning for Romblon.",
         },
         {
             title: "Mission",
             subText:
-                "Equipping the province with competent, flexible, economically stable and dignified human resources for domestic and global demands.",
+                "Provide students with professional, practical, and, positive learning experiences so they become competent, valuable individuals, maximizing their career opportunities and academic pathways.",
         },
         {
-            title: "Philosophy",
+            title: "Organizational Culture",
             subText:
-                "An institution that nurtures the total development of the Filipino youth, rich in knowledge, competent in their skills and imbued with positive attitude and work-values; whose program and services reflect the needs of its clientele and that of the greater community it servers; a school that is student centered enabling them to grow into producing, responsible, and loving individuals.",
+                [
+                    "R - Responsive to the needs of the community",
+                    "N - Nurturing changes towards quality",
+                    "I - Integrity as public servants",
+                    "T - Transparency, Teamwork, Timely",
+                ],
         },
         {
             title: "Values Statement",
             subText:
-                "We believe in competence, integrity, high level of commitment, transparency, 5S, strong desire for improvement, teamwork and cooperation.",
+                "At Romblon Polytechnic Institute (RPI), we value quality, integrity and sustainability in all that we do as a teaching and learning institution. We are committed to creating an environment of open communication and transparency for the attainment of our vision and mission.",
         },
     ];
     return (
@@ -151,9 +156,20 @@ const About = () => {
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent className="flex-grow">
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
-                                        {card.subText}
-                                    </p>
+                                    {Array.isArray(card.subText) ? (
+                                        card.subText.map((line, lineIndex) => (
+                                            <p
+                                                key={lineIndex}
+                                                className="text-sm text-muted-foreground leading-relaxed"
+                                            >
+                                                {line}
+                                            </p>
+                                        ))
+                                    ) : (
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            {card.subText}
+                                        </p>
+                                    )}
                                 </CardContent>
                             </Card>
                         ))}

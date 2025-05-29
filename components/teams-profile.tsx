@@ -65,13 +65,13 @@ export const TeamsProfile = ({ employees }: TeamsProfileProps) => {
                                     key={employee.id} // Use unique ID for key
                                 >
                                     {/* Increased padding slightly for larger images */}
-                                    <div className="flex rounded-md aspect-square items-center justify-center p-2 sm:p-3">
+                                    <div className="flex rounded-md aspect-square items-start justify-center p-2 sm:p-3 mx-auto">
                                         <Image
                                             src={employee.image}
                                             alt={employee.name}
                                             width={150} // Base size for mobile/smaller screens
                                             height={150}
-                                            className="mx-auto object-cover aspect-square shadow rounded-md lg:w-[180px] lg:h-[180px]"
+                                            className="object-cover object-top aspect-square shadow rounded-md lg:w-[180px] lg:h-[180px]"
                                         // --- End Size Adjustment ---
                                         />
                                     </div>
