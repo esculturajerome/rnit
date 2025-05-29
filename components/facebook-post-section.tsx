@@ -19,11 +19,14 @@ export const FacebookPostSection: React.FC = () => {
         setVisiblePostsCount(prevCount => prevCount + POSTS_PER_LOAD);
     };
 
+    // Reverse the array before slicing
+    const reversedPosts = [...facebookPostUrls].reverse();
+
     // Slice the array to get only the posts that should be visible
-    const visiblePosts = facebookPostUrls.slice(0, visiblePostsCount);
+    const visiblePosts = reversedPosts.slice(0, visiblePostsCount);
 
     // Check if there are more posts to load
-    const hasMorePosts = visiblePostsCount < facebookPostUrls.length;
+    const hasMorePosts = visiblePostsCount < reversedPosts.length;
 
     return (
         <div className="wrapper__wide py-10">
