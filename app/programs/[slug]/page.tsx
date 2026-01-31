@@ -73,7 +73,7 @@ export default function ProgramDetailPage() {
                 </section>
 
                 {/* Qualifications */}
-                {program.qualifications?.length > 0 && (
+                {program.qualifications && program.qualifications.length > 0 && (
                     <section className="mt-16 pt-12">
                         <TitleRow title="Related Trainings & Activities" className="mb-10 lg:mb-12 text-center items-center" />
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
