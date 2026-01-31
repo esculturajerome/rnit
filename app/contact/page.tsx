@@ -10,11 +10,11 @@ import Building from "@/public/images/building.png";
 import ContactForm from "@/components/rnit-contact-form"
 
 export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
+  title: "Contact Us",
+  description: "Contact Us Page – includes form for inquiries, company address, email, and phone number for easy client communication",
 }
 
-export default function AuthenticationPage() {
+export default function ContactPage() {
   return (
     <div className="wrapper__wide">
       <div className="relative h-[600px] lg:h-[80vh] flex-col items-center lg:justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
