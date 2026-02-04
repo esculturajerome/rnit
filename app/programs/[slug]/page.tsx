@@ -53,10 +53,10 @@ export default function ProgramDetailPage() {
                         </div>
 
                         <div className="py-2 lg:py-4">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-primary mr-12">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-tight text-primary mr-12">
                                 {program.title}
                             </h1>
-                            <p className="text-xl lg:text-xl text-muted-foreground my-6 leading-relaxed">{program.subText}</p>
+                            <p className="text-xl lg:text-xl  my-6 leading-relaxed">{program.subText}</p>
                             <div className="prose prose-lg max-w-none dark:prose-invert text-foreground/90 space-y-4">
                                 {program.desc1 && <p>{program.desc1}</p>}
                                 {program.desc2 && <p>{program.desc2}</p>}
@@ -108,13 +108,13 @@ export default function ProgramDetailPage() {
                                                     )}
                                                 </Carousel>
                                             ) : (
-                                                <div className="aspect-video w-full bg-muted flex items-center justify-center text-muted-foreground">No images</div>
+                                                <div className="aspect-video w-full bg-muted flex items-center justify-center  ">No images</div>
                                             )}
                                         </div>
                                         <div className="p-4 md:p-6">
                                             <h4 className="text-lg md:text-xl font-semibold mb-2 text-primary">{qual.qualification}</h4>
-                                            <p className="text-sm text-muted-foreground"><strong>Venue:</strong> {qual.venue}</p>
-                                            <p className="text-sm text-muted-foreground"><strong>Date:</strong> {qual.date}</p>
+                                            <p className="text-sm  "><strong>Venue:</strong> {qual.venue}</p>
+                                            <p className="text-sm  "><strong>Date:</strong> {qual.date}</p>
                                         </div>
                                     </div>
                                 )

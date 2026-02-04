@@ -1,6 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Playfair_Display, Roboto } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { RnitNav } from "@/components/rnit-nav";
 import Link from "next/link";
@@ -8,15 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/rnit-footer";
 import { cn } from "@/lib/utils"; // Import cn
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
-  subsets: ["latin"],
-});
 
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '700'], // Add weights you need
-  variable: '--font-roboto', // Crucial part
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-sans",
 });
 
 // --- Metadata Update ---
@@ -75,12 +71,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(playfairDisplay.variable, roboto.variable)} // Apply font variables here
     >
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased" // Base body styles
-          // Font variables removed from here
+          ibmPlexSans.variable,
+          "min-h-screen bg-background font-sans antialiased"
         )}
       >
         <header className="bg-primary/90 py-1 wrapper__wide">

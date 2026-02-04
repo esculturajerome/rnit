@@ -67,7 +67,7 @@ interface SingleTableDisplayProps {
 const SingleTableDisplay: React.FC<SingleTableDisplayProps> = ({ dataset, caption }) => {
     // Guard clause for invalid or empty dataset
     if (!dataset || !dataset.columns || dataset.columns.length === 0 || !dataset.rows) {
-        return <p className="py-8 text-center text-muted-foreground">No data available for this table.</p>;
+        return <p className="py-8 text-center  ">No data available for this table.</p>;
     }
 
     const { columns: headers, rows } = dataset;
@@ -133,7 +133,7 @@ export const AccreditedProgramsTable: React.FC<AccreditedProgramsTableProps> = (
 
     // Basic check to ensure all required datasets are provided.
     if (!utprasData || !assessmentData || !programsData) {
-        return <p className="py-8 text-center text-muted-foreground">One or more required data sets are missing.</p>;
+        return <p className="py-8 text-center  ">One or more required data sets are missing.</p>;
     }
 
     return (

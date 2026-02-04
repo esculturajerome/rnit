@@ -117,10 +117,10 @@ const About = () => {
                     </div>
                     <div className="relative z-10 wrapper lg:w-1/2 lg:pr-8">
                         <div className="bg-background lg:bg-transparent p-8 rounded-lg shadow-lg lg:shadow-none lg:p-0">
-                            <h2 className="mb-4 text-3xl font-bold tracking-tight text-primary md:text-4xl lg:leading-none">
+                            <h2 className="mb-4 text-3xl font-medium tracking-tight text-primary md:text-4xl lg:leading-none">
                                 Citizen&apos;s Charter
                             </h2>
-                            <p className="text-base text-muted-foreground lg:text-lg max-w-xl">
+                            <p className="text-base   lg:text-lg max-w-xl">
                                 The Citizen’s Charter is one of the primary tools that government
                                 agencies use to communicate their service standards on the delivery
                                 of government services to their citizens or clients.
@@ -151,7 +151,7 @@ const About = () => {
                                 className="flex flex-col bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden border border-border/40 h-full"
                             >
                                 <CardHeader>
-                                    <CardTitle className="text-3xl font-bold tracking-tight text-primary md:text-4xl lg:leading-none">
+                                    <CardTitle className="text-3xl font-medium tracking-tight text-primary md:text-4xl lg:leading-none">
                                         {card.title}
                                     </CardTitle>
                                 </CardHeader>
@@ -160,13 +160,13 @@ const About = () => {
                                         card.subText.map((line, lineIndex) => (
                                             <p
                                                 key={lineIndex}
-                                                className="text-sm text-muted-foreground leading-relaxed"
+                                                className="text-sm   leading-relaxed"
                                             >
                                                 {line}
                                             </p>
                                         ))
                                     ) : (
-                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                        <p className="text-sm   leading-relaxed">
                                             {card.subText}
                                         </p>
                                     )}

@@ -14,10 +14,10 @@ const Hero = ({ }) => {
             <div className="flex flex-col items-center z-10 w-full px-4 lg:px-8 order-2 lg:order-1 lg:w-1/2 lg:items-end lg:justify-center">
                 {/* Adjusted padding/margins for better alignment */}
                 <div className="mb-0 lg:max-w-lg bg-white py-12 lg:px-8 lg:border-b-4 border-secondary space-y-4 lg:space-y-8 lg:ml-0 lg:mt-0">
-                    <h2 className="max-w-lg text-3xl font-bold tracking-tight text-primary sm:text-4xl sm:leading-none">
+                    <h2 className="max-w-lg text-3xl font-medium tracking-tight text-primary sm:text-4xl sm:leading-none">
                         Undertake direct training activities for TESDA
                     </h2>
-                    <p className="max-w-sm text-gray-700 text-lg">
+                    <p className="max-w-sm  text-lg">
                         Skilling Romblon thru quality TVET Delivery for Peoples Prosperity
                     </p>
                     <div className="flex items-center gap-4">
@@ -47,12 +47,9 @@ const Hero = ({ }) => {
                         src={HeroImage}
                         alt="Hero image"
                         fill // Use fill layout to cover the parent container
-                        style={{ objectFit: "cover" }} // Use cover to fill space, cropping if needed
-                        // objectFit="contain" // Use contain if you want to see the whole image without cropping
+                        style={{ objectFit: "cover" }} // Use cover to fill space, 
                         placeholder="blur"
                         priority
-                        // Removed width/height props as they are not needed with layout="fill"
-                        // Added sizes attribute for optimization
                         sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                 )}

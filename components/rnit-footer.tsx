@@ -66,9 +66,9 @@ const Footer = ({
         },
     ],
 
-    copyright = "© 2025 rnit-tesda.org. All rights reserved.",
+    copyright = "© 2026 rnit-tesda.org. All rights reserved.",
     bottomLinks = [
-        { text: "Developed by: Escultura", url: "https://jescultura.com/" },
+        { text: "Developed by: Escultura", url: "" },
     ],
 }: FooterProps) => {
     return (
@@ -88,7 +88,7 @@ const Footer = ({
                                     />
                                 </div>
                             </div>
-                            <p className="mt-4 md:w-10/12">{tagline}</p>
+                            <p className="mt-4 md:w-10/12 text-sm">{tagline}</p>
                         </div>
                         {menuItems.map((section, sectionIdx) => (
                             <div key={sectionIdx}>
@@ -107,14 +107,15 @@ const Footer = ({
                             </div>
                         ))}
                     </div>
-                    <div className="mt-12 lg:mt-24 flex flex-col justify-between gap-4 pt-8 text-sm font-medium text-muted-foreground border-t border-gray-200 md:flex-row md:items-center">
-                        <p className="text-gray-200">{copyright}</p>
-                        <ul className="flex gap-4">
+                    <div className=" flex flex-col justify-between gap-4 pt-8 md:flex-row md:items-center">
+                        <p className="text-gray-200 text-sm">{copyright}</p>
+                        <ul className="flex gap-4 ">
                             {bottomLinks.map((link, linkIdx) => (
                                 <li key={linkIdx}>
-                                    <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white">
+                                    {/* <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white">
                                         {link.text}
-                                    </a>
+                                    </a> */}
+                                    <p className="text-white text-sm">{link.text}</p>
                                 </li>
                             ))}
                         </ul>
