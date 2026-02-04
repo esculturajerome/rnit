@@ -10,7 +10,7 @@ export default function FullWidth() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 md:bg-black/25" />
       <div className="absolute inset-0  flex-col justify-start items-start px-6 md:px-16 lg:px-32 text-white mt-12 hidden md:flex">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           How Do Skills Change Lives?

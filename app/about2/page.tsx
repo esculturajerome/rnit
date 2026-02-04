@@ -1,256 +1,183 @@
-export default function AboutPage() {
-  return (
-    <main className="w-full">
-      {/* ================= HERO / INTRO ================= */}
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <h1 className="text-3xl font-medium text-slate-900">
-            About Romblon National Institute of Technology
-          </h1>
 
-          <p className="mt-4 max-w-3xl text-slate-600">
-            A TESDA-accredited institution committed to quality technical
-            education and skills development in Romblon.
-          </p>
+import { TeamsProfile } from '@/components/teams-profile'
+import { Employees } from '@/data/employees'
+import Image from 'next/image'
+import React from 'react'
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#team" className="text-sm font-medium text-blue-700">
-              Meet the Team
-            </a>
-            <a href="#vision-mission" className="text-sm font-medium text-blue-700">
-              Vision & Mission
-            </a>
-            <a href="#org-structure" className="text-sm font-medium text-blue-700">
-              Organizational Structure
-            </a>
-            <a href="#assessment" className="text-sm font-medium text-blue-700">
-              Assessment & Fees
-            </a>
-          </div>
-        </div>
-      </section>
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import TitleRow from '@/components/title-row'
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
 
-      {/* ================= MEET OUR TEAM ================= */}
-      <section id="team" className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Meet Our Team
-          </h2>
+import orgChart from "@/public/images/2025-org-chart.jpg";
+import assessmentFee from "@/public/images/assessment-fee_2024.jpg";
+import assessmentMission from "@/public/images/assessment-mission.jpg";
+import CharterImage from "@/public/images/charter.png";
+import bg_pattern from "@/public/images/bg_pattern.png"
 
-          <p className="mt-2 max-w-2xl text-slate-600">
-            Our instructors and staff are dedicated to delivering quality,
-            industry-relevant training.
-          </p>
+const About = () => {
+    const aboutCards = [
+        {
+            title: "Vision",
+            subText:
+                "By 2028, RNIT will become a Polytechnic Institute providing professional education, skills training and lifelong learning for Romblon.",
+        },
+        {
+            title: "Mission",
+            subText:
+                "Provide students with professional, practical, and, positive learning experiences so they become competent, valuable individuals, maximizing their career opportunities and academic pathways.",
+        },
+        {
+            title: "Organizational Culture",
+            subText:
+                [
+                    "R - Responsive to the needs of the community",
+                    "N - Nurturing changes towards quality",
+                    "I - Integrity as public servants",
+                    "T - Transparency, Teamwork, Timely",
+                ],
+        },
+        {
+            title: "Values Statement",
+            subText:
+                "At Romblon Polytechnic Institute (RPI), we value quality, integrity and sustainability in all that we do as a teaching and learning institution. We are committed to creating an environment of open communication and transparency for the attainment of our vision and mission.",
+        },
+    ];
+    return (
+        <div className='wrapper__wide'>
+            <TeamsProfile employees={Employees} />
+            <div className='lg:block'>
+                <div className="w-full py-20" id="orgchart">
+                    <div className="wrapper mx-auto">
+                        <TitleRow title="Our Organizational Structure" subText="A visual representation of how our team collaborates to achieve excellence." />
+                        <div className="grid gap-10 items-center">
+                            <Link href={orgChart.src} target='_blank'>
+                                <Image
+                                    src={orgChart}
+                                    width={orgChart.width}
+                                    height={orgChart.height}
+                                    alt="Organizational Chart"
+                                    className='object-contain w-full max-h-[80vh]'
+                                    priority
+                                />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
 
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {/* Team Card */}
-            {[...Array(8)].map((_, i) => (
-              <div
-                key={i}
-                className="rounded-lg border border-slate-200 p-4 text-center"
-              >
-                <div className="mx-auto h-32 w-32 rounded-md bg-slate-100" />
-                <h3 className="mt-4 font-medium text-slate-900">
-                  Full Name
-                </h3>
-                <p className="text-sm text-slate-600">
-                  Position Title
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ================= VISION & MISSION ================= */}
-      <section id="vision-mission" className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          {/* Row 1 */}
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-lg bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">Vision</h3>
-              <p className="mt-4 text-slate-600">
-                By 2030, RNIT will become a polytechnic institution providing
-                quality technical education and skills training.
-              </p>
+                <div className="w-full pb-20" id="assessmentCenter">
+                    <div className="wrapper mx-auto">
+                        <div className="grid lg:grid-cols-2 gap-10 items-start">
+                            <div>
+                                <TitleRow title="Assessment Fees" subText="Clear and fair pricing to ensure accessibility and value." />
+                                <Link href={assessmentFee.src} target='_blank'>
+                                    <Image
+                                        src={assessmentFee}
+                                        width={500}
+                                        height={1000}
+                                        alt="Assessment Fee"
+                                        className='object-contain w-full max-h-[60vh] rounded-md shadow-md'
+                                        priority
+                                    />
+                                </Link>
+                            </div>
+                            <div>
+                                <TitleRow title="Quality Assessments" subText="Striving for accuracy, fairness, and excellence in every evaluation." />
+                                <Link href={assessmentMission.src} target='_blank'>
+                                    <Image
+                                        src={assessmentMission}
+                                        width={assessmentMission.width}
+                                        height={assessmentMission.height}
+                                        alt="Assessment Mission"
+                                        className='object-contain w-full max-h-[60vh] rounded-md shadow-md'
+                                        priority
+                                    />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div className="wrapper__wide bg-muted/40" id='citizen-charter'>
+                <div className="relative min-h-[400px] flex items-center justify-center lg:justify-start">
 
-            <div className="rounded-lg bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">Mission</h3>
-              <p className="mt-4 text-slate-600">
-                To provide students with professional, ethical, and industry-
-                relevant technical skills.
-              </p>
+                    <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2">
+                        <Image
+                            src={CharterImage}
+                            alt="Citizen Charter Background"
+                            fill
+                            className="object-cover object-center"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-muted/40 via-muted/40 to-transparent"></div>
+                    </div>
+                    <div className="relative z-10 wrapper lg:w-1/2 lg:pr-8">
+                        <div className="bg-background lg:bg-transparent p-8 rounded-lg shadow-lg lg:shadow-none lg:p-0">
+                            <h2 className="mb-4 text-3xl font-medium tracking-tight text-primary md:text-4xl lg:leading-none">
+                                Citizen&apos;s Charter
+                            </h2>
+                            <p className="text-base   lg:text-lg max-w-xl">
+                                The Citizen’s Charter is one of the primary tools that government
+                                agencies use to communicate their service standards on the delivery
+                                of government services to their citizens or clients.
+                            </p>
+                            <Button asChild className="w-auto mt-6">
+                                <a href="/documents/citizens-charter.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div className="relative w-full h-auto py-16 md:py-24 wrapper__wide" id="vision-mission">
 
-          {/* Row 2 */}
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            <div className="rounded-lg bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">
-                Core Values
-              </h3>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-                <li>Integrity</li>
-                <li>Excellence</li>
-                <li>Service</li>
-              </ul>
+                <div className="absolute inset-0 z-[-1]">
+                    <Image
+                        src={bg_pattern}
+                        alt="Background Pattern"
+                        fill
+                        className="object-cover object-center opacity-10"
+                        priority
+                    />
+                </div>
+                <div className="relative z-20 wrapper mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {aboutCards.map((card, index) => (
+                            <Card
+                                key={index}
+                                className="flex flex-col bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden border border-border/40 h-full"
+                            >
+                                <CardHeader>
+                                    <CardTitle className="text-3xl font-medium tracking-tight text-primary md:text-4xl lg:leading-none">
+                                        {card.title}
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    {Array.isArray(card.subText) ? (
+                                        card.subText.map((line, lineIndex) => (
+                                            <p
+                                                key={lineIndex}
+                                                className="text-sm   leading-relaxed"
+                                            >
+                                                {line}
+                                            </p>
+                                        ))
+                                    ) : (
+                                        <p className="text-sm   leading-relaxed">
+                                            {card.subText}
+                                        </p>
+                                    )}
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
             </div>
-
-            <div className="rounded-lg bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">
-                Organizational Culture
-              </h3>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-                <li>Transparency</li>
-                <li>Teamwork</li>
-                <li>Accountability</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= ORGANIZATIONAL STRUCTURE ================= */}
-      <section id="org-structure" className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 text-center">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Organizational Structure
-          </h2>
-
-          <p className="mx-auto mt-2 max-w-2xl text-slate-600">
-            A visual overview of RNIT’s administrative and instructional
-            framework.
-          </p>
-
-          <div className="mt-10 mx-auto max-w-4xl rounded-lg border border-slate-200 bg-slate-50 p-6">
-            <div className="aspect-video w-full rounded bg-slate-200" />
-          </div>
-
-          <div className="mt-6">
-            <a
-              href="#"
-              className="inline-flex items-center rounded-md bg-blue-700 px-6 py-2 text-sm font-medium text-white"
-            >
-              View Full Organizational Chart
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= ASSESSMENT & QUALITY ================= */}
-      <section id="assessment" className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Assessment & Quality Assurance
-          </h2>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            {/* Assessment Fees */}
-            <div className="rounded-lg bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">
-                Assessment Fees
-              </h3>
-              <p className="mt-4 text-slate-600">
-                Transparent and TESDA-approved assessment fees for all
-                qualifications.
-              </p>
-
-              <div className="mt-6 flex gap-4">
-                <a className="rounded-md bg-blue-700 px-4 py-2 text-sm text-white">
-                  View Fees
-                </a>
-                <a className="rounded-md border border-slate-300 px-4 py-2 text-sm">
-                  Download PDF
-                </a>
-              </div>
-            </div>
-
-            {/* Quality Assessment */}
-            <div className="rounded-lg bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">
-                Quality Assessment
-              </h3>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-                <li>Standardized assessment tools</li>
-                <li>TESDA-compliant procedures</li>
-                <li>Qualified assessors</li>
-              </ul>
-
-              <div className="mt-6">
-                <a className="text-sm font-medium text-blue-700">
-                  View Details
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= CITIZEN’S CHARTER ================= */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 text-center">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Citizen’s Charter
-          </h2>
-
-          <p className="mx-auto mt-2 max-w-2xl text-slate-600">
-            Learn about our service standards, processing times, and commitments
-            to the public.
-          </p>
-
-          <div className="mt-6">
-            <a className="inline-flex rounded-md bg-blue-700 px-6 py-2 text-sm font-medium text-white">
-              Download Citizen’s Charter
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-blue-800 text-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid gap-10 md:grid-cols-4">
-            <div>
-              <div className="h-12 w-12 rounded bg-white/20" />
-              <p className="mt-4 text-sm text-white/80">
-                Romblon National Institute of Technology
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold">Programs</h4>
-              <ul className="mt-4 space-y-2 text-sm text-white/80">
-                <li>Automotive Servicing</li>
-                <li>Electrical Installation</li>
-                <li>Welding</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold">About RNIT</h4>
-              <ul className="mt-4 space-y-2 text-sm text-white/80">
-                <li>Meet Our Team</li>
-                <li>Organizational Chart</li>
-                <li>Assessment Center</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold">Contact</h4>
-              <ul className="mt-4 space-y-2 text-sm text-white/80">
-                <li>Romblon, Philippines</li>
-                <li>Phone: 09xx xxx xxxx</li>
-                <li>Email: info@rnit.edu.ph</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 border-t border-white/20 pt-6 text-sm text-white/60">
-            © 2025 RNIT. All rights reserved.
-          </div>
-        </div>
-      </footer>
-    </main>
-  )
+        </div >
+    )
 }
+
+export default About

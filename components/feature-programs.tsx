@@ -33,7 +33,7 @@ export const FeaturePrograms = ({
     }
 
     return (
-        <section className="relative w-full bg-muted/40 py-12 lg:py-20">
+        <section className="relative w-full py-12 lg:py-20">
             {/* Background Pattern */}
             <div className="absolute inset-0 -z-10">
                 <Image

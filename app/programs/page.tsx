@@ -6,7 +6,7 @@ import { UTPRASData, assessmentData, programsData } from '@/data/tables-data';
 
 export default function ProgramsPage() {
     return (
-        <>
+        <div className="wrapper__wide">
             <FeaturePrograms
                 showTitleRow={true} // Let FeaturePrograms handle its title section
                 title="Our Programs"
@@ -18,6 +18,6 @@ export default function ProgramsPage() {
                 assessmentData={assessmentData}
                 programsData={programsData}
             />
-        </>
+        </div>
     );
 }

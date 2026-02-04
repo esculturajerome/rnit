@@ -1,36 +1,30 @@
-
-import Link from "next/link";
-import { Button } from "./ui/button";
-import Image from "next/image";
-
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "./ui/button"
 
 import SealImage from "@/public/images/transparency_seal.webp"
-
+import RNITLogo from "@/public/RNIT-logo.webp";
 
 interface MenuItem {
-    title: string;
+    title: string
     links: {
-        text: string;
-        url: string;
-    }[];
+        text: string
+        url: string
+    }[]
 }
-
 
 interface FooterProps {
-    tagline?: string;
-
-    menuItems?: MenuItem[];
-    copyright?: string;
-    bottomLinks?: {
-        text: string;
-        url: string;
-    }[];
+    tagline?: string
+    menuItems?: MenuItem[]
+    copyright?: string
 }
 
-const Footer = ({
-    tagline = "A Transparency Seal, prominently displayed on the main page of the website of a particular government agency, is a certificate that it has complied with the requirements of Section 93. This Seal links to a page within the agency’s website which contains an index of downloadable items of each of the above-mentioned documents.",
-    menuItems = [
+const isExternal = (url: string) =>
+    url.startsWith("http") || url.startsWith("mailto:") || url.startsWith("tel:")
 
+export const Footer = ({
+    tagline = "A Transparency Seal, prominently displayed on the main page of the website of a particular government agency, is a certificate that it has complied with the requirements of Section 93.",
+    menuItems = [
         {
             title: "Programs",
             links: [
@@ -48,9 +42,9 @@ const Footer = ({
         {
             title: "About Us",
             links: [
-                { text: "Meet our team", url: "/about#meetourteam" },
-                { text: "Organizational Chart", url: "/about#orgchart" },
-                { text: "Assessment Center", url: "/about#assessmentCenter" },
+                { text: "Meet the team", url: "/about#meettheteam" },
+                { text: "Organizational Chart", url: "/about#org-structure" },
+                { text: "Assessment Center", url: "/about#assessment" },
                 { text: "Citizen's Charter", url: "/about/#citizen-charter" },
             ],
         },
@@ -65,65 +59,78 @@ const Footer = ({
             ],
         },
     ],
-
     copyright = "© 2026 rnit-tesda.org. All rights reserved.",
-    bottomLinks = [
-        { text: "Developed by: Escultura", url: "" },
-    ],
 }: FooterProps) => {
     return (
-        <section className="wrapper__wide">
-            <div className="py-6 lg:pt-16 lg:pb-12 bg-primary text-white">
-                <footer className="wrapper">
-                    <div className="grid grid-cols-2 gap-14 lg:grid-cols-5">
-                        <div className="col-span-2 mb-8 lg:mb-0">
-                            <div className="flex items-center gap-2 lg:justify-start">
-                                <div className="w-16 h-16 lg:w-24 lg:h-24 relative">
-                                    <Image
-                                        src={SealImage}
-                                        alt="seal"
-                                        fill
-                                        style={{ objectFit: "contain" }}
-                                        sizes="(max-width: 1024px) 64px, 96px"
-                                    />
-                                </div>
-                            </div>
-                            <p className="mt-4 md:w-10/12 text-sm">{tagline}</p>
+        <footer className="wrapper__wide bg-primary text-white">
+            <div className="wrapper pt-12 pb-4">
+                {/* Top */}
+                <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                    {/* Column 1: Seal + Tagline */}
+                    <div>
+                        <div className="relative h-20 w-20">
+                            <Image
+                                src={RNITLogo}
+                                alt="Transparency Seal"
+                                fill
+                                className="object-contain"
+                                sizes="96px"
+                            />
                         </div>
-                        {menuItems.map((section, sectionIdx) => (
-                            <div key={sectionIdx}>
-                                <h3 className="mb-6 font-semibold text-xl">{section.title}</h3>
-                                <ul className="space-y-2">
-                                    {section.links.map((link, linkIdx) => (
-                                        <li key={linkIdx}>
-                                            <Button asChild variant="link" className="p-0 h-auto text-gray-300 hover:text-white font-normal text-left justify-start">
-                                                <Link href={link.url} target={link.url.startsWith('http') || link.url.startsWith('mailto:') || link.url.startsWith('tel:') ? '_blank' : '_self'}>
-                                                    {link.text}
-                                                </Link>
-                                            </Button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                        <p className="mt-4 text-sm text-gray-200 max-w-xs">
+                            Romblon National Institute of Technology
+                        </p>
                     </div>
-                    <div className=" flex flex-col justify-between gap-4 pt-8 md:flex-row md:items-center">
-                        <p className="text-gray-200 text-sm">{copyright}</p>
-                        <ul className="flex gap-4 ">
-                            {bottomLinks.map((link, linkIdx) => (
-                                <li key={linkIdx}>
-                                    {/* <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white">
-                                        {link.text}
-                                    </a> */}
-                                    <p className="text-white text-sm">{link.text}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </footer>
-            </div>
-        </section>
-    );
-};
 
-export { Footer };
+                    {/* Columns 2–4: Menus */}
+                    {menuItems.map((menu) => (
+                        <div key={menu.title}>
+                            <h3 className="mb-4 text-lg font-semibold">
+                                {menu.title}
+                            </h3>
+
+                            <ul className="space-y-2">
+                                {menu.links.map((link) => (
+                                    <li key={link.text}>
+                                        <Button
+                                            asChild
+                                            variant="link"
+                                            className="p-0 h-auto text-gray-300 hover:text-white justify-start"
+                                        >
+                                            <Link
+                                                href={link.url}
+                                                target={isExternal(link.url) ? "_blank" : undefined}
+                                            >
+                                                {link.text}
+                                            </Link>
+                                        </Button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+                {/* <div className="mt-12 flex flex-col md:items-center md:text-center">
+                    <div className="relative h-20 w-20 ">
+                        <Image
+                            src={SealImage}
+                            alt="Transparency Seal"
+                            fill
+                            className="object-contain"
+                            sizes="96px"
+                        />
+                    </div>
+                    <p className="mt-4 text-sm text-gray-200 max-w-2xl">
+                        {tagline}
+                    </p>
+                </div> */}
+
+                {/* Bottom */}
+                <div className="mt-10 border-t border-white/20 pt-6  text-gray-300 flex justify-between">
+                    <p className="text-sm">{copyright}</p>
+                    <p className="text-sm">Developed and maintained by <span className="font-semibold underline">Escultura</span></p>
+                </div>
+            </div>
+        </footer>
+    )
+}

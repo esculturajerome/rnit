@@ -25,7 +25,7 @@ const ThreeColumn = () => {
         {columns.map((col) => (
           <Card key={col.title} className="border-none shadow-none">
             <CardContent className="px-0">
-              <CardTitle className="text-xl md:text-3xl font-medium mb-2">{col.title}</CardTitle>
+              <CardTitle className="text-xl md:text-3xl font-medium mb-2 text-primary">{col.title}</CardTitle>
               <p className="text-sm mr-4 md:max-w-xs md:text-base ">{col.description}</p>
             </CardContent>
           </Card>
