@@ -38,7 +38,7 @@ export default function ProgramDetailPage() {
                 {/* Main Program */}
                 <section className="mb-12 lg:mb-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                        <div className={cn("relative w-full aspect-[4/3] lg:min-h-[500px] rounded-lg overflow-hidden group shadow-xl")}>
+                        <div className={cn("relative w-full aspect-[4/3] lg:min-h-[500px] rounded-lg overflow-hidden group ")}>
                             {program.image1 && (
                                 <Image
                                     src={program.image1}
@@ -53,10 +53,10 @@ export default function ProgramDetailPage() {
                         </div>
 
                         <div className="py-2 lg:py-4">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-primary mr-12">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-tight text-primary mr-12">
                                 {program.title}
                             </h1>
-                            <p className="text-xl lg:text-xl text-muted-foreground my-6 leading-relaxed">{program.subText}</p>
+                            <p className="text-xl lg:text-xl  my-6 leading-relaxed">{program.subText}</p>
                             <div className="prose prose-lg max-w-none dark:prose-invert text-foreground/90 space-y-4">
                                 {program.desc1 && <p>{program.desc1}</p>}
                                 {program.desc2 && <p>{program.desc2}</p>}
@@ -80,7 +80,7 @@ export default function ProgramDetailPage() {
                             {program.qualifications.map((qual, i) => {
                                 const images = getValidImages(qual)
                                 return (
-                                    <div key={i} className="flex flex-col bg-card border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <div key={i} className="flex flex-col bg-card border rounded-lg overflow-hidden">
                                         <div className="w-full">
                                             {images.length > 0 ? (
                                                 <Carousel opts={{ loop: images.length > 1 }} className="w-full group/carousel">
@@ -108,13 +108,13 @@ export default function ProgramDetailPage() {
                                                     )}
                                                 </Carousel>
                                             ) : (
-                                                <div className="aspect-video w-full bg-muted flex items-center justify-center text-muted-foreground">No images</div>
+                                                <div className="aspect-video w-full bg-muted flex items-center justify-center  ">No images</div>
                                             )}
                                         </div>
                                         <div className="p-4 md:p-6">
                                             <h4 className="text-lg md:text-xl font-semibold mb-2 text-primary">{qual.qualification}</h4>
-                                            <p className="text-sm text-muted-foreground"><strong>Venue:</strong> {qual.venue}</p>
-                                            <p className="text-sm text-muted-foreground"><strong>Date:</strong> {qual.date}</p>
+                                            <p className="text-sm  "><strong>Venue:</strong> {qual.venue}</p>
+                                            <p className="text-sm  "><strong>Date:</strong> {qual.date}</p>
                                         </div>
                                     </div>
                                 )

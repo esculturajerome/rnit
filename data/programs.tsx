@@ -168,6 +168,8 @@ export const PROGRAMS_DATA: Program[] = [
             "Provide Learning environment of close, relevant hands-on experience and meaningful interaction between trainer and trainees instilling values like teamwork, professionalism, and work safety song others.",
         desc3:
             "Continually strive to provide high level of student satisfaction to produce a consistently high rate of graduates certification and placement through partnership with industries.",
-        image1: "/images/programs/agricultural/agricultural1.jpg",
+        image1: "/images/programs/agricultural/agricultural.jpg",
+        image2: "/images/programs/agricultural/agricultural2.jpg",
+
     },
 ];

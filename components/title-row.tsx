@@ -30,12 +30,12 @@ const TitleRow: React.FC<TitleRowProps> = ({ badge, title, subText, actionElemen
                 {(title || subText) && (
                     <div className="flex gap-2 flex-col">
                         {title && (
-                            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-left">
+                            <h2 className="text-xl md:text-3xl max-w-xl font-medium text-left">
                                 {title}
                             </h2>
                         )}
                         {subText && (
-                            <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground text-left">
+                            <p className=" max-w-xl   text-left">
                                 {subText}
                             </p>
                         )}

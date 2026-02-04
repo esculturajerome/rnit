@@ -1,91 +1,77 @@
-// components/teams-profile.tsx
 "use client"
 
-import React, { useRef } from "react" // Needed for useRef
-import Autoplay from "embla-carousel-autoplay" // Carousel Autoplay plugin
-import {
-    Carousel,
-    // CarouselApi, // Removed unused import
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,     // Navigation button
-    CarouselPrevious, // Navigation button
-} from "@/components/ui/carousel"
 import Image from "next/image"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import TitleRow from "./title-row"
+import { Employees } from '@/data/employees'
 
-import bg_pattern from "@/public/images/bg_pattern.png"
-
-interface EmployeeProps {
-    id: string
-    name: string
-    position: string
-    image: string
-}
-
-interface TeamsProfileProps {
-    employees: EmployeeProps[]
-}
-
-export const TeamsProfile = ({ employees }: TeamsProfileProps) => {
-    // useRef to keep the plugin instance stable across renders
-    const plugin = useRef(
-        // Configure Autoplay: 2s delay, stop on interaction/hover
-        Autoplay({ delay: 2000, stopOnInteraction: true, stopOnMouseEnter: true })
+// Chunking function for the desktop 2x4 grid
+const chunk = (arr: any[], size: number) =>
+    Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+        arr.slice(i * size, i * size + size)
     )
 
+export const TeamsProfile = () => {
+    const desktopSlides = chunk(Employees, 8); // 8 items per slide (2 rows of 4)
+
     return (
-        <div className="w-full py-20 lg:py-40 relative wrapper__wide" id="meetourteam">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 z-[-1]">
-                <Image
-                    src={bg_pattern}
-                    alt="Background"
-                    fill
-                    className="object-cover object-center opacity-10"
-                    priority
+        <section id="meettheteam" className="bg-white">
+            <div className="wrapper py-20">
+                <TitleRow
+                    title="Meet the Team"
+                    subText="Our instructors and staff are dedicated to delivering quality, industry-relevant training."
                 />
-            </div>
-            <div className="wrapper mx-auto relative z-10">
-                <div className="flex flex-col gap-10">
-                    <TitleRow title="Meet Our Team" subText="A glimpse of the passionate individuals behind our success." />
-                    <Carousel
-                        plugins={[plugin.current]} // Pass the autoplay plugin instance
-                        className="w-full"
-                        opts={{
-                            align: "start", // Ensure items align to the start
-                            loop: true,     // Enable looping
-                        }}
-                    >
+
+                <div className="mt-10 w-full relative">
+                    <Carousel opts={{ align: "start", loop: false }}>
                         <CarouselContent>
-                            {employees.map((employee) => (
-                                <CarouselItem
-                                    // Adjust item width based on screen size
-                                    className="basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6" // Shows ~3 up to 8 items
-                                    key={employee.id} // Use unique ID for key
-                                >
-                                    {/* Increased padding slightly for larger images */}
-                                    <div className="flex rounded-md aspect-square items-start justify-center p-2 sm:p-3 mx-auto">
-                                        <Image
-                                            src={employee.image}
-                                            alt={employee.name}
-                                            width={150} // Base size for mobile/smaller screens
-                                            height={150}
-                                            className="object-cover object-top aspect-square shadow rounded-md lg:w-[180px] lg:h-[180px]"
-                                        // --- End Size Adjustment ---
-                                        />
+                            {/* MOBILE VIEW: 1 employee per slide */}
+                            {/* Hidden on md screens and up */}
+                            {Employees.map((employee) => (
+                                <CarouselItem key={`mobile-${employee.id}`} className="md:hidden">
+                                    <EmployeeCard employee={employee} />
+                                </CarouselItem>
+                            ))}
+
+                            {/* DESKTOP VIEW: 8 employees per slide in a grid */}
+                            {/* Hidden on small screens */}
+                            {desktopSlides.map((group, index) => (
+                                <CarouselItem key={`desktop-${index}`} className="hidden md:block">
+                                    <div className="grid grid-cols-4 grid-rows-2 gap-6">
+                                        {group.map((employee) => (
+                                            <EmployeeCard key={employee.id} employee={employee} />
+                                        ))}
                                     </div>
-                                    <p className="text-sm font-medium text-center mt-2 truncate px-1">{employee.name}</p>
-                                    <p className="text-xs text-center text-gray-500 truncate px-1">{employee.position}</p>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
-                        {/* Carousel Navigation Buttons */}
-                        <CarouselPrevious className="absolute left-[-10px] sm:left-[-20px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white border-primary text-primary" />
-                        <CarouselNext className="absolute right-[-10px] sm:right-[-20px] top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white border-primary text-primary" />
+                        {/* Navigation Buttons */}
+                        <div className="flex items-center justify-center gap-4 mt-8">
+                            <CarouselPrevious className="static translate-y-0" />
+                            <CarouselNext className="static translate-y-0" />
+                        </div>
                     </Carousel>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
+
+// Reusable Card Component to keep code clean
+const EmployeeCard = ({ employee }: { employee: any }) => (
+    <div className="border border-primary p-4 text-center h-full bg-white shadow-sm">
+        <Image
+            src={employee.image}
+            alt={employee.name}
+            width={128}
+            height={128}
+            className="mx-auto h-32 w-32 object-cover object-top"
+        />
+        <h3 className="mt-4 font-medium text-slate-900 line-clamp-1">
+            {employee.name}
+        </h3>
+        <p className="text-sm text-slate-600">
+            {employee.position}
+        </p>
+    </div>
+)

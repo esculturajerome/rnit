@@ -75,10 +75,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     return (
         <article className="container mx-auto max-w-3xl py-10 lg:py-16 px-4">
             <header className="mb-8 border-b pb-6">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-3">
                     {frontmatter.title}
                 </h1>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm  ">
                     <div className="flex items-center gap-1">
                         <CalendarDays className="w-4 h-4" />
                         <time dateTime={frontmatter.date}>

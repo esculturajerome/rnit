@@ -89,41 +89,40 @@
   --chart-5: oklch(0.65 0.22 340);
 }
 
-@layer base {
-  html,
-  body,
-  p,
-  a,
-  span {
-    font-family: var(--font-roboto), sans-serif;
-  }
+:root {
+  --font-ibm-plex-sans: 'IBM Plex Sans', sans-serif !important;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-playfair-display), serif;
-  }
+body {
+  font-family: var(--font-ibm-plex-sans);
+}
+
+@layer base {
+
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   p {
     @apply text-sm md:text-base;
   }
+
   .wrapper__wide {
     @apply max-w-[1600px] mx-auto;
   }
+
   .wrapper {
     @apply w-11/12 max-w-[1600px] lg:w-10/12 mx-auto;
   }
+
   article ul {
     @apply ml-4 my-4 space-y-2;
   }
+
   article h2 {
     @apply font-medium mt-8 mb-4 text-2xl;
   }
