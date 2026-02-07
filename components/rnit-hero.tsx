@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -9,16 +9,16 @@ import HeroImage from "@/public/images/hero-transparent.png";
 
 const Hero = () => {
     // Animation Variants
-    const textContainer = {
+    const textContainer: Variants = {
         hidden: { opacity: 0, x: -20 },
         visible: {
             opacity: 1,
             x: 0,
-            transition: { staggerChildren: 0.1, duration: 0.5, ease: "easeOut" }
+            transition: { staggerChildren: 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }
         }
     };
 
-    const item = {
+    const item: Variants = {
         hidden: { opacity: 0, x: -20 },
         visible: { opacity: 1, x: 0 }
     };
