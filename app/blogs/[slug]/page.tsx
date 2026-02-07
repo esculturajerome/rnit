@@ -45,7 +45,7 @@ const mdxComponents = {
             {...props}
             src={props.src}
             alt={props.alt || ''}
-            className={cn("my-6 rounded-md shadow-md", props.className)}
+            className={cn("my-6  shadow-md", props.className)}
         />
     ),
 }
@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 )}
             </header>
 
-            <div className="prose prose-stone dark:prose-invert max-w-none prose-img:rounded-md prose-a:text-primary hover:prose-a:text-primary/80">
+            <div className="prose prose-stone dark:prose-invert max-w-none prose-img: prose-a:text-primary hover:prose-a:text-primary/80">
                 <MDXRemote source={content} components={mdxComponents} />
             </div>
         </article>

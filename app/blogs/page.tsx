@@ -1,18 +1,46 @@
-// app/blogs/page.tsx
-
-import { FacebookPostSection } from "@/components/facebook-post-section";
 import { FeatureBlogs } from "@/components/feature-blogs";
-import { FeatureBlogsFacebook } from "@/components/feature-blogs-facebook";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { FacebookPostSection } from "@/components/facebook-post-section";
 
-export default function BlogsPage() {
+// Server-side data fetching
+function getBlogPosts() {
+    const postsDirectory = path.join(process.cwd(), "content/blogs");
+    try {
+        const filenames = fs.readdirSync(postsDirectory);
+        return filenames
+            .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"))
+            .map((filename) => {
+                const fileContents = fs.readFileSync(path.join(postsDirectory, filename), "utf8");
+                const { data } = matter(fileContents);
+                return {
+                    slug: filename.replace(/\.(mdx|md)$/, ""),
+                    title: data.title || "Untitled",
+                    date: data.date || "",
+                    summary: data.summary || "",
+                    featuredImage: data.featuredImage || "/images/placeholder-blog.jpg",
+                };
+            })
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    } catch (e) {
+        console.error("Error reading blogs:", e);
+        return [];
+    }
+}
+
+export default function Page() {
+    const allPosts = getBlogPosts();
+
     return (
-        <div>
-            {/* <FeatureBlogsFacebook showViewAllBlogsButton={false} /> */}
+        <main>
+
             <FeatureBlogs
-                maxPosts={9}
-                showTitleRow={true}
+                posts={allPosts}
+                maxPosts={allPosts.length}
+                showViewAllButton={false}
             />
             <FacebookPostSection />
-        </div>
+        </main>
     );
 }

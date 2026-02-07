@@ -92,7 +92,7 @@ export function RnitNav() {
                                     <Link
                                         href={link.href}
                                         className={cn(
-                                            "block px-3 py-3 rounded-md text-base font-medium", // Adjusted padding
+                                            "block px-3 py-3  text-base font-medium", // Adjusted padding
                                             "hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary" // Adjusted hover/focus
                                         )}
                                     >

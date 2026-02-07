@@ -110,25 +110,20 @@ export const Footer = ({
                         </div>
                     ))}
                 </div>
-                {/* <div className="mt-12 flex flex-col md:items-center md:text-center">
-                    <div className="relative h-20 w-20 ">
-                        <Image
-                            src={SealImage}
-                            alt="Transparency Seal"
-                            fill
-                            className="object-contain"
-                            sizes="96px"
-                        />
-                    </div>
-                    <p className="mt-4 text-sm text-gray-200 max-w-2xl">
-                        {tagline}
-                    </p>
-                </div> */}
-
                 {/* Bottom */}
-                <div className="mt-10 border-t border-white/20 pt-6  text-gray-300 flex justify-between">
+                <div className="mt-10 border-t border-white/20 pt-6 text-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm">{copyright}</p>
-                    <p className="text-sm">Developed and maintained by <span className="font-semibold underline">Escultura</span></p>
+                    <p className="text-sm">
+                        Developed and maintained by{" "}
+                        <Link
+                            href="https://jeromeeeee.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold underline hover:text-white transition-colors"
+                        >
+                            Jerome
+                        </Link>
+                    </p>
                 </div>
             </div>
         </footer>
