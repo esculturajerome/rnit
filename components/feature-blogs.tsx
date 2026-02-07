@@ -1,202 +1,141 @@
-// components/feature-blogs.tsx
-import { ArrowRight, CalendarDays } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "./ui/button"
-import Link from "next/link"
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
-import TitleRow from "./title-row"
-import Image from "next/image"
-import { cn } from "@/lib/utils"
+'use client';
 
-interface BlogPost {
-    slug: string
-    title: string
-    date: string
-    summary: string
-    featuredImage?: string
+import { ArrowRight, CalendarDays } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import TitleRow from "./title-row";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+
+// Animation Variants (Same as Program Page)
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1 }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+};
+
+interface Post {
+    slug: string;
+    title: string;
+    date: string;
+    summary: string;
+    featuredImage: string;
 }
 
 interface FeatureBlogsProps {
-    maxPosts?: number
-    showTitleRow?: boolean
-    showViewAllButton?: boolean
-    title?: string
-    subText?: string
-    badgeText?: string
+    posts: Post[]; // Pass data from parent (Page) to keep this a Client Component
+    maxPosts?: number;
+    showViewAllButton?: boolean;
 }
 
-// Generate a short preview from markdown content
-const generatePreview = (content: string, maxLength = 150): string => {
-    let text = content
-        .replace(/---[\s\S]*?---/, "") // remove frontmatter
-        .replace(/^#+\s+/gm, "")
-        .replace(/^[*\-+]\s+/gm, "")
-        .replace(/^>\s+/gm, "")
-        .replace(/^[=`~]{3,}.*$/gm, "")
-        .replace(/!\[.*?\]\(.*?\)/g, "")
-        .replace(/\[(.*?)\]\(.*?\)/g, "$1")
-        .replace(/\s+/g, " ")
-        .trim()
-    if (text.length <= maxLength) return text
-    let truncated = text.substring(0, maxLength)
-    truncated = truncated.substring(0, Math.min(truncated.length, truncated.lastIndexOf(" ")))
-    return truncated + "..."
-}
+export const FeatureBlogs = ({
+    posts = [],
+    maxPosts = 5,
+    showViewAllButton = true
+}: FeatureBlogsProps) => {
 
-// Fetch blog posts from content folder
-const getBlogPosts = (): BlogPost[] => {
-    const postsDirectory = path.join(process.cwd(), "content/blogs")
-    let filenames: string[] = []
-    try {
-        filenames = fs.readdirSync(postsDirectory)
-    } catch (error) {
-        console.error("Could not read blog directory:", error)
-        return []
-    }
-
-    const posts = filenames
-        .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"))
-        .map((filename) => {
-            const filePath = path.join(postsDirectory, filename)
-            const fileContents = fs.readFileSync(filePath, "utf8")
-            const { data, content } = matter(fileContents)
-
-            if (!data.title || !data.date) return null
-
-            return {
-                slug: filename.replace(/\.(mdx|md)$/, ""),
-                title: data.title,
-                date: data.date,
-                summary: data.summary || generatePreview(content),
-                featuredImage: data.featuredImage || "/images/placeholder-blog.jpg",
-            } as BlogPost
-        })
-        .filter((post): post is BlogPost => post !== null)
-
-    posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    return posts
-}
-
-// Blog card component
-const BlogCard = ({ post, featured = false }: { post: BlogPost; featured?: boolean }) => {
-    const formatDate = (dateString: string) =>
-        new Date(dateString).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-        })
+    const displayedPosts = posts.slice(0, maxPosts);
+    if (displayedPosts.length === 0) return null;
 
     return (
-        <div
-            className={cn(
-                "relative h-full overflow-hidden group",
-                featured
-                    ? "aspect-square sm:col-span-2 lg:col-span-2 lg:row-span-2"
-                    : "aspect-square"
-            )}
-        >
-            {post.featuredImage && (
-                <Image
-                    src={post.featuredImage}
-                    alt={post.title}
-                    fill
-                    sizes={
-                        featured
-                            ? "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
-                            : "(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                    }
-                    style={{ objectFit: "cover" }}
-                    className="z-0 transition-transform duration-300 group-hover:scale-105"
-                    priority={featured}
-                />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"></div>
-            <div className="relative z-20 p-6 flex flex-col justify-between h-full text-white">
-                <CalendarDays className="w-8 h-8 stroke-1 text-gray-300" />
-                <div className="flex flex-col">
-                    <Link
-                        href={`/blogs/${post.slug}`}
-                        className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded"
-                    >
-                        <h3
+        <section className="relative w-full py-12 lg:py-24 overflow-hidden wrapper__wide">
+            <div className="wrapper relative z-10 mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <TitleRow title="Insights & Updates" subText="Stay Ahead with Our Latest Blogs" />
+                </motion.div>
+
+                {/* Blogs Grid */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                >
+                    {displayedPosts.map((post, i) => (
+                        <motion.div
+                            key={post.slug}
+                            variants={itemVariants}
                             className={cn(
-                                featured ? "text-xl md:text-2xl" : "text-lg",
-                                "font-semibold tracking-tight hover:underline line-clamp-1"
+                                "group relative overflow-hidden aspect-square bg-slate-900",
+                                i === 0 && "sm:col-span-2 lg:col-span-2 lg:row-span-2"
                             )}
                         >
-                            {post.title}
-                        </h3>
-                    </Link>
-                    <p className={cn(featured ? "text-gray-200 mt-1" : "text-gray-200 max-w-xs text-sm mt-1", "line-clamp-2")}>
-                        {post.summary}
-                    </p>
-                    <p className="text-xs text-gray-400 mt-2">{formatDate(post.date)}</p>
-                    <div className={featured ? "mt-4" : "mt-3"}>
-                        <Button
-                            variant="link"
-                            className="!p-0 h-auto text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 rounded"
-                            asChild
-                        >
-                            <Link href={`/blogs/${post.slug}`} className="flex items-center">
-                                Read more
-                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+                            {/* Image with zoom effect */}
+                            <Image
+                                src={post.featuredImage}
+                                alt={post.title}
+                                fill
+                                className="object-cover opacity-80 transition-transform duration-700 ease-out group-hover:scale-110 group-hover:opacity-100"
+                            />
 
-// Main feature blogs component
-export const FeatureBlogs = async ({
-    maxPosts = 5,
-    showTitleRow = true,
-    showViewAllButton = false,
-    title = "Insights & Updates",
-    subText = "Stay Ahead with Our Latest Blogs",
-    badgeText = "Blogs",
-}: FeatureBlogsProps) => {
-    const allPosts = getBlogPosts()
-    const latestPosts = allPosts.slice(0, maxPosts)
+                            {/* Refined Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent transition-opacity duration-300 group-hover:from-black/90" />
 
-    if (latestPosts.length === 0)
-        return (
-            <div className="py-10">
-                {showTitleRow && <TitleRow badge={badgeText} title={title} subText={subText} />}
-                <p className="text-center mt-10">No blog posts found yet.</p>
-            </div>
-        )
+                            {/* Content */}
+                            <div className="relative z-10 h-full p-6 flex flex-col justify-between text-white">
+                                <div className="flex justify-between items-start">
+                                    <CalendarDays className="w-8 h-8 stroke-1 text-secondary opacity-80 transition-transform duration-300 group-hover:-translate-y-1" />
+                                    <div className="h-6 w-6  border border-white/20 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+                                        <ArrowRight className="h-3 w-3" />
+                                    </div>
+                                </div>
 
-    const featuredPost = latestPosts[0]
-    const regularPosts = latestPosts.slice(1)
+                                <div>
+                                    <Link href={`/blogs/${post.slug}`} className="focus:outline-none">
+                                        <h3 className={cn(
+                                            "font-bold line-clamp-2 tracking-tight transition-colors group-hover:text-secondary",
+                                            i === 0 ? "text-2xl md:text-3xl" : "text-lg"
+                                        )}>
+                                            {post.title}
+                                        </h3>
+                                    </Link>
 
-    return (
-        <div className="wrapper__wide">
-            <div className="wrapper py-10">
-                {showTitleRow && <TitleRow title={title} subText={subText} />}
+                                    <p className="text-sm text-gray-300 line-clamp-2 mt-2 opacity-90">
+                                        {post.summary}
+                                    </p>
 
-                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {featuredPost && <BlogCard post={featuredPost} featured={regularPosts.length > 0} />}
-                    {regularPosts.map((post) => (
-                        <BlogCard key={post.slug} post={post} />
+                                    <Button variant="link" className="p-0 text-white mt-4 h-auto hover:text-secondary transition-colors" asChild>
+                                        <Link href={`/blogs/${post.slug}`} className="group inline-flex items-center">
+                                            Read More
+                                            <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+                                        </Link>
+                                    </Button>
+                                </div>
+                            </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
+                {/* View All Button */}
                 {showViewAllButton && (
-                    <div className="mt-12 text-center">
-                        <Button size="lg" asChild>
-                            <Link href="/blogs" className="flex items-center group">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                        className="mt-16 text-center"
+                    >
+                        <Button size="lg" className=" px-8 shadow-lg" asChild>
+                            <Link href="/blogs" className="group inline-flex items-center">
                                 View All Blogs
-                                <ArrowRight className="ml-2 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </Button>
-                    </div>
+                    </motion.div>
                 )}
             </div>
-        </div>
-    )
-}
+        </section>
+    );
+};

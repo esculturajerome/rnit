@@ -1,41 +1,79 @@
 import { FeatureBlogs } from "@/components/feature-blogs";
 import { Hero } from "@/components/rnit-hero";
-import { TeamsProfile } from "@/components/teams-profile";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { Employees } from "@/data/employees"
-import { FeaturePrograms } from "@/components/feature-programs";
-import FullWidthWithText from "@/components/full-width-with-text";
+import { Reveal } from "@/components/framer-wrapper";
 import ThreeColumn from "@/components/three-column";
 import FullWidth from "@/components/full-width";
-import DownloadSection from "@/components/download-section";
 import ProgramsGrid from "@/components/programs-grid";
+import DownloadSection from "@/components/download-section";
+import FullWidthWithText from "@/components/full-width-with-text";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
+// Server-side data fetching
+function getBlogPosts() {
+  const postsDirectory = path.join(process.cwd(), "content/blogs");
+  try {
+    const filenames = fs.readdirSync(postsDirectory);
+    return filenames
+      .filter((file) => file.endsWith(".mdx") || file.endsWith(".md"))
+      .map((filename) => {
+        const fileContents = fs.readFileSync(path.join(postsDirectory, filename), "utf8");
+        const { data } = matter(fileContents);
+        return {
+          slug: filename.replace(/\.(mdx|md)$/, ""),
+          title: data.title || "Untitled",
+          date: data.date || "",
+          summary: data.summary || "",
+          featuredImage: data.featuredImage || "/images/placeholder-blog.jpg",
+        };
+      })
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } catch (e) {
+    console.error("Error reading blogs:", e);
+    return [];
+  }
+}
 
 export default function Home() {
+  const allPosts = getBlogPosts();
   return (
     <main>
       <Hero />
-      <ThreeColumn />
-      <FullWidth />
-      {/* <FeaturePrograms
-        maxPrograms={5} // Optionally customize how many programs to show
-        showTitleRow={true}
-      // You can also override title, subText, badgeText here if needed
-      /> */}
-      <ProgramsGrid />
-      <section className="wrapper__wide py-12 ">
-        <DownloadSection title="Download Citizen's Charter" subtext="View our service standards, processing times, and requirements." file='citizens-charter.pdf' /></section>
-      <FeatureBlogs showViewAllButton={true} />
-      <FullWidthWithText />
 
-      <section className="wrapper__wide py-12 ">
-        <DownloadSection title="Download our Assessment Fees" file='assessment-fee-2024.pdf' />
-        <div className="wrapper">
-          <p className=" mt-4 px-5 mr-12">Download our Assessment Fees to view the official schedule of charges approved by TESDA. This document provides a transparent breakdown of costs for each program offered. It ensures that students and applicants are fully informed before enrollment. Access reliable information to help you plan your training journey with confidence.</p>
-        </div>
+      <Reveal>
+        <ThreeColumn />
+      </Reveal>
+
+      <Reveal>
+        <FullWidth
+          title="How Do Skills Change Lives?"
+          subtext="TESDA-accredited training opens opportunities, creates jobs, and builds a skilled workforce for the future."
+        />
+      </Reveal>
+
+      <Reveal>
+        <ProgramsGrid />
+      </Reveal>
+
+      <Reveal>
+        <FeatureBlogs showViewAllButton={true} posts={allPosts}
+          maxPosts={5}
+        />
+      </Reveal>
+
+      <Reveal>
+        <FullWidthWithText />
+      </Reveal>
+
+      <section className="wrapper__wide py-12">
+        <Reveal>
+          <DownloadSection
+            title="Download our Assessment Fees"
+            file='assessment-fee-2024.pdf'
+          />
+        </Reveal>
       </section>
-      {/* <IndexBlogs /> */}
-    </main >
+    </main>
   );
 }

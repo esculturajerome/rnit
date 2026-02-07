@@ -73,7 +73,7 @@ const SingleTableDisplay: React.FC<SingleTableDisplayProps> = ({ dataset, captio
     const { columns: headers, rows } = dataset;
 
     return (
-        <div className="mt-4 overflow-x-auto rounded-md border shadow-md" id='accredited-programs'> {/* Removed w-5xl for better responsiveness */}
+        <div className="mt-4 overflow-x-auto  border shadow-md" id='accredited-programs'> {/* Removed w-5xl for better responsiveness */}
             <Table>
                 {caption && <TableCaption className="py-3">{caption}</TableCaption>}
                 <TableHeader>

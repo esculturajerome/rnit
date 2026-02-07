@@ -38,7 +38,7 @@ export default function ProgramDetailPage() {
                 {/* Main Program */}
                 <section className="mb-12 lg:mb-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                        <div className={cn("relative w-full aspect-[4/3] lg:min-h-[500px] rounded-lg overflow-hidden group ")}>
+                        <div className={cn("relative w-full aspect-[4/3] lg:min-h-[500px]  overflow-hidden group ")}>
                             {program.image1 && (
                                 <Image
                                     src={program.image1}
@@ -80,7 +80,7 @@ export default function ProgramDetailPage() {
                             {program.qualifications.map((qual, i) => {
                                 const images = getValidImages(qual)
                                 return (
-                                    <div key={i} className="flex flex-col bg-card border rounded-lg overflow-hidden">
+                                    <div key={i} className="flex flex-col bg-card border  overflow-hidden">
                                         <div className="w-full">
                                             {images.length > 0 ? (
                                                 <Carousel opts={{ loop: images.length > 1 }} className="w-full group/carousel">
