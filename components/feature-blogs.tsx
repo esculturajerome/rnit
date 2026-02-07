@@ -3,13 +3,13 @@
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import TitleRow from "./title-row";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 // Animation Variants (Same as Program Page)
-const containerVariants = {
+const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -17,7 +17,7 @@ const containerVariants = {
     }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
 };
