@@ -1,12 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { Metadata } from 'next'
 import { Badge } from '@/components/ui/badge'
 import { CalendarDays, User } from 'lucide-react'
 import Image, { ImageProps } from 'next/image'
 import { cn } from '@/lib/utils'
+import { getBlogPostBySlug } from '@/lib/content'
 
 interface PostFrontmatter {
     title: string
@@ -15,27 +12,6 @@ interface PostFrontmatter {
     tags?: string[]
     summary?: string
     featuredImage?: string
-}
-
-// Read post from disk
-function getPostBySlug(slug: string) {
-    const postsDirectory = path.join(process.cwd(), 'content/blogs')
-    const safeSlug = String(slug ?? '')
-    if (!safeSlug) return null
-
-    const filePath = path.join(postsDirectory, `${safeSlug}.mdx`)
-    try {
-        const fileContents = fs.readFileSync(filePath, 'utf8')
-        const { data, content } = matter(fileContents)
-        return {
-            frontmatter: data as PostFrontmatter,
-            content,
-            slug: safeSlug,
-        }
-    } catch (e) {
-        console.warn(`Blog post not found or error reading file for slug: ${safeSlug}`, e)
-        return null
-    }
 }
 
 // MDX custom components
@@ -67,7 +43,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     const { slug } = await params
 
     if (!slug) return <p>Loading...</p>
-    const post = getPostBySlug(Array.isArray(slug) ? slug[0] : slug)
+    const post = getBlogPostBySlug(Array.isArray(slug) ? slug[0] : slug)
     if (!post) return <p>Post not found</p>
 
     const { frontmatter, content } = post

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agricultural Crops Production NC II | RNIT-TESDA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#edf3ff",
+              "tertiary-container": "#d12f32",
+              "tertiary": "#ad101d",
+              "on-tertiary-fixed": "#410004",
+              "on-surface-variant": "#404751",
+              "secondary-fixed": "#d9e3f9",
+              "primary-container": "#0672bd",
+              "on-error-container": "#93000a",
+              "outline-variant": "#c0c7d3",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "surface-container": "#e7eeff",
+              "primary-fixed-dim": "#9ecaff",
+              "on-primary-fixed": "#001d36",
+              "tertiary-fixed": "#ffdad7",
+              "on-primary": "#ffffff",
+              "on-background": "#121c2c",
+              "primary": "#005996",
+              "surface-dim": "#d0daf0",
+              "on-secondary-fixed": "#121c2c",
+              "inverse-primary": "#9ecaff",
+              "on-tertiary-fixed-variant": "#930013",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-container": "#fff0ee",
+              "secondary": "#555f71",
+              "secondary-container": "#d6e0f6",
+              "surface-container-low": "#f0f3ff",
+              "inverse-on-surface": "#ebf1ff",
+              "surface-tint": "#0061a3",
+              "outline": "#717882",
+              "on-secondary-container": "#596376",
+              "surface-bright": "#f9f9ff",
+              "surface": "#f9f9ff",
+              "on-secondary-fixed-variant": "#3d4759",
+              "on-primary-fixed-variant": "#00497c",
+              "surface-container-highest": "#d9e3f9",
+              "background": "#f9f9ff",
+              "primary-fixed": "#d1e4ff",
+              "surface-variant": "#d9e3f9",
+              "surface-container-high": "#dee8ff",
+              "secondary-fixed-dim": "#bdc7dc",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#273141",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#121c2c",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Public Sans"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(45deg, #005996, #0672bd);
+        }
+        .tonal-glass {
+            background: rgba(249, 249, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 z-50 sticky bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-100 font-headline">RNIT-TESDA</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 pb-1 font-label text-sm" href="#">Programs</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 font-label text-sm transition-all duration-200" href="#">Admission</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 font-label text-sm transition-all duration-200" href="#">Assessment</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 font-label text-sm transition-all duration-200" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-on-surface-variant font-label text-xs uppercase tracking-widest hover:text-primary transition-colors">Online Assessment</button>
+<button class="signature-gradient text-on-primary px-5 py-2.5 rounded-md font-label text-sm font-semibold active:scale-95 duration-150 shadow-md">Online Enrollment</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center overflow-hidden bg-surface-container">
+<div class="absolute inset-0 z-0">
+<img alt="Agricultural crop field" class="w-full h-full object-cover" data-alt="Lush green rows of agricultural crops in a sunny field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFPFnUmLUEvNOzqBHWDX_x9y2IxfpVUq0TjI_KjLwXnIbyx7bNwHBMzRb3XKtOu6FolkHUIcW_VrQXQznSEpOCOoRyV9z2k_QlpOJR9bzy7OdSf2FgIdc99PEPmJ33MnbduNww97szzb_2Ew-zMW50BBIOYbQaN4s9xV6BAesFRJOIWgK5SMip5i0CefenAZi1V6Yh-a77ygZAGZ6TZSeuKiLl8fUUo7f3MTXFo-1VQT3RHFLIF-nUfMAqleDAqikMt4fR-FK65lw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 py-24">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary text-on-tertiary mb-6">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="font-label text-[10px] font-bold tracking-[0.05em] uppercase">TESDA Accredited</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline text-white leading-tight tracking-tight mb-6">
+                        Agricultural Crops Production NC II
+                    </h1>
+<p class="text-xl text-surface-container-low font-light mb-10 leading-relaxed">
+                        Master the foundations of modern agriculture through sustainable planting, intensive crop care, and professional harvesting techniques.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="signature-gradient text-on-primary px-8 py-4 rounded-md font-label font-bold text-base shadow-xl flex items-center gap-3 active:scale-95 duration-150">
+                            Enroll in Program
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-md font-label font-bold text-base hover:bg-white/20 transition-all">
+                            Download Curriculum
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Program Description & Bento Grid -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Text Content -->
+<div class="lg:col-span-5 flex flex-col justify-center">
+<h2 class="text-3xl font-bold font-headline text-primary mb-6">Program Overview</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                            The Agricultural Crops Production NC II qualification consists of competencies that a person must achieve to produce various agricultural crops which include performing nursery operations, planting, caring and maintaining of crops and carrying out harvest and post-harvest operations.
+                        </p>
+<div class="space-y-6">
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+<div>
+<h4 class="font-bold text-on-surface">Sustainable Techniques</h4>
+<p class="text-sm text-on-surface-variant">Focus on organic methods and climate-resilient farming practices.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+<div>
+<h4 class="font-bold text-on-surface">Modern Tooling</h4>
+<p class="text-sm text-on-surface-variant">Hands-on training with contemporary farm machinery and irrigation systems.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Grid -->
+<div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[500px]">
+<div class="rounded-2xl overflow-hidden shadow-lg row-span-2">
+<img class="w-full h-full object-cover" data-alt="Farmer inspecting growing vegetable crops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhkldJeluPP27bCT2vsgiaNC-T13tIPt0xifzeAmOvz0vgbnjvfOealb6fBB5RFtx8ZWkZGCWRK4VipQNDX8F4Ml5JuSFRKGBR9n_VpMGPrqa32SN4sVbdJYmTcax8ZsoB49rnkTquc1cFJGjXw7pix2yttDwU64ReJ37wVFr7jDrh1HgVp6mRnLy8yiICcW4w5PK-jOK5zaXtiNDC-A-G-GYhlGh2I25zPO873Z9SXjbZYCGLljsExh9f8DSiV38ajOJRZn0LZjo"/>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-lg h-full">
+<img class="w-full h-full object-cover" data-alt="Seedlings in a commercial farm nursery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc6VSXk76kYAm8RUOyKKP2sDlG2kHGlJ8oHlSzxN1dNeRd3e3IDcFlqY78vqf_4VqlvdQccEjvv-nTEdZrim42OAsPtSaMriZMdokHZtQgayQKFihqmRNdOXXrRT6_FbRxUFOHASHLehZlfvASK_ikzuCnSB2nbZwYEyYAQLhA5Jk4-h_Uv5f33MoNVa5fDsyEI6H0J188skyQceA22GhEit271OK11bZ7wVfE5Ymy49lKTsY12SXQECi4bvsAlE-gHSlwP0jibo0"/>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-lg h-full bg-primary-container p-8 flex flex-col justify-end">
+<span class="text-4xl font-black text-white/20 mb-4 font-headline">NC II</span>
+<h3 class="text-2xl font-bold text-white leading-tight">National Certification Level 2</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Competency Standards (Tonal Layering Section) -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold font-headline text-on-background mb-4 tracking-tight">Competency Standards</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">This program follows the strict TESDA curriculum, dividing mastery into three essential pillars of agricultural proficiency.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Competencies -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border-b-4 border-primary transition-transform hover:-translate-y-2 duration-300">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<h3 class="text-xl font-bold mb-4 font-headline">Basic Competencies</h3>
+<ul class="space-y-3 text-on-surface-variant text-sm font-label">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Workplace Communication</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Working in Teams</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Solving Problems &amp; Decisions</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Occupational Health &amp; Safety</li>
+</ul>
+</div>
+<!-- Common Competencies -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border-b-4 border-primary transition-transform hover:-translate-y-2 duration-300">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">engineering</span>
+</div>
+<h3 class="text-xl font-bold mb-4 font-headline">Common Competencies</h3>
+<ul class="space-y-3 text-on-surface-variant text-sm font-label">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Safety Measures in Farm Ops</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Tools &amp; Equipment Maintenance</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Estimation &amp; Calculation</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">check_circle</span> Processing Farm Records</li>
+</ul>
+</div>
+<!-- Core Competencies -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl border-b-4 border-tertiary transition-transform hover:-translate-y-2 duration-300">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary">agriculture</span>
+</div>
+<h3 class="text-xl font-bold mb-4 font-headline">Core Competencies</h3>
+<ul class="space-y-3 text-on-surface-variant text-sm font-label">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-tertiary">star</span> Nursery Operations</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-tertiary">star</span> Planting of Crops</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-tertiary">star</span> Caring &amp; Maintaining Crops</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-tertiary">star</span> Harvesting &amp; Post-Harvest Ops</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Career Opportunities -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row items-end justify-between gap-6 mb-12">
+<div class="max-w-xl">
+<h2 class="text-4xl font-bold font-headline text-on-background tracking-tight mb-4">Career Pathways</h2>
+<p class="text-on-surface-variant">Graduates of this program are equipped for immediate employment in the agricultural sector, both locally and internationally.</p>
+</div>
+<div class="h-[2px] flex-grow bg-surface-container mx-8 hidden md:block mb-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
+<img alt="Crop Farmer at work" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional crop farmer managing an organic vegetable garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChyHQ8ji0QjiMZBL-cG_LOzEJs_cbTROKgy19n8y-XhHVrgEpWJ9p7FlG9WlP7c5JliWWG1LA4t1y6BQlVALHsBUsX8eXRJZlzUTHcQN0CB0wJPjRcLYNcAOE-1R6J8HPITjSPEgaHCHvkP2SoVpI8HZCRwuDgXN203LKiMAPCpV6ylZPgidoiOdmm-MbvHtJPdfhR7P0MpVUVH2D4F3ruYfEPt4loSbJF0ps4P9pgiQzV21smK_qsudDgm20eOKerf9TwuLRIZ2U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/20 to-transparent flex flex-col justify-end p-8">
+<h4 class="text-2xl font-bold text-white mb-2 font-headline">Crop Farmer</h4>
+<p class="text-white/70 text-sm font-label uppercase tracking-widest">Lead Producer</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
+<img alt="Farm Technician" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Agricultural technician checking soil moisture levels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDahXhN4Iz0ipfx8ZTDVkqJJFZW81oidALJw6cWjVNfCmohazp30coyK3XQPO2wk_n5FvA-EyhxNM5nlgeJa-NdpgbUNo3Gjh-IXYnYcKaORWTwJNGQGWto8Boo_dzHmqo7pdkUey9NDTNrxKXjg9JzC4gQ77WWI6POAPw6uwIkh1MZMUL9QkEFDKPpZyk01z7XCJAnnZQYyH6oAuockQlV2NB51pO78t2JaTkCAxYHMbIW9ZKmVtne3n1eFoYrznlJLFoPLMc6-lI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/20 to-transparent flex flex-col justify-end p-8">
+<h4 class="text-2xl font-bold text-white mb-2 font-headline">Farm Technician</h4>
+<p class="text-white/70 text-sm font-label uppercase tracking-widest">Technical Support</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
+<img alt="Agricultural Worker" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Agricultural worker harvesting fresh produce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSXcP_M52fqPXbp-3fiemZiUyy8KKqTRp-J9gDCBWL-E7nY4QFdoUtOd5ORVAQH9wcei91L8pHlWPF1eSNpFbHqdhCphVzLNHDfXUas3lwnyBzYj_j8BmMKvBOIurbkAc-0wySuvs7LxxFxI66U6NpN-A0iPmkxX7-0lNCmjbKB5iQ5EIVVDyVbUTHdhRWr2sMC-lkIaJr9iCRv3JYkRER_qfnBujmh7_W6za7M-sj_Q8r3sh_VllqnxvLtu-_WQlWZY6CkxlU0V4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-on-background/20 to-transparent flex flex-col justify-end p-8">
+<h4 class="text-2xl font-bold text-white mb-2 font-headline">Agricultural Worker</h4>
+<p class="text-white/70 text-sm font-label uppercase tracking-widest">Operational Staff</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-6">
+<div class="max-w-5xl mx-auto signature-gradient rounded-[2rem] p-12 text-center text-white relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 p-12 opacity-10">
+<span class="material-symbols-outlined text-[12rem]">potted_plant</span>
+</div>
+<h2 class="text-4xl font-bold font-headline mb-6 relative z-10">Ready to start your agricultural career?</h2>
+<p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto relative z-10">Applications for the next semester are now open. Secure your slot and become a certified modern agriculturist.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-white text-primary px-10 py-4 rounded-md font-bold font-label hover:bg-surface-container-low transition-colors active:scale-95 duration-150">Enroll Online</button>
+<button class="bg-primary-container border border-white/30 text-white px-10 py-4 rounded-md font-bold font-label hover:bg-white/10 transition-colors">Talk to an Advisor</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-slate-100 dark:bg-slate-950 full-width mt-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg font-bold text-blue-900 dark:text-blue-50 font-headline">RNIT-TESDA</div>
+<p class="text-slate-500 dark:text-slate-400 font-body text-xs text-center md:text-left">© 2024 Romblon National Institute of Technology. A TESDA-Accredited Institution.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 font-label text-[10px] tracking-widest uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 font-label text-[10px] tracking-widest uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 font-label text-[10px] tracking-widest uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">Transparency Seal</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 font-label text-[10px] tracking-widest uppercase transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>

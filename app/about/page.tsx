@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { TeamsProfile } from "@/components/teams-profile";
-import FullWidth from "@/components/full-width";
+import FullWidthWithText from "@/components/full-width-with-text";
 
 // Animation Variants
 const containerVariants: Variants = {
@@ -42,8 +42,8 @@ const AnimatedSection = ({ children, className = "", id = "" }: { children: Reac
 export default function AboutPage() {
   return (
     <main className="wrapper__wide">
-      <FullWidth
-        title="About Romblon National Institute of Technology"
+      <FullWidthWithText
+        title="About RNIT"
         subtext="A TESDA-accredited institution committed to quality technical education and skills development in Romblon."
       />
 

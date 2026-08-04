@@ -78,7 +78,7 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased"
         )}
       >
-        <header className="bg-primary/90 py-1 wrapper__wide">
+        {/* <header className="bg-primary/90 py-1 wrapper__wide">
           <div className="wrapper flex justify-end gap-1 sm:gap-2">
             <Button
               variant="ghost"
@@ -100,7 +100,7 @@ export default function RootLayout({
             </Button>
           </div>
 
-        </header>
+        </header> */}
         <RnitNav />
         <main className="wrapper_wide">{children}</main>
         <Footer />

@@ -94,7 +94,7 @@ export const FeatureBlogs = ({
                                 </div>
 
                                 <div>
-                                    <Link href={`/blogs/${post.slug}`} className="focus:outline-none">
+                                    <Link href={`/events/${post.slug}`} className="focus:outline-none">
                                         <h3 className={cn(
                                             "font-bold line-clamp-2 tracking-tight transition-colors group-hover:text-secondary",
                                             i === 0 ? "text-2xl md:text-3xl" : "text-lg"
@@ -108,7 +108,7 @@ export const FeatureBlogs = ({
                                     </p>
 
                                     <Button variant="link" className="p-0 text-white mt-4 h-auto hover:text-secondary transition-colors" asChild>
-                                        <Link href={`/blogs/${post.slug}`} className="group inline-flex items-center">
+                                        <Link href={`/events/${post.slug}`} className="group inline-flex items-center">
                                             Read More
                                             <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                                         </Link>
@@ -128,8 +128,8 @@ export const FeatureBlogs = ({
                         className="mt-16 text-center"
                     >
                         <Button size="lg" className=" px-8 shadow-lg" asChild>
-                            <Link href="/blogs" className="group inline-flex items-center">
-                                View All Blogs
+                            <Link href="/events" className="group inline-flex items-center">
+                                View All Events
                                 <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </Button>

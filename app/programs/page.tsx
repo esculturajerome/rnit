@@ -3,10 +3,15 @@ import { PROGRAMS_DATA } from "@/data/programs";
 import { FeaturePrograms } from "@/components/feature-programs";
 import { AccreditedProgramsTable } from "@/components/accredited-programs-table";
 import { UTPRASData, assessmentData, programsData } from '@/data/tables-data';
+import FullWidthWithText from "@/components/full-width-with-text";
 
 export default function ProgramsPage() {
     return (
         <div className="wrapper__wide">
+            <FullWidthWithText
+                title="RNIT Programs Offered"
+                subtext="Explore the technical-vocational and skills development programs designed to prepare learners for meaningful careers and livelihoods."
+            />
             <FeaturePrograms
                 showTitleRow={true} // Let FeaturePrograms handle its title section
                 title="Our Programs"
