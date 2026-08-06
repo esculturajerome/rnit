@@ -85,8 +85,8 @@ export default function RootLayout({
               size="sm"
               asChild
             >
-              <Link href="/enrolment">
-                Online Enrolment
+              <Link href="/enrollment">
+                Online Enrollment
               </Link>
             </Button>
             <Button
