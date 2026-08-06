@@ -56,10 +56,10 @@ export default function AboutPage() {
       <AnimatedSection id="vision-mission" className="bg-slate-50">
         <div className="wrapper py-20">
           <div className="grid gap-8 md:grid-cols-2">
-            <Card title="Vision" content="By 2030, RNIT will become a polytechnic institution providing quality technical education and skills training." />
-            <Card title="Mission" content="To provide students with professional, ethical, and industry-relevant technical skills." />
-            <Card title="Core Values" items={['Integrity', 'Excellence', 'Service']} />
-            <Card title="Organizational Culture" items={['Transparency', 'Teamwork', 'Accountability']} />
+            <Card title="Vision" content="By 2028, RNIT will become a Polytechnic Institute providing professional education, skills training and lifelong learning for Romblon." />
+            <Card title="Mission" content="To provide students with professional, practical, and, positive learning experiences so they become competent, valuable individuals, maximizing their career opportunities and academic pathways." />
+            <Card title="ORGANIZATIONAL CULTURE" items={['R-Responsive to the needs of the community', 'N-Nurturing changes towards quality', 'I-Integrity as public servants', 'T-Transparency, Teamwork, Timely']} />
+            <Card title="Values Statement" content="At Romblon Polytechnic Institute (RPI), we value quality, integrity and sustainability in all that we do as a teaching and learning institution. We are committed to creating an environment of open communication and transparency for the attainment of our vision and mission" />
           </div>
         </div>
       </AnimatedSection>
@@ -75,7 +75,7 @@ export default function AboutPage() {
           <motion.div variants={itemVariants} className="mt-10 mx-auto max-w-4xl border border-slate-200 bg-slate-50 p-6 ">
             <div className="relative w-full aspect-video  overflow-hidden bg-slate-200">
               <Image
-                src="/images/2025-org-chart.jpg"
+                src="/images/2026-org-chart.jpg"
                 alt="Organizational Structure"
                 fill
                 className="transition-transform duration-500 hover:scale-105 object-cover"
@@ -83,7 +83,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-6">
               <Button size='lg' asChild>
-                <a href="/images/2025-org-chart.jpg" target="_blank">View Full Organizational Chart</a>
+                <a href="/images/2026-org-chart.jpg" target="_blank">View Full Organizational Chart</a>
               </Button>
             </div>
           </motion.div>

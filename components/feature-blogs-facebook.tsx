@@ -49,7 +49,7 @@ const generatePreview = (content: string, maxLength = 150): string => {
 }
 
 const getBlogPosts = (): BlogPost[] => {
-  const postsDirectory = path.join(process.cwd(), "content/blogs")
+  const postsDirectory = path.join(process.cwd(), "content/events")
   let filenames: string[] = []
   try {
     filenames = fs.readdirSync(postsDirectory)
@@ -113,7 +113,7 @@ const BlogCard = ({ post, featured = false }: { post: BlogPost; featured?: boole
           <CalendarDays className="w-4 h-4 mr-1" />
           {formatDate(post.date)}
         </p>
-        <Link href={`/blogs/${post.slug}`}>
+        <Link href={`/events/${post.slug}`}>
           <h3 className={cn(featured ? "text-xl md:text-2xl" : "text-lg", "font-semibold hover:underline")}>
             {post.title}
           </h3>
@@ -121,7 +121,7 @@ const BlogCard = ({ post, featured = false }: { post: BlogPost; featured?: boole
         <p className="text-gray-200 text-sm mt-1 line-clamp-2">{post.summary}</p>
         <div className="mt-2">
           <Button variant="link" className="!p-0 text-white flex items-center gap-1" asChild>
-            <Link href={`/blogs/${post.slug}`}>
+            <Link href={`/events/${post.slug}`}>
               Read more <ArrowRight className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
@@ -190,7 +190,7 @@ export const FeatureBlogsFacebook = async ({
           {showViewAllBlogsButton && (
             <div className="mt-4">
               <Button size="lg" asChild>
-                <Link href="/blogs" className="flex items-center gap-1">
+                <Link href="/events" className="flex items-center gap-1">
                   View All Blogs <ArrowRight className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
