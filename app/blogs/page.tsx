@@ -6,7 +6,7 @@ import { FacebookPostSection } from "@/components/facebook-post-section";
 
 // Server-side data fetching
 function getBlogPosts() {
-    const postsDirectory = path.join(process.cwd(), "content/blogs");
+    const postsDirectory = path.join(process.cwd(), "content/events");
     try {
         const filenames = fs.readdirSync(postsDirectory);
         return filenames

@@ -19,7 +19,7 @@ interface PostFrontmatter {
 
 // Read post from disk
 function getPostBySlug(slug: string) {
-    const postsDirectory = path.join(process.cwd(), 'content/blogs')
+    const postsDirectory = path.join(process.cwd(), 'content/events')
     const safeSlug = String(slug ?? '')
     if (!safeSlug) return null
 
