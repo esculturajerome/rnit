@@ -43,7 +43,7 @@ const Hero = () => {
 
                     <motion.div variants={item} className="flex items-center gap-4">
                         <Button size='lg' asChild className="w-full sm:w-auto">
-                            <a href="/enrolment">Enrol now</a>
+                            <a href="/enrollment">Enroll now</a>
                         </Button>
 
                         <Button variant="link" asChild className="w-auto text-primary p-0">

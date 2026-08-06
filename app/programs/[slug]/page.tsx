@@ -65,7 +65,7 @@ export default function ProgramDetailPage() {
                             </div>
                             <div className="mt-10">
                                 <Button size="lg" className="px-8 py-4 text-lg" asChild>
-                                    <Link href="/enrolment">Enrol Now</Link>
+                                    <Link href="/enrollment">Enroll Now</Link>
                                 </Button>
                             </div>
                         </div>

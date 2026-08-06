@@ -26,11 +26,11 @@ import RNITLogo from "@/public/RNIT-logo.webp";
 export function RnitNav() {
     const navLinks = [
         { href: "/programs", label: "Programs" },
-        { href: "/blogs", label: "Blogs" },
+        { href: "/events", label: "Events" },
         { href: "/about", label: "About Us" },
         { href: "/contact", label: "Contact Us" },
         // Add the header links here for mobile consistency
-        { href: "/enrolment", label: "Online Enrolment" },
+        { href: "/enrollment", label: "Online Enrollment" },
         { href: "/assessment", label: "Online Assessment" },
     ];
 
@@ -55,8 +55,8 @@ export function RnitNav() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex gap-2">
-                    {/* Filter out the enrolment/assessment links for desktop view */}
-                    {navLinks.filter(link => !["/enrolment", "/assessment"].includes(link.href)).map((link) => (
+                    {/* Filter out the enrollment/assessment links for desktop view */}
+                    {navLinks.filter(link => !["/enrollment", "/assessment"].includes(link.href)).map((link) => (
                         <Button variant='ghost' key={link.href} asChild>
                             <Link href={link.href}>
                                 {link.label}

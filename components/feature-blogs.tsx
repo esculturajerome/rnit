@@ -53,7 +53,7 @@ export const FeatureBlogs = ({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <TitleRow title="Insights & Updates" subText="Stay Ahead with Our Latest Blogs" />
+                    <TitleRow title="Insights & Updates" subText="Stay Ahead with Our Latest Events" />
                 </motion.div>
 
                 {/* Blogs Grid */}
@@ -129,7 +129,7 @@ export const FeatureBlogs = ({
                     >
                         <Button size="lg" className=" px-8 shadow-lg" asChild>
                             <Link href="/events" className="group inline-flex items-center">
-                                View All Blogs
+                                View All Events
                                 <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </Button>

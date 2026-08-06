@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 
-const Enrolment = () => {
+const Enrollment = () => {
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -48,4 +48,4 @@ const Enrolment = () => {
     );
 }
 
-export default Enrolment
+export default Enrollment
