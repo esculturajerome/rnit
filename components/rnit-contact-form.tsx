@@ -67,10 +67,11 @@ const ContactForm: React.FC = () => {
         <form
             name="RNITContactForm" // This name must match the hidden input value
             method="post"
-            // data-netlify="true"
-            // data-netlify-honeypot="bot-field" // Optional: Add honeypot for spam
+            data-netlify="true"
+            data-netlify-honeypot="bot-field" // Optional: Add honeypot for spam
             onSubmit={handleSubmit}
             className="space-y-4"
+            netlify
         >
             {/* Hidden input for Netlify */}
             <input type="hidden" name="form-name" value="RNITContactForm" />
