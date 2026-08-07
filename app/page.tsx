@@ -6,9 +6,11 @@ import FullWidth from "@/components/full-width";
 import ProgramsGrid from "@/components/programs-grid";
 import DownloadSection from "@/components/download-section";
 import FullWidthWithText from "@/components/full-width-with-text";
+import VisionMissionGoals from "@/components/vision-mission-goals";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import VerticalTabs from "@/components/ui/vertical-tabs";
 
 // Server-side data fetching
 function getBlogPosts() {
@@ -44,12 +46,21 @@ export default function Home() {
       <Reveal>
         <ThreeColumn />
       </Reveal>
+      <Reveal>
+        <section className="wrapper__wide py-12">
+          <VerticalTabs />
+        </section>
+      </Reveal>
 
       <Reveal>
         <FullWidth
           title="How Do Skills Change Lives?"
           subtext="TESDA-accredited training opens opportunities, creates jobs, and builds a skilled workforce for the future."
         />
+      </Reveal>
+
+      <Reveal>
+        <VisionMissionGoals />
       </Reveal>
 
       <Reveal>
