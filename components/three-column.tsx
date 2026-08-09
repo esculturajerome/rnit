@@ -3,19 +3,19 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card"
 const ThreeColumn = () => {
   const columns = [
     {
-      title: "Quality Education",
+      title: "Vision",
       description:
-        "Practical, relevant, and industry-aligned learning. Designed to prepare students for real-world success.",
+        "By 2028, RNIT will become a Polytechnic Institute providing professional education, skills training and lifelong learning for Romblon.",
     },
     {
-      title: "Rooted in Romblon",
+      title: "Mission",
       description:
-        "Supporting local growth through education and skills. Building talent for a stronger Romblon community.",
+        " To provide students with professional, practical, and positive learning experiences so they become competent, valuable individuals, maximizing their career opportunities and academic pathways.",
     },
     {
-      title: "Career-Focused Programs",
+      title: "Values Statement",
       description:
-        "Hands-on training with real-world application. Preparing students for employment and advancement.",
+        "At Romblon Polytechnic Institute (RPI), we value quality, integrity and sustainability in all that we do as a teaching and learning institution. We are committed to creating an environment of open communication and transparency for the attainment of our vision and mission.",
     },
   ]
 

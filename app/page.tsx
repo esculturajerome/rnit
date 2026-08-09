@@ -9,6 +9,7 @@ import FullWidthWithText from "@/components/full-width-with-text";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import VerticalTabs from "@/components/ui/vertical-tabs";
 
 // Server-side data fetching
 function getBlogPosts() {
@@ -44,6 +45,11 @@ export default function Home() {
       <Reveal>
         <ThreeColumn />
       </Reveal>
+      <Reveal>
+        <section className="wrapper__wide py-12">
+          <VerticalTabs />
+        </section>
+      </Reveal>
 
       <Reveal>
         <FullWidth
@@ -66,7 +72,7 @@ export default function Home() {
         <FullWidthWithText />
       </Reveal>
 
-      <section className="wrapper__wide py-12">
+      <section className="wrapper__wide lg:py-12">
         <Reveal>
           <DownloadSection
             title="Download our Assessment Fees"
