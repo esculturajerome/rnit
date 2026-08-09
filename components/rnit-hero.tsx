@@ -5,8 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import HeroImage from "@/public/images/goals.jpg";
-// import HeroImage from "@/public/images/hero-transparent.png";
+import HeroImage from "@/public/images/hero-transparent.png";
 
 const Hero = () => {
     // Animation Variants

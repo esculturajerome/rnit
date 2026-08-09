@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const GOALS = [
   {
@@ -88,7 +89,6 @@ export function VerticalTabs() {
     if (index === activeIndex) return;
     setDirection(index > activeIndex ? 1 : -1);
     setActiveIndex(index);
-    setIsPaused(false);
   };
 
   // autoplay removed: user requested manual navigation only
@@ -113,21 +113,54 @@ export function VerticalTabs() {
     }),
   };
 
-  return (
-    <section className="w-full bg-background py-10 md:py-16 lg:py-24">
-      <div className="w-full px-4 md:px-8 lg:px-12 xl:px-20 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-5 flex flex-col justify-start order-2 lg:order-1 pt-4">
-            <div className="space-y-1 mb-8">
-              <h2 className="tracking-tight text-3xl font-medium md:text-4xl lg:text-5xl text-foreground">
-                RNIT Strategic Goals
-              </h2>
-              <span className="text-xs font-medium text-muted-foreground uppercase tracking-[0.3em] block ml-0.5">
-                (STRATEGIC GOALS)
-              </span>
-            </div>
+  const logos = [
+    {
+      name: "BP_logo",
+      src: "/BP_logo.png",
+      alt: "Bagong Pilipinas Logo",
+    },
+    {
+      name: "Tesda_logo",
+      src: "/tesda_logo.webp",
+      alt: "TESDA Logo",
+    },
+    {
+      name: "RNIT_logo",
+      src: "/RNIT-logo.webp",
+      alt: "RNIT Logo",
+    },
+  ]
 
-            <div className="flex flex-col rounded-2xl border border-border/80 bg-white/80 shadow-sm backdrop-blur-md overflow-hidden">
+
+
+  return (
+    <section className="w-full bg-background">
+      <div className="w-full px-4 md:px-8 lg:px-12 xl:px-20 mx-auto">
+        <div className="flex flex-col md:flex-row items-start justify-between space-y-1 mb-4 md:items-end gap-4">
+          <h2 className="text-xl md:text-3xl max-w-xl font-medium text-left order-2 md:order-1 ">
+            RNIT Strategic Goals
+          </h2>
+          <div className="flex md:self-end gap-4 order-1 md:order-2">
+            {logos.map((logo) => (
+              <div
+                key={logo.name}
+                className="flex items-center justify-center w-16 md:w-24"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={160}
+                  className="w-full h-full object-contain"
+                  priority
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-start">
+          <div className="lg:col-span-5 hidden lg:flex flex-col justify-start order-2 lg:order-1">
+            <div className="flex flex-col border border-border/80 bg-white/80 shadow-sm backdrop-blur-md overflow-hidden">
               {GOALS.map((goal, index) => {
                 const isActive = activeIndex === index;
                 return (
@@ -148,7 +181,7 @@ export function VerticalTabs() {
                     <span className="text-[10px] font-medium mt-1 tabular-nums opacity-60">/{goal.id}</span>
 
                     <div className="flex flex-col gap-2 flex-1">
-                      <span className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight">
+                      <span className="text-xl font-semibold text-primary group-hover:text-primary/80 transition-all duration-300">
                         {goal.title}
                       </span>
                     </div>
@@ -158,21 +191,21 @@ export function VerticalTabs() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 flex flex-col justify-start h-full order-1 lg:order-2">
-            <div className="relative">
-              <div className="relative rounded-2xl bg-white border border-border/50 p-8">
-                <AnimatePresence initial={false} custom={direction} mode="wait">
+          <div className="lg:col-span-7 h-full order-1 lg:order-2">
+            <div className="relative h-full">
+              <div className="relative bg-white border border-border/50 p-8 h-full pb-24">
+                <AnimatePresence mode="wait">
                   <motion.div
                     key={activeIndex}
                     custom={direction}
                     variants={variants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
+                    // initial="enter"
+                    // animate="center"
+                    // exit="exit"
                     transition={{ duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
                     className="w-full h-full"
                   >
-                    <h3 className="text-2xl md:text-3xl font-semibold text-foreground">{GOALS[activeIndex].title}</h3>
+                    <h3 className="block lg:hidden tracking-tight text-lg font-medium md:text-2xl text-primary">{GOALS[activeIndex].title}</h3>
 
                     <div className="mt-6 grid gap-6 md:grid-cols-2">
                       <div>

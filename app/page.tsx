@@ -60,10 +60,6 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <VisionMissionGoals />
-      </Reveal>
-
-      <Reveal>
         <ProgramsGrid />
       </Reveal>
 
@@ -77,7 +73,7 @@ export default function Home() {
         <FullWidthWithText />
       </Reveal>
 
-      <section className="wrapper__wide py-12">
+      <section className="wrapper__wide lg:py-12">
         <Reveal>
           <DownloadSection
             title="Download our Assessment Fees"
