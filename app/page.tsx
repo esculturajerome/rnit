@@ -6,7 +6,6 @@ import FullWidth from "@/components/full-width";
 import ProgramsGrid from "@/components/programs-grid";
 import DownloadSection from "@/components/download-section";
 import FullWidthWithText from "@/components/full-width-with-text";
-import VisionMissionGoals from "@/components/vision-mission-goals";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
