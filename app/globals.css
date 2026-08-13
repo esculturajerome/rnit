@@ -112,7 +112,7 @@ body {
   }
 
   .wrapper__wide {
-    @apply max-w-[1600px] mx-auto;
+    @apply max-w-[2000px] mx-auto;
   }
 
   .wrapper {

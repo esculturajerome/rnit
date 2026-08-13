@@ -53,7 +53,7 @@ export default function AboutPage() {
       </motion.div>
 
       {/* VISION & MISSION */}
-      <AnimatedSection id="vision-mission" className="bg-slate-50">
+      {/* <AnimatedSection id="vision-mission" className="bg-slate-50">
         <div className="wrapper py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <Card title="Vision" content="By 2028, RNIT will become a Polytechnic Institute providing professional education, skills training and lifelong learning for Romblon." />
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <Card title="Values Statement" content="At Romblon Polytechnic Institute (RPI), we value quality, integrity and sustainability in all that we do as a teaching and learning institution. We are committed to creating an environment of open communication and transparency for the attainment of our vision and mission" />
           </div>
         </div>
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       {/* ORGANIZATIONAL STRUCTURE */}
       <AnimatedSection id="org-structure" className="bg-white">
@@ -93,22 +93,60 @@ export default function AboutPage() {
       {/* ASSESSMENT & QUALITY */}
       <AnimatedSection id="assessment" className="bg-slate-50">
         <div className="wrapper py-20">
-          <motion.h2 variants={itemVariants} className="text-2xl font-medium mb-10">Assessment & Quality Assurance</motion.h2>
+          <motion.h2 variants={itemVariants} className="text-2xl font-medium mb-10">Accredited Assessment Center</motion.h2>
           <div className="grid gap-8 md:grid-cols-2">
             <motion.div variants={itemVariants} className="bg-white p-8 shadow-sm">
               <h3 className="text-2xl font-medium">Assessment Fees</h3>
               <p className="mt-4 text-slate-600">Transparent and TESDA-approved assessment fees for all qualifications.</p>
               <Button size='lg' asChild className="mt-6">
-                <a href="/documents/assessment-fee-2024.pdf" target="_blank">Download PDF</a>
+                <a href="/documents/assessment-fee-2024.pdf" target="_blank">Download Assessment Fees</a>
               </Button>
             </motion.div>
 
             <motion.div variants={itemVariants} className="bg-white p-8 shadow-sm">
-              <h3 className="text-2xl font-medium">RNIT Assessment Center</h3>
-              <p className="mt-4 text-slate-600">Dedicated to providing high-quality, reliable assessment services.</p>
+              <h3 className="text-2xl font-medium">Assessment Services</h3>
+              <p className="mt-4 text-slate-600">Dedicated to providing high-quality, reliable assessment services for our accredited programs.</p>
               <Button size='lg' asChild className="mt-6" variant="outline">
-                <a href="/images/assessment-mission.jpg" target="_blank">View Programs</a>
+                <a href="/programs">View Programs</a>
               </Button>
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* CITIZEN'S CHARTER */}
+      <AnimatedSection id="citizen-charter" className="bg-white">
+        <div className="wrapper py-20">
+          <motion.h2 variants={itemVariants} className="text-2xl font-medium mb-10">Citizen's Charter</motion.h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div variants={itemVariants} className="bg-slate-50 p-8 shadow-sm border border-slate-200">
+              <h3 className="text-xl font-semibold mb-4">Vision</h3>
+              <p className="text-slate-600 leading-relaxed">By 2028, RNIT will become a Polytechnic Institute providing professional education, skills training and lifelong learning for Romblon.</p>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="bg-slate-50 p-8 shadow-sm border border-slate-200">
+              <h3 className="text-xl font-semibold mb-4">Mission</h3>
+              <p className="text-slate-600 leading-relaxed">To provide students with professional, practical, and positive learning experiences so they become competent, valuable individuals, maximizing their career opportunities and academic pathways.</p>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="bg-slate-50 p-8 shadow-sm border border-slate-200">
+              <h3 className="text-xl font-semibold mb-4">Core Values (RNIT)</h3>
+              <ul className="text-slate-600 space-y-2">
+                <li><strong>R</strong> - Responsive to the needs of the community</li>
+                <li><strong>N</strong> - Nurturing changes towards quality</li>
+                <li><strong>I</strong> - Integrity as public servants</li>
+                <li><strong>T</strong> - Transparency, Teamwork, Timely</li>
+              </ul>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="md:col-span-2 lg:col-span-3 bg-slate-50 p-8 shadow-sm border border-slate-200">
+              <h3 className="text-xl font-semibold mb-4">Service Commitment</h3>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                RNIT is committed to providing accessible, inclusive, and quality technical and vocational education training (TVET) that equips individuals with the skills and competencies needed to succeed in the job market and contribute to national development.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                We pledge to maintain transparency, accountability, and excellence in all our operations, ensuring that every student and stakeholder receives the highest standard of service.
+              </p>
             </motion.div>
           </div>
         </div>

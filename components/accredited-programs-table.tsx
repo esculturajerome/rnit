@@ -139,16 +139,12 @@ export const AccreditedProgramsTable: React.FC<AccreditedProgramsTableProps> = (
     return (
         <div className="wrapper_wide flex flex-col items-center py-8"> {/* Centering the Tabs component */}
             <Tabs defaultValue='programs' className="max-w-4xl wrapper"> {/* Control max-width of Tabs */}
-                <TabsList className="grid grid-cols-3 overflow-x-scroll">
+                <TabsList className="grid grid-cols-2 overflow-x-scroll">
                     <TabsTrigger value="programs">Accredited Programs</TabsTrigger>
-                    <TabsTrigger value="utpras">UTPRAS Registered</TabsTrigger>
-                    <TabsTrigger value="assessment">Assessment Info</TabsTrigger>
+                    <TabsTrigger value="assessment">Accredited Assessment Center</TabsTrigger>
                 </TabsList>
                 <TabsContent value="programs">
                     <SingleTableDisplay dataset={programsData} caption="List of Accredited Programs" />
-                </TabsContent>
-                <TabsContent value="utpras">
-                    <SingleTableDisplay dataset={utprasData} caption="UTPRAS Registered Programs" />
                 </TabsContent>
                 <TabsContent value="assessment">
                     <SingleTableDisplay dataset={assessmentData} caption="Assessment Information" />
