@@ -34,11 +34,11 @@ const Hero = () => {
             >
                 <div className="mb-0 lg:max-w-lg bg-white py-12 lg:px-8 lg:border-b-4 border-secondary space-y-4 lg:space-y-8 lg:ml-0 lg:mt-0">
                     <motion.h2 variants={item} className="max-w-lg text-3xl font-medium tracking-tight text-primary sm:text-4xl sm:leading-none">
-                        Undertake direct training activities for TESDA
+                        RNIT's Vision
                     </motion.h2>
 
                     <motion.p variants={item} className="max-w-sm text-lg text-muted-foreground">
-                        Skilling Romblon thru quality TVET Delivery for Peoples Prosperity
+                        By 2028, RNIT will become a Polytechnic Institute providing professional education, skills training and lifelong learning for Romblon.
                     </motion.p>
 
                     <motion.div variants={item} className="flex items-center gap-4">

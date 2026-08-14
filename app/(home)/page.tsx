@@ -43,9 +43,12 @@ export default function Home() {
         <RnitNavHero />
       </div>
       <Reveal>
-        <section className="wrapper__wide py-12">
+        <section className="wrapper__wide pt-12">
           <VerticalTabs />
         </section>
+      </Reveal>
+      <Reveal>
+        <ThreeColumn />
       </Reveal>
       <Reveal>
         <FullWidth

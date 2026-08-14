@@ -1,12 +1,11 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
-import { RnitNav } from "@/components/rnit-nav";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/rnit-footer";
-import { cn } from "@/lib/utils"; // Import cn
+import { RnitNavBar } from "@/components/rnit-nav-bar";
+import { cn } from "@/lib/utils";
 
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -78,31 +77,8 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased"
         )}
       >
-        <header className="bg-primary/90 py-1 wrapper__wide">
-          <div className="wrapper flex justify-end gap-1 sm:gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              asChild
-            >
-              <Link href="/enrollment">
-                Online Enrollment
-              </Link>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              asChild
-            >
-              <Link href="/assessment">
-                Online Assessment
-              </Link>
-            </Button>
-          </div>
-
-        </header>
-        <RnitNav />
-        <main className="wrapper_wide">{children}</main>
+        <RnitNavBar />
+        <main className="pt-12">{children}</main>
         <Footer />
       </body>
     </html>
